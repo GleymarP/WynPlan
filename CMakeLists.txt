@@ -18,6 +18,7 @@ set(PROJECT_SOURCES
         src/mainwindow.cpp
         include/mainwindow.h
         ui/mainwindow.ui
+        resources/flujograma.json
 )
 include_directories(include)
 

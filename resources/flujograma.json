@@ -1,0 +1,70 @@
+{
+	"plan_de_estudio":
+	{
+		"nombre": "Ingeniería en Sistemas",
+		"semestres":
+		{
+			"Semestre 1": 
+			[
+				{
+					"nombre": "Programación 1",
+					"creditos": 4,
+				},
+				{
+					"nombre": "Cálculo 10",
+					"creditos": 6,
+				},
+				{
+					"nombre": "Sistemas de Representación 10",
+					"creditos": 4,
+				},
+				{
+					"nombre": "Ingeniería de Sistemas",
+					"creditos": 4,
+				}
+			],
+			"Semestre 2": 
+			[
+				{
+					"nombre": "Programación 2",
+					"creditos": 4,
+				},
+				{
+					"nombre": "Cálculo 20",
+					"creditos": 6,
+				},
+				{
+					"nombre": "Física 11",
+					"creditos": 5,
+				},
+				{
+					"nombre": "Introducción a los Procesos Químicos",
+					"creditos": 5,
+				}
+			],
+			"Semestre 3": 
+			[
+				{
+					"nombre": "Arquitectura de Computadoras",
+					"creditos": 4,
+				},
+				{
+					"nombre": "Cálculo 30",
+					"creditos": 6,
+				},
+				{
+					"nombre": "Física 21",
+					"creditos": 5,
+				},
+				{
+					"nombre": "Mecánica Racional",
+					"creditos": 4,
+				},
+				{
+					"nombre": "Inglés - Lectura I",
+					"creditos": 3,
+				}
+			]
+		} 
+	}
+}
