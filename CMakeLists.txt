@@ -19,6 +19,7 @@ set(PROJECT_SOURCES
         include/mainwindow.h
         ui/mainwindow.ui
         resources/flujograma.json
+        resources/teachers.json
 )
 include_directories(include)
 
@@ -26,6 +27,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(WynPlan
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET WynPlan APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
