@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/flujograma.json</file>
+        <file>resources/teachers.json</file>
+    </qresource>
+</RCC>
