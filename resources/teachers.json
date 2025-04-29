@@ -4,7 +4,7 @@
         "materias": 
         [
             {
-              "nombre": "Cálculo 10",
+              "codigo": 1004,
               "seccion": "01",
               "horarios": 
               [
@@ -18,7 +18,7 @@
             },
 
             {
-                "nombre": "Cálculo 20",
+                "codigo": 1012,
                 "seccion": "02",
                 "horarios": [
                   {
@@ -37,7 +37,7 @@
         "nombre": "Ferrer Maria",
         "materias": [
           {
-            "nombre": "Cálculo 10",
+            "codigo": 1004,
             "seccion": "02",
             "horarios": [
               {
@@ -49,7 +49,7 @@
           },
 
           {
-            "nombre": "Cálculo 30",
+            "codigo": 1018,
             "seccion": "01",
             "horarios": [
               {
@@ -66,7 +66,7 @@
         "nombre": "Rosales Richard",
         "materias": [
           {
-            "nombre": "Cálculo 10",
+            "codigo": 1004,
             "seccion": "03",
             "horarios": [
               {
@@ -78,7 +78,7 @@
           },
 
           {
-            "nombre": "Cálculo 30",
+            "codigo": 1018,
             "seccion": "02",
             "horarios": [
               {
@@ -94,7 +94,7 @@
         "nombre": "Cedeño Moisés",
         "materias": [
           {
-            "nombre": "Cálculo 10",
+            "codigo": 1004,
             "seccion": "04",
             "horarios": [
               {
@@ -111,7 +111,7 @@
           },
 
           {
-            "nombre": "Cálculo 30",
+            "codigo": 1018,
             "seccion": "03",
             "horarios": [
               {
@@ -129,7 +129,7 @@
         "nombre": "Domínguez Andrea",
         "materias": [
           {
-            "nombre": "Cálculo 10",
+            "codigo": 1004,
             "seccion": "05",
             "horarios": [
               {
@@ -141,7 +141,7 @@
           },
 
           {
-            "nombre": "Cálculo 20",
+            "codigo": 1012,
             "seccion": "01",
             "horarios": [
               {
@@ -163,7 +163,7 @@
         "nombre": "José Prieto",
         "materias": [
           {
-            "nombre": "Cálculo 10",
+            "codigo": 1004,
             "seccion": "06",
             "horarios": [
               {
@@ -179,7 +179,7 @@
         "nombre": "Lorena Zambrano",
         "materias": [
           {
-            "nombre": "Cálculo 10",
+            "codigo": 1004,
             "seccion": "07",
             "horarios": [
               {
@@ -196,7 +196,7 @@
         "nombre": "Vargas Wilmer",
         "materias": [
           {
-            "nombre": "Cálculo 10",
+            "codigo": 1004,
             "seccion": "08",
             "horarios": [
               {
@@ -208,7 +208,7 @@
           },
 
           {
-            "nombre": "Cálculo 20",
+            "codigo": 1012,
             "seccion": "03",
             "horarios": [
               {
@@ -226,7 +226,7 @@
         "nombre": "Orielys Soto",
         "materias":[
             {
-                "nombre": "Física 11",
+                "codigo": 1011,
                 "seccion": "01",
                 "horarios": [
                     {
@@ -245,7 +245,7 @@
         "nombre": "Libardo Zerpa",
         "materias":[
             {
-                "nombre": "Física 11",
+                "codigo": 1011,
                 "seccion": "01",
                 "horarios": [
                     {
@@ -263,7 +263,7 @@
         "nombre": "Leonardo Lacruz",
         "materias":[
             {
-                "nombre": "Física 21",
+                "codigo": 1017,
                 "seccion": "01",
                 "horarios": [
                     {
@@ -281,7 +281,7 @@
         "nombre": "Liliana Chirinos",
         "materias":[
             {
-                "nombre": "Mecánica Racional",
+                "codigo": 1052,
                 "seccion": "01",
                 "horarios": [
                     {
@@ -299,7 +299,7 @@
         "nombre": "Gerardo Nava",
         "materias":[
             {
-                "nombre": "Mecánica Racional",
+                "codigo": 1052,
                 "seccion": "01",
                 "horarios": [
                     {
@@ -317,7 +317,7 @@
         "nombre": "Juan Sebastian Diaz",
         "materias":[
             {
-                "nombre": "Sistemas de Representación 10",
+                "codigo": 1006,
                 "seccion": "01",
                 "horarios": [
                     {
@@ -335,7 +335,7 @@
         "nombre": "Pedro Araujo",
         "materias":[
             {
-                "nombre": "Sistemas de Representación 10",
+                "codigo": 1006,
                 "seccion": "02",
                 "horarios": [
                     {
@@ -353,7 +353,7 @@
         "nombre": "Jorge Calderon",
         "materias":[
             {
-                "nombre": "Sistemas de Representación 10",
+                "codigo": 1006,
                 "seccion": "03",
                 "horarios": [
                     {
@@ -371,7 +371,7 @@
         "nombre": "Andres Puerta",
         "materias":[
             {
-                "nombre": "Sistemas de Representación 10",
+                "codigo": 1006,
                 "seccion": "04",
                 "horarios": [
                     {
@@ -389,7 +389,7 @@
         "nombre": "Juan Cardillo",
         "materias":[
             {
-                "nombre": "Ingeniería de Sistemas",
+                "codigo": 1053,
                 "seccion": "01",
                 "horarios": [
                     {
@@ -407,7 +407,7 @@
         "nombre": "Luis Vizcaya",
         "materias":[
             {
-                "nombre": "Introducción a los Procesos Químicos",
+                "codigo": 1056,
                 "seccion": "01",
                 "horarios": [
                     {
@@ -425,7 +425,7 @@
         "nombre": "Jesus Perez",
         "materias":[
             {
-                "nombre": "Programación 1",
+                "codigo": 1054,
                 "seccion": "01",
                 "horarios": [
                     {
@@ -444,7 +444,7 @@
         "nombre": "Alex Romero",
         "materias":[
             {
-                "nombre": "Programación 2",
+                "codigo": 1055,
                 "seccion": "01",
                 "horarios": [
                     {
@@ -466,7 +466,7 @@
         "nombre": "Junior Altamira",
         "materias":[
             {
-                "nombre": "Programación 2",
+                "codigo": 1055,
                 "seccion": "01",
                 "horarios": [
                     {
@@ -480,30 +480,11 @@
         ]
       },
 
-    
-      {
-        "nombre": "Junior Altamira",
-        "materias":[
-            {
-                "nombre": "Programación 3",
-                "seccion": "01",
-                "horarios": [
-                    {
-                        "dias": [ "Martes", "Jueves"], 
-                        "hora_inicio":"12:00",
-                        "hora_fin" : "14:00"
-                    }
-
-                ]
-            }
-        ]
-      },
-
       {
         "nombre": "Ronald Sulbaran",
         "materias":[
             {
-                "nombre": "Arquitectura de Computadoras",
+                "codigo": 1057,
                 "seccion": "01",
                 "horarios": [
                     {
@@ -521,7 +502,7 @@
         "nombre": "Olivia Rodrigo",
         "materias":[
             {
-                "nombre": "Inglés - Lectura I",
+                "codigo": 1039,
                 "seccion": "01",
                 "horarios": [
                     {
