@@ -20,6 +20,7 @@ set(PROJECT_SOURCES
         ui/mainwindow.ui
         resources/flujograma.json
         resources/teachers.json
+
 )
 include_directories(include)
 
@@ -28,6 +29,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         include/definitions.h
+        src/definitions.cpp
 
     )
 # Define target properties for Android with Qt 6 as:
