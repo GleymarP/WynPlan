@@ -31,6 +31,8 @@ size_t Subject::get_credit_units() const
     return credit_units;
 }
 
+
+
 void Semester::set_semester_name(std::string name)
 {
     semester_name = name;
@@ -50,6 +52,8 @@ std::vector<Subject> Semester::get_subjects_semester() const
 {
     return subject;
 }
+
+
 
 void StudyPlan::set_degree(std::string name)
 {
@@ -121,3 +125,5 @@ StudyPlan StudyPlan::load_from_json(const QString &filePath)
     plan.set_semester(semesters);
     return plan;
 }
+
+
