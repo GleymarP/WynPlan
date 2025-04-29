@@ -8,18 +8,22 @@
 			[
 				{
 					"nombre": "Programación 1",
+					"codigo": 1054,
 					"creditos": 4,
 				},
 				{
 					"nombre": "Cálculo 10",
+					"codigo": 1004,
 					"creditos": 6,
 				},
 				{
 					"nombre": "Sistemas de Representación 10",
+					"codigo": 1006,
 					"creditos": 4,
 				},
 				{
 					"nombre": "Ingeniería de Sistemas",
+					"codigo": 1053,
 					"creditos": 4,
 				}
 			],
@@ -27,18 +31,22 @@
 			[
 				{
 					"nombre": "Programación 2",
+					"codigo": 1055,
 					"creditos": 4,
 				},
 				{
 					"nombre": "Cálculo 20",
+					"codigo": 1012,
 					"creditos": 6,
 				},
 				{
 					"nombre": "Física 11",
+					"codigo": 1011,
 					"creditos": 5,
 				},
 				{
 					"nombre": "Introducción a los Procesos Químicos",
+					"codigo": 1056,
 					"creditos": 5,
 				}
 			],
@@ -47,21 +55,26 @@
 				{
 					"nombre": "Arquitectura de Computadoras",
 					"creditos": 4,
+					"codigo": 1057,
 				},
 				{
 					"nombre": "Cálculo 30",
+					"codigo": 1018,
 					"creditos": 6,
 				},
 				{
 					"nombre": "Física 21",
+					"codigo": 1017,
 					"creditos": 5,
 				},
 				{
 					"nombre": "Mecánica Racional",
+					"codigo": 1052,
 					"creditos": 4,
 				},
 				{
-					"nombre": "Inglés - Lectura I",
+					"nombre": "Inglés I",
+					"codigo": 1039,
 					"creditos": 3,
 				}
 			]
