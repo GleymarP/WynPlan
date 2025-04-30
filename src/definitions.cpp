@@ -53,7 +53,6 @@ std::vector<Subject> Semester::get_subjects_semester() const
 }
 
 
-
 void StudyPlan::set_degree(std::string name)
 {
     degree = name;
