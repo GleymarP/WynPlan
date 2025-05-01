@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 
     std::vector<Teacher> teachers = Teacher::load_from_json(path_json_teacher, plan);
 
+
     MainWindow w;
     w.show();
     return a.exec();
