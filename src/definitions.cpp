@@ -13,10 +13,6 @@ void Subject::set_name(std::string name_)
 {
     name = name_;
 }
-void Subject::set_credit_units(size_t credit_units_)
-{
-    credit_units = credit_units_;
-}
 
 std::string Subject::get_subject_name() const
 {
@@ -26,11 +22,6 @@ std::string Subject::get_id() const
 {
     return id;
 }
-size_t Subject::get_credit_units() const
-{
-    return credit_units;
-}
-
 
 void Semester::set_semester_name(std::string name)
 {
@@ -112,7 +103,6 @@ StudyPlan StudyPlan::load_from_json(const QString &filePath)
             Subject subject;
             subject.set_name(subject_object["nombre"].toString().toStdString());
             subject.set_id(subject_object["codigo"].toString().toStdString());
-            subject.set_credit_units(subject_object["creditos"].toInt());
             subjects.push_back(subject);
         }
 

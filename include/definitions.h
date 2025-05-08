@@ -21,11 +21,9 @@ public:
 
     void set_id(std::string id_);
     void set_name(std::string name_);
-    void set_credit_units(size_t credit_units_);
 
     std::string get_subject_name() const;
     std::string get_id() const;
-    size_t get_credit_units() const;
 };
 
 
