@@ -166,9 +166,9 @@ void Teacher::set_subjects(std::vector<Subject> subjects_)
     subjects = subjects_;
 }
 
-void Teacher::set_available_schedule(std::vector<std::tuple<Subject, std::vector<Schedule>>> available_schedule_)
+void Teacher::set_availability(std::vector<Schedule> available_schedule_)
 {
-    available_schedule = available_schedule_;
+    availability = available_schedule_;
 }
 
 std::string Teacher::get_full_name() const
@@ -181,9 +181,9 @@ std::vector<Subject> Teacher::get_subjects() const
     return subjects;
 }
 
-std::vector<std::tuple<Subject, std::vector<Schedule>>> Teacher::get_available_schedule() const
+std::vector<Schedule> Teacher::get_availability() const
 {
-    return available_schedule;
+    return availability;
 }
 
 std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const StudyPlan &study_plan)
@@ -214,14 +214,34 @@ std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const Stu
 
         teacher.set_full_name(teacher_obj["nombre"].toString().toStdString());
 
+        std::vector<Schedule> availability;
+        QJsonArray availability_aaray = teacher_obj["disponibilidad"].toArray();
+
+        for(const QJsonValue& avail_value : availability_aaray)
+        {
+            QJsonObject avail_obj = avail_value.toObject();
+            QString start = avail_obj["hora_inicio"].toString();
+            QString end = avail_obj["hora_fin"].toString();
+            QJsonArray days_array = avail_obj["dias"].toArray();
+
+            for(const QJsonValue &day_value : days_array)
+            {
+                Schedule schedule;
+                schedule.set_day(day_value.toString().toStdString());
+                schedule.set_start_time(start.toStdString());
+                schedule.set_end_time(end.toStdString());
+                availability.push_back(schedule);
+            }
+        }
+
+        teacher.set_availability(availability);
+
+        std::vector<Subject> subjects;
         QJsonArray subjects_array = teacher_obj["materias"].toArray();
-        std::vector<Subject> teacher_subjects;
-        std::vector<std::tuple<Subject, std::vector<Schedule>>> teacher_schedules;
 
         for(const QJsonValue& subject_value : subjects_array)
         {
-            QJsonObject subject_obj = subject_value.toObject();
-
+            std::string subject_id = QString::number(subject_value.toInt()).toStdString();
             Subject subject_info;
             bool subject_found = false;
 
@@ -229,7 +249,7 @@ std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const Stu
             {
                 for(const Subject& plan_subject : semester.get_subjects_semester())
                 {
-                    if(plan_subject.get_id() == std::to_string(subject_obj["codigo"].toInt()))
+                    if(plan_subject.get_id() == subject_id)
                     {
                         subject_info = plan_subject;
                         subject_found = true;
@@ -244,40 +264,10 @@ std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const Stu
 
             if(subject_found)
             {
-                Subject teacher_subject;
-                teacher_subject.set_name(subject_info.get_subject_name());
-                teacher_subject.set_id(std::to_string(subject_obj["codigo"].toInt()));
-                teacher_subject.set_credit_units((subject_info.get_credit_units()));
-
-                std::vector<Schedule> subject_schelude;
-
-                QJsonArray schedules_array = subject_obj["horarios"].toArray();
-
-                for(const QJsonValue& schedule_value : schedules_array)
-                {
-                    QJsonObject schedule_obj = schedule_value.toObject();
-                    Schedule schedule;
-
-                    QJsonArray days_array = schedule_obj["dias"].toArray();
-
-                    for(const QJsonValue& day_value : days_array)
-                    {
-                        schedule.set_day(day_value.toString().toStdString());
-                        schedule.set_start_time(schedule_obj["hora_inicio"].toString().toStdString());
-                        schedule.set_end_time(schedule_obj["hora_fin"].toString().toStdString());
-                        subject_schelude.push_back(schedule);
-                    }
-
-                }
-
-                teacher_subjects.push_back(teacher_subject);
-                teacher_schedules.push_back(std::make_tuple(teacher_subject, subject_schelude));
+                subjects.push_back(subject_info);
             }
-
         }
-
-        teacher.set_subjects(teacher_subjects);
-        teacher.set_available_schedule(teacher_schedules);
+        teacher.set_subjects(subjects);
         teachers.push_back(teacher);
 
     }

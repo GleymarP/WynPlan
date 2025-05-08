@@ -82,15 +82,15 @@ class Teacher
 private:
     std::string  full_name;
     std::vector<Subject> subjects;
-    std::vector<std::tuple<Subject, std::vector<Schedule>>> available_schedule;
+    std::vector<Schedule> availability;
 public:
     void set_full_name(std::string full_name_);
     void set_subjects(std::vector<Subject> subjects_);
-    void set_available_schedule(std::vector<std::tuple<Subject, std::vector<Schedule>>> available_schedule_);
+    void set_availability(std::vector<Schedule> availability_);
 
     std::string get_full_name() const;
     std::vector<Subject> get_subjects() const;
-    std::vector<std::tuple <Subject, std::vector<Schedule>>> get_available_schedule() const;
+    std::vector<Schedule> get_availability() const;
 
     static std::vector<Teacher> load_from_json (const QString &file_path, const StudyPlan &study_plan);
 };
