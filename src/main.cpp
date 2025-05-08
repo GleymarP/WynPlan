@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
         for (const Subject& subject : teacher.get_subjects()) {
             qDebug() << "-" << QString::fromStdString(subject.get_subject_name())
             << "(Código:" << QString::fromStdString(subject.get_id())
-            << "| Créditos:" << subject.get_credit_units() << ")";
+            << ")";
         }
     }
 
