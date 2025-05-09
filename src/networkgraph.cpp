@@ -1,5 +1,6 @@
-// NetworkGraph.cpp
+
 #include "networkgraph.h"
+
 using Node = Designar::Digraph<NetworkGraph::NodeData, NetworkGraph::ArcData>::Node*;
 
 NetworkGraph::NetworkGraph(const std::vector<Teacher>& teachers, const StudyPlan& plan)
@@ -75,4 +76,5 @@ void NetworkGraph::printGraph() const
                   << ", Flow: " << info.flow << "]\n";
     });
 }
+
 
