@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "definitions.h"
 #include "networkgraph.h"
-#include <QApplication>
 
 int main(int argc, char *argv[])
 {

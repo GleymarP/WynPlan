@@ -88,6 +88,8 @@ qt_add_executable(WynPlan
     include/schedulesolver.h
     include/networkgraph.h
     src/networkgraph.cpp
+    include/menuwindow.h
+    src/menuwindow.cpp
 )
 
 target_link_libraries(WynPlan PRIVATE
