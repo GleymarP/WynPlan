@@ -1,8 +1,6 @@
 #include "mainwindow.h"
 #include "definitions.h"
-#include "menuwindow.h"
-#include "netgraph.h"
-#include <QApplication>
+#include "networkgraph.h"
 
 int main(int argc, char *argv[])
 {
@@ -41,7 +39,12 @@ int main(int argc, char *argv[])
         }
     }
 
-    MenuWindow menuWindow;
-    menuWindow.show();
+    NetworkGraph network(teachers, plan);
+
+    network.printGraph();
+
+
+    MainWindow w;
+    w.show();
     return a.exec();
 }
