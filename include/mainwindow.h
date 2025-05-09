@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPushButton>
+#include <QTableWidget>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,7 +20,18 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void returnToMenu();
+
+signals:
+    void returnToMenuRequested();
+
 private:
     Ui::MainWindow *ui;
+    void setupUI();
+    void populateTable();
+
+    QTableWidget *tableWidget;
+    QPushButton *returnButton;
 };
 #endif // MAINWINDOW_H

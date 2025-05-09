@@ -1,5 +1,5 @@
 #include "networkgraph.h"
-
+/*
 void ScheduleManager::buildNetwork()
 {
     addTeachersToNetwork();
@@ -120,6 +120,6 @@ void ScheduleManager::addCollisionConstraints() {
         }
     }
 }
-
+*/
 
 
