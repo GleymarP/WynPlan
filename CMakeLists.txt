@@ -69,7 +69,6 @@ set(PROJECT_SOURCES
     resources/flujograma.json
     resources/teachers.json
     src/definitions.cpp
-    src/netgraph.cpp
 )
 
 include_directories(
@@ -81,10 +80,9 @@ qt_add_executable(WynPlan
     MANUAL_FINALIZATION
     ${PROJECT_SOURCES}
     include/definitions.h
-    include/netgraph.h
+
     resources.qrc
     src/definitions.cpp
-    src/netgraph.cpp
     include/schedulesolver.h
     include/networkgraph.h
     src/networkgraph.cpp
