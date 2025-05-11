@@ -1,10 +1,8 @@
 #ifndef DEFINITIONS_H
 #define DEFINITIONS_H
-#include<string>
-#include<vector>
-#include<tuple>
-#include<QString>
-
+#include <string>
+#include <vector>
+#include <QString>
 #include <QFile>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -16,7 +14,6 @@ class Subject
 private:
     std::string id;
     std::string name;
-    size_t credit_units;
 public:
 
     void set_id(std::string id_);
@@ -93,6 +90,24 @@ public:
     static std::vector<Teacher> load_from_json (const QString &file_path, const StudyPlan &study_plan);
 };
 
+class Section
+{
+private:
+    Teacher teacher;
+    Subject subject;
+    Schedule schedule;
+    size_t id_section;
+public:
+    void set_teacher_section(Teacher teacher_);
+    void set_subject_section(Subject subject_);
+    void set_schedule_section(Schedule schedule_);
+    void set_id_section(size_t id_section_);
+
+    Teacher get_teacher_section();
+    Subject get_subject_section();
+    Schedule get_schedule_section();
+    size_t get_id_section();
+};
 
 #endif // DEFINITIONS_H
 
