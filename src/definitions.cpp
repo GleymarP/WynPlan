@@ -264,3 +264,42 @@ std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const Stu
 
     return teachers;
 }
+
+
+void Section::set_teacher_section(Teacher teacher_)
+{
+    teacher = teacher_;
+}
+
+void Section::set_subject_section(Subject subject_)
+{
+    subject = subject_;
+}
+
+void Section::set_schedule_section(Schedule schedule_)
+{
+    schedule = schedule_;
+}
+
+void Section::set_id_section(size_t id_section_)
+{
+    id_section = id_section_;
+}
+
+Teacher Section::get_teacher_section()
+{
+    return teacher;
+}
+
+Subject Section::get_subject_section()
+{
+    return subject;
+}
+Schedule Section::get_schedule_section()
+{
+    return schedule;
+}
+size_t Section::get_id_section()
+{
+    return id_section;
+}
