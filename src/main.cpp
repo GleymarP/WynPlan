@@ -2,6 +2,7 @@
 #include "networkgraph.h"
 #include "menuwindow.h"
 #include <QApplication>
+#include <homepage.h>
 
 int main(int argc, char *argv[])
 {
@@ -43,8 +44,9 @@ int main(int argc, char *argv[])
     NetworkGraph network(teachers, plan);
     network.printGraph();
 
-    MenuWindow menuWindow;
-    menuWindow.show();
+
+    HomePage homepage;
+    homepage.show();
 
     return a.exec();
 }

@@ -88,6 +88,9 @@ qt_add_executable(WynPlan
     src/networkgraph.cpp
     include/menuwindow.h
     src/menuwindow.cpp
+    include/homepage.h
+    src/homepage.cpp
+    ui/homepage.ui
 )
 
 target_link_libraries(WynPlan PRIVATE

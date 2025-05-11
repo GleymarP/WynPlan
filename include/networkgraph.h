@@ -38,8 +38,8 @@ private:
 
     std::map<std::string, Node> teacher_nodes;
     std::map<std::string, Node> subject_nodes;
-    Designar::Digraph<NetworkGraph::NodeData, NetworkGraph::ArcData>::Node* source_node;
-    Designar::Digraph<NetworkGraph::NodeData, NetworkGraph::ArcData>::Node* sink_node;
+    Node source_node;
+    Node sink_node;
 
     void buildNetwork();
 };
