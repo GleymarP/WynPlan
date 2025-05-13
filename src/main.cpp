@@ -10,20 +10,34 @@ int main(int argc, char *argv[])
     QString path_json = ":/resources/flujograma.json";
     StudyPlan plan = StudyPlan::load_from_json(path_json);
 
-    qDebug() << "\n=== DETALLES DEL PLAN DE ESTUDIOS ===";
+    /*qDebug() << "\n=== DETALLES DEL PLAN DE ESTUDIOS ===";
     qDebug() << "Nombre del programa:" << QString::fromStdString(plan.get_degree());
-    qDebug() << "Total de semestres:" << plan.get_semester().size();
+    qDebug() << "Total de semestres:" << plan.get_semester().size();*/
+
+    auto semesters = plan.get_semester();
+    Semester first_semester;
+
+    for(const auto& semester : semesters)
+    {
+        if(semester.get_semester_name() == "Semestre 1")
+        {
+            first_semester = semester;
+            break;
+        }
+    }
+
 
 
     QString path_json_teacher = ":/resources/teachers.json";
     std::vector<Teacher> teachers = Teacher::load_from_json(path_json_teacher, plan);
 
-    qDebug() << "=== PROFESORES CARGADOS ===";
+   /* qDebug() << "=== PROFESORES CARGADOS ===";
     qDebug() << "Total de profesores:" << teachers.size();
     qDebug() << "-----------------------------------";
 
     for (const Teacher& teacher : teachers) {
         qDebug() << "\nProfesor:" << QString::fromStdString(teacher.get_full_name());
+        qDebug() << "cedula: " << QString::fromStdString(teacher.get_id());
 
         qDebug() << "Horarios disponibles:";
         for (const Schedule& avail : teacher.get_availability()) {
@@ -38,10 +52,10 @@ int main(int argc, char *argv[])
             << "(Código:" << QString::fromStdString(subject.get_id())
             << ")";
         }
-    }
+    }*/
 
-    NetworkGraph network(teachers, plan);
-    network.printGraph();
+    NetworkGraph network(teachers, first_semester.get_subjects_semester());
+    network.print_graph();
 
 
     HomePage homepage;

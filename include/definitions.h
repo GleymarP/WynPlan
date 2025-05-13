@@ -75,14 +75,17 @@ public:
 class Teacher
 {
 private:
+    std::string id;
     std::string  full_name;
     std::vector<Subject> subjects;
     std::vector<Schedule> availability;
 public:
+    void set_id(std::string id_);
     void set_full_name(std::string full_name_);
     void set_subjects(std::vector<Subject> subjects_);
     void set_availability(std::vector<Schedule> availability_);
 
+    std::string get_id() const;
     std::string get_full_name() const;
     std::vector<Subject> get_subjects() const;
     std::vector<Schedule> get_availability() const;

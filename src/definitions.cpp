@@ -145,6 +145,10 @@ std::string Schedule::get_end_time() const
     return end_time;
 }
 
+void Teacher::set_id(std::string id_)
+{
+    id = id_;
+}
 
 void Teacher::set_full_name(std::string full_name_)
 {
@@ -159,6 +163,11 @@ void Teacher::set_subjects(std::vector<Subject> subjects_)
 void Teacher::set_availability(std::vector<Schedule> available_schedule_)
 {
     availability = available_schedule_;
+}
+
+std::string Teacher::get_id() const
+{
+    return id;
 }
 
 std::string Teacher::get_full_name() const
@@ -203,6 +212,7 @@ std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const Stu
         Teacher teacher;
 
         teacher.set_full_name(teacher_obj["nombre"].toString().toStdString());
+        teacher.set_id(teacher_obj["cedula"].toString().toStdString());
 
         std::vector<Schedule> availability;
         QJsonArray availability_aaray = teacher_obj["disponibilidad"].toArray();

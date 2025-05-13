@@ -1,281 +1,305 @@
 [
-    {
-        "nombre": "Derwis Rivas",
-        "disponibilidad": [
-            {
-                "dias": ["Lunes", "Martes", "Jueves"],
-                "hora_inicio": "08:00",
-                "hora_fin": "16:00"
-            }
-        ],
-        "materias": [1004, 1012]
-    },
-    {
-        "nombre": "Ferrer Maria",
-        "disponibilidad": [
-            {
-                "dias": ["Lunes", "Martes", "Jueves"],
-                "hora_inicio": "08:00",
-                "hora_fin": "12:00"
-            }
-        ],
-        "materias": [1004, 1018]
-    },
-    {
-        "nombre": "Rosales Richard",
-        "disponibilidad": [
-            {
-                "dias": ["Lunes", "Martes", "Jueves"],
-                "hora_inicio": "08:00",
-                "hora_fin": "12:00"
-            }
-        ],
-        "materias": [1004, 1018]
-    },
-    {
-        "nombre": "Cedeño Moisés",
-        "disponibilidad": [
-            {
-                "dias": ["Martes", "Jueves"],
-                "hora_inicio": "08:00",
-                "hora_fin": "12:00"
-            },
-            {
-                "dias": ["Viernes"],
-                "hora_inicio": "16:00",
-                "hora_fin": "18:00"
-            }
-        ],
-        "materias": [1004, 1018]
-    },
-    {
-        "nombre": "Domínguez Andrea",
-        "disponibilidad": [
-            {
-                "dias": ["Lunes", "Miércoles"],
-                "hora_inicio": "08:00",
-                "hora_fin": "12:00"
-            },
-            {
-                "dias": ["Viernes"],
-                "hora_inicio": "18:00",
-                "hora_fin": "20:00"
-            }
-        ],
-        "materias": [1004, 1012]
-    },
-    {
-        "nombre": "José Prieto",
-        "disponibilidad": [
-            {
-                "dias": ["Martes", "Jueves", "Viernes"],
-                "hora_inicio": "08:00",
-                "hora_fin": "10:00"
-            }
-        ],
-        "materias": [1004]
-    },
-    {
-        "nombre": "Lorena Zambrano",
-        "disponibilidad": [
-            {
-                "dias": ["Martes", "Miércoles", "Viernes"],
-                "hora_inicio": "12:00",
-                "hora_fin": "14:00"
-            }
-        ],
-        "materias": [1004]
-    },
-    {
-        "nombre": "Vargas Wilmer",
-        "disponibilidad": [
-            {
-                "dias": ["Martes", "Miércoles", "Jueves"],
-                "hora_inicio": "08:00",
-                "hora_fin": "10:00"
-            }
-        ],
-        "materias": [1004, 1012]
-    },
-    {
-        "nombre": "Orielys Soto",
-        "disponibilidad": [
-            {
-                "dias": ["Martes", "Miércoles", "Viernes"],
-                "hora_inicio": "10:00",
-                "hora_fin": "12:00"
-            }
-        ],
-        "materias": [1011]
-    },
-    {
-        "nombre": "Libardo Zerpa",
-        "disponibilidad": [
-            {
-                "dias": ["Lunes", "Miércoles", "Viernes"],
-                "hora_inicio": "10:00",
-                "hora_fin": "12:00"
-            }
-        ],
-        "materias": [1011]
-    },
-    {
-        "nombre": "Leonardo Lacruz",
-        "disponibilidad": [
-            {
-                "dias": ["Miércoles", "Viernes"],
-                "hora_inicio": "10:00",
-                "hora_fin": "12:00"
-            }
-        ],
-        "materias": [1017]
-    },
-    {
-        "nombre": "Liliana Chirinos",
-        "disponibilidad": [
-            {
-                "dias": ["Martes"],
-                "hora_inicio": "08:00",
-                "hora_fin": "10:00"
-            }
-        ],
-        "materias": [1052]
-    },
-    {
-        "nombre": "Gerardo Nava",
-        "disponibilidad": [
-            {
-                "dias": ["Miércoles"],
-                "hora_inicio": "07:00",
-                "hora_fin": "09:00"
-            }
-        ],
-        "materias": [1052]
-    },
-    {
-        "nombre": "Juan Sebastian Diaz",
-        "disponibilidad": [
-            {
-                "dias": ["Martes", "Jueves"],
-                "hora_inicio": "07:00",
-                "hora_fin": "10:00"
-            }
-        ],
-        "materias": [1006]
-    },
-    {
-        "nombre": "Pedro Araujo",
-        "disponibilidad": [
-            {
-                "dias": ["Miércoles", "Jueves"],
-                "hora_inicio": "07:00",
-                "hora_fin": "10:00"
-            }
-        ],
-        "materias": [1006]
-    },
-    {
-        "nombre": "Jorge Calderon",
-        "disponibilidad": [
-            {
-                "dias": ["Lunes", "Jueves"],
-                "hora_inicio": "10:00",
-                "hora_fin": "13:00"
-            }
-        ],
-        "materias": [1006]
-    },
-    {
-        "nombre": "Andres Puerta",
-        "disponibilidad": [
-            {
-                "dias": ["Lunes", "Miércoles"],
-                "hora_inicio": "10:00",
-                "hora_fin": "13:00"
-            }
-        ],
-        "materias": [1006]
-    },
-    {
-        "nombre": "Juan Cardillo",
-        "disponibilidad": [
-            {
-                "dias": ["Miércoles"],
-                "hora_inicio": "14:00",
-                "hora_fin": "16:00"
-            }
-        ],
-        "materias": [1053]
-    },
-    {
-        "nombre": "Luis Vizcaya",
-        "disponibilidad": [
-            {
-                "dias": ["Lunes", "Martes", "Viernes"],
-                "hora_inicio": "08:00",
-                "hora_fin": "10:00"
-            }
-        ],
-        "materias": [1056]
-    },
-    {
-        "nombre": "Jesus Perez",
-        "disponibilidad": [
-            {
-                "dias": ["Lunes", "Miércoles"],
-                "hora_inicio": "08:00",
-                "hora_fin": "10:00"
-            }
-        ],
-        "materias": [1054]
-    },
-    {
-        "nombre": "Alex Romero",
-        "disponibilidad": [
-            {
-                "dias": ["Miércoles"],
-                "hora_inicio": "09:00",
-                "hora_fin": "11:00"
-            },
-            {
-                "dias": ["Viernes"],
-                "hora_inicio": "15:00",
-                "hora_fin": "17:00"
-            }
-        ],
-        "materias": [1055]
-    },
-    {
-        "nombre": "Junior Altamira",
-        "disponibilidad": [
-            {
-                "dias": ["Jueves"],
-                "hora_inicio": "10:00",
-                "hora_fin": "12:00"
-            }
-        ],
-        "materias": [1055]
-    },
-    {
-        "nombre": "Ronald Sulbaran",
-        "disponibilidad": [
-            {
-                "dias": ["Viernes"],
-                "hora_inicio": "12:00",
-                "hora_fin": "14:00"
-            }
-        ],
-        "materias": [1057]
-    },
-    {
-        "nombre": "Olivia Rodrigo",
-        "disponibilidad": [
-            {
-                "dias": ["Martes"],
-                "hora_inicio": "10:00",
-                "hora_fin": "12:00"
-            }
-        ],
-        "materias": [1039]
-    }
+  {
+    "nombre": "Derwis Rivas",
+    "cedula": "V-10000001",
+    "disponibilidad": [
+      {
+        "dias": ["Lunes", "Martes", "Jueves"],
+        "hora_inicio": "08:00",
+        "hora_fin": "16:00"
+      }
+    ],
+    "materias": [1004, 1012]
+  },
+  {
+    "nombre": "Ferrer Maria",
+    "cedula": "V-10000002",
+    "disponibilidad": [
+      {
+        "dias": ["Lunes", "Martes", "Jueves"],
+        "hora_inicio": "08:00",
+        "hora_fin": "12:00"
+      }
+    ],
+    "materias": [1004, 1018]
+  },
+  {
+    "nombre": "Rosales Richard",
+    "cedula": "V-10000003",
+    "disponibilidad": [
+      {
+        "dias": ["Lunes", "Martes", "Jueves"],
+        "hora_inicio": "08:00",
+        "hora_fin": "12:00"
+      }
+    ],
+    "materias": [1004, 1018]
+  },
+  {
+    "nombre": "Cedeño Moisés",
+    "cedula": "V-10000004",
+    "disponibilidad": [
+      {
+        "dias": ["Martes", "Jueves"],
+        "hora_inicio": "08:00",
+        "hora_fin": "12:00"
+      },
+      {
+        "dias": ["Viernes"],
+        "hora_inicio": "16:00",
+        "hora_fin": "18:00"
+      }
+    ],
+    "materias": [1004, 1018]
+  },
+  {
+    "nombre": "Domínguez Andrea",
+    "cedula": "V-10000005",
+    "disponibilidad": [
+      {
+        "dias": ["Lunes", "Miércoles"],
+        "hora_inicio": "08:00",
+        "hora_fin": "12:00"
+      },
+      {
+        "dias": ["Viernes"],
+        "hora_inicio": "18:00",
+        "hora_fin": "20:00"
+      }
+    ],
+    "materias": [1004, 1012]
+  },
+  {
+    "nombre": "José Prieto",
+    "cedula": "V-10000006",
+    "disponibilidad": [
+      {
+        "dias": ["Martes", "Jueves", "Viernes"],
+        "hora_inicio": "08:00",
+        "hora_fin": "10:00"
+      }
+    ],
+    "materias": [1004]
+  },
+  {
+    "nombre": "Lorena Zambrano",
+    "cedula": "V-10000007",
+    "disponibilidad": [
+      {
+        "dias": ["Martes", "Miércoles", "Viernes"],
+        "hora_inicio": "12:00",
+        "hora_fin": "14:00"
+      }
+    ],
+    "materias": [1004]
+  },
+  {
+    "nombre": "Vargas Wilmer",
+    "cedula": "V-10000008",
+    "disponibilidad": [
+      {
+        "dias": ["Martes", "Miércoles", "Jueves"],
+        "hora_inicio": "08:00",
+        "hora_fin": "10:00"
+      }
+    ],
+    "materias": [1004, 1012]
+  },
+  {
+    "nombre": "Orielys Soto",
+    "cedula": "V-10000009",
+    "disponibilidad": [
+      {
+        "dias": ["Martes", "Miércoles", "Viernes"],
+        "hora_inicio": "10:00",
+        "hora_fin": "12:00"
+      }
+    ],
+    "materias": [1011]
+  },
+  {
+    "nombre": "Libardo Zerpa",
+    "cedula": "V-10000010",
+    "disponibilidad": [
+      {
+        "dias": ["Lunes", "Miércoles", "Viernes"],
+        "hora_inicio": "10:00",
+        "hora_fin": "12:00"
+      }
+    ],
+    "materias": [1011]
+  },
+  {
+    "nombre": "Leonardo Lacruz",
+    "cedula": "V-10000011",
+    "disponibilidad": [
+      {
+        "dias": ["Miércoles", "Viernes"],
+        "hora_inicio": "10:00",
+        "hora_fin": "12:00"
+      }
+    ],
+    "materias": [1017]
+  },
+  {
+    "nombre": "Liliana Chirinos",
+    "cedula": "V-10000012",
+    "disponibilidad": [
+      {
+        "dias": ["Martes"],
+        "hora_inicio": "08:00",
+        "hora_fin": "10:00"
+      }
+    ],
+    "materias": [1052]
+  },
+  {
+    "nombre": "Gerardo Nava",
+    "cedula": "V-10000013",
+    "disponibilidad": [
+      {
+        "dias": ["Miércoles"],
+        "hora_inicio": "07:00",
+        "hora_fin": "09:00"
+      }
+    ],
+    "materias": [1052]
+  },
+  {
+    "nombre": "Juan Sebastian Diaz",
+    "cedula": "V-10000014",
+    "disponibilidad": [
+      {
+        "dias": ["Martes", "Jueves"],
+        "hora_inicio": "07:00",
+        "hora_fin": "10:00"
+      }
+    ],
+    "materias": [1006]
+  },
+  {
+    "nombre": "Pedro Araujo",
+    "cedula": "V-10000015",
+    "disponibilidad": [
+      {
+        "dias": ["Miércoles", "Jueves"],
+        "hora_inicio": "07:00",
+        "hora_fin": "10:00"
+      }
+    ],
+    "materias": [1006]
+  },
+  {
+    "nombre": "Jorge Calderon",
+    "cedula": "V-10000016",
+    "disponibilidad": [
+      {
+        "dias": ["Lunes", "Jueves"],
+        "hora_inicio": "10:00",
+        "hora_fin": "13:00"
+      }
+    ],
+    "materias": [1006]
+  },
+  {
+    "nombre": "Andres Puerta",
+    "cedula": "V-10000017",
+    "disponibilidad": [
+      {
+        "dias": ["Lunes", "Miércoles"],
+        "hora_inicio": "10:00",
+        "hora_fin": "13:00"
+      }
+    ],
+    "materias": [1006]
+  },
+  {
+    "nombre": "Juan Cardillo",
+    "cedula": "V-10000018",
+    "disponibilidad": [
+      {
+        "dias": ["Miércoles"],
+        "hora_inicio": "14:00",
+        "hora_fin": "16:00"
+      }
+    ],
+    "materias": [1053]
+  },
+  {
+    "nombre": "Luis Vizcaya",
+    "cedula": "V-10000019",
+    "disponibilidad": [
+      {
+        "dias": ["Lunes", "Martes", "Viernes"],
+        "hora_inicio": "08:00",
+        "hora_fin": "10:00"
+      }
+    ],
+    "materias": [1056]
+  },
+  {
+    "nombre": "Jesus Perez",
+    "cedula": "V-10000020",
+    "disponibilidad": [
+      {
+        "dias": ["Lunes", "Miércoles"],
+        "hora_inicio": "08:00",
+        "hora_fin": "10:00"
+      }
+    ],
+    "materias": [1054]
+  },
+  {
+    "nombre": "Alex Romero",
+    "cedula": "V-10000021",
+    "disponibilidad": [
+      {
+        "dias": ["Miércoles"],
+        "hora_inicio": "09:00",
+        "hora_fin": "11:00"
+      },
+      {
+        "dias": ["Viernes"],
+        "hora_inicio": "15:00",
+        "hora_fin": "17:00"
+      }
+    ],
+    "materias": [1055]
+  },
+  {
+    "nombre": "Junior Altamira",
+    "cedula": "V-10000022",
+    "disponibilidad": [
+      {
+        "dias": ["Jueves"],
+        "hora_inicio": "10:00",
+        "hora_fin": "12:00"
+      }
+    ],
+    "materias": [1055]
+  },
+  {
+    "nombre": "Ronald Sulbaran",
+    "cedula": "V-10000023",
+    "disponibilidad": [
+      {
+        "dias": ["Viernes"],
+        "hora_inicio": "12:00",
+        "hora_fin": "14:00"
+      }
+    ],
+    "materias": [1057]
+  },
+  {
+    "nombre": "Olivia Rodrigo",
+    "cedula": "V-10000024",
+    "disponibilidad": [
+      {
+        "dias": ["Martes"],
+        "hora_inicio": "10:00",
+        "hora_fin": "12:00"
+      }
+    ],
+    "materias": [1039]
+  }
 ]

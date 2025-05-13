@@ -12,13 +12,17 @@
 class NetworkGraph
 {
 public:
-    struct NodeData {
+    enum class NodeType { Source, Sink, Subject, Teacher};
+    struct NodeData
+    {
+        NodeType type;
         int capacity;
         int flow = 0;
-        std::string label;
+        std::string id;
     };
 
-    struct ArcData {
+    struct ArcData
+    {
         int capacity;
         int flow = 0;
     };
@@ -26,22 +30,21 @@ public:
     using FlowGraph = Designar::Digraph<NodeData, ArcData>;
     using Node = Designar::Digraph<NetworkGraph::NodeData, NetworkGraph::ArcData>::Node*;
 
-    NetworkGraph(const std::vector<Teacher>& teachers, const StudyPlan& plan);
+    NetworkGraph(const std::vector<Teacher>& teachers, const std::vector<Subject>& subjects);
 
-    void printGraph() const;
-    void simulateAssignments();
+    void print_graph() const;
 
 private:
     FlowGraph graph;
     const std::vector<Teacher>& teachers;
-    const StudyPlan& study_plan;
+    const std::vector<Subject>& subjects;
 
     std::map<std::string, Node> teacher_nodes;
     std::map<std::string, Node> subject_nodes;
     Node source_node;
     Node sink_node;
 
-    void buildNetwork();
+    void build_network();
 };
 
 #endif // NETWORKGRAPH_H

@@ -3,76 +3,70 @@
 
 using Node = Designar::Digraph<NetworkGraph::NodeData, NetworkGraph::ArcData>::Node*;
 
-NetworkGraph::NetworkGraph(const std::vector<Teacher>& teachers, const StudyPlan& plan)
-    : teachers(teachers), study_plan(plan)
+NetworkGraph::NetworkGraph(const std::vector<Teacher>& teachers, const std::vector<Subject>& subjects)
+    : teachers(teachers), subjects(subjects)
 {
-    buildNetwork();
+    build_network();
 }
 
-void NetworkGraph::buildNetwork()
+void NetworkGraph::build_network()
 {
-    source_node = graph.insert_node({INT_MAX, 0, "FUENTE"});
-    sink_node = graph.insert_node({INT_MAX, 0, "SUMIDERO"});
+    source_node = graph.insert_node({NodeType::Source, INT_MAX, 0, "source"});
+    sink_node = graph.insert_node({NodeType::Sink, INT_MAX, 0, "sink"});
 
-
-    for (const auto& teacher : teachers)
+    for(const auto& subject : subjects)
     {
-        Node node_id = graph.insert_node({1, 0, "Prof: " + teacher.get_full_name()});
-        teacher_nodes[teacher.get_full_name()] = node_id;
-        graph.insert_arc(source_node, node_id, {1, 0});
+        Node subject_node = graph.insert_node({NodeType::Subject, 1, 1, subject.get_id()});
+        subject_nodes[subject.get_id()] = subject_node;
+        graph.insert_arc(source_node, subject_node, {1, 1});
     }
 
-    for (const auto& semester : study_plan.get_semester())
+    for(const auto& teacher: teachers)
     {
-        for (const auto& subject : semester.get_subjects_semester())
+        for(const auto& teacher_subject: teacher.get_subjects())
         {
-            Node node_id = graph.insert_node({1, 0, "Materia: " + subject.get_id() + " - " + subject.get_subject_name()});
-            subject_nodes[subject.get_id()] = node_id;
-        }
-    }
-
-
-    for (const auto& teacher : teachers)
-    {
-        Node teacher_node = teacher_nodes[teacher.get_full_name()];
-        for (const auto& subject : teacher.get_subjects()) {
-            if (subject_nodes.count(subject.get_id()))
+            if(subject_nodes.count(teacher_subject.get_id()))
             {
-                graph.insert_arc(teacher_node, subject_nodes[subject.get_id()], {1, 0});
+                Node teacher_node = graph.insert_node({NodeType::Teacher, 1, 0, teacher.get_id()});
+                teacher_nodes[teacher.get_id()] = teacher_node;
+                graph.insert_arc(subject_nodes[teacher_subject.get_id()], teacher_node, {1,0});
             }
         }
     }
 
-    for (const auto& [subject_id, node_id] : subject_nodes)
+    for(const auto& [teacher_id, node_id] : teacher_nodes)
     {
-        graph.insert_arc(node_id, sink_node, {1, 0});
+        graph.insert_arc(node_id, sink_node, {1,0});
     }
+
+    std::cout << "Teachers: " << teachers.size() << ", Subjects: " << subjects.size() << "\n";
+
 }
 
-void NetworkGraph::printGraph() const
+void NetworkGraph::print_graph() const
 {
-    std::cout << "\n=== ESTRUCTURA DEL GRAFO ===\n";
-    std::cout << "Nodos totales: " << graph.get_num_nodes() << "\n";
-    std::cout << "Arcos totales: " << graph.get_num_arcs() << "\n\n";
 
+    qDebug() << "\n=== ESTRUCTURA DEL GRAFO ===";
+    qDebug() << "Nodos totales:" << graph.get_num_nodes();
+    qDebug() << "Arcos totales:" << graph.get_num_arcs();
 
-    std::cout << "NODOS:\n";
+    qDebug() << "\nNODOS:";
     graph.for_each_node([&](auto node) {
         const auto& info = node->get_info();
-        std::cout << "Label: " << info.label
-                  << " | Cap: " << info.capacity
-                  << " | Flow: " << info.flow << "\n";
+        qDebug() << "Label:" << QString::fromStdString(info.id)
+                 << "| Cap:" << info.capacity
+                 << "| Flow:" << info.flow;
     });
 
-    // Mostrar arcos
-    std::cout << "\nARCOS:\n";
+    qDebug() << "\nARCOS:";
     graph.for_each_arc([&](auto arc) {
         const auto& info = arc->get_info();
-        const auto& src_label = arc->get_src_node()->get_info().label;
-        const auto& tgt_label = arc->get_tgt_node()->get_info().label;
+        const auto& src_label = arc->get_src_node()->get_info().id;
+        const auto& tgt_label = arc->get_tgt_node()->get_info().id;
 
-        std::cout << src_label << " -> " << tgt_label
-                  << " [Cap: " << info.capacity
-                  << ", Flow: " << info.flow << "]\n";
+        qDebug() << QString::fromStdString(src_label)
+                 << "->" << QString::fromStdString(tgt_label)
+                 << "[Cap:" << info.capacity
+                 << ", Flow:" << info.flow << "]";
     });
 }
