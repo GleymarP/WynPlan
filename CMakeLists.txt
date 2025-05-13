@@ -63,9 +63,9 @@ endif()
 
 set(PROJECT_SOURCES
     src/main.cpp
-    src/mainwindow.cpp
-    include/mainwindow.h
-    ui/mainwindow.ui
+
+
+
     resources/flujograma.json
     resources/teachers.json
     src/definitions.cpp
@@ -86,11 +86,18 @@ qt_add_executable(WynPlan
     include/schedulesolver.h
     include/networkgraph.h
     src/networkgraph.cpp
-    include/menuwindow.h
-    src/menuwindow.cpp
     include/homepage.h
     src/homepage.cpp
     ui/homepage.ui
+    include/studyplanwindow.h
+    src/studyplanwindow.cpp
+    ui/studyplanwindow.ui
+    include/teacherwindow.h
+    src/teacherwindow.cpp
+    ui/teacherwindow.ui
+    include/schedulewindow.h
+    src/schedulewindow.cpp
+    ui/schedulewindow.ui
 )
 
 target_link_libraries(WynPlan PRIVATE
