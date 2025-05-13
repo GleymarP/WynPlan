@@ -13,8 +13,4 @@ HomePage::~HomePage()
     delete ui;
 }
 
-void HomePage::on_teacher_button_clicked()
-{
-
-}
 

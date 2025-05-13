@@ -15,6 +15,9 @@ public:
     explicit HomePage(QWidget *parent = nullptr);
     ~HomePage();
 
+private slots:
+
+
 private:
     Ui::HomePage *ui;
 };
