@@ -145,6 +145,10 @@ std::string Schedule::get_end_time() const
     return end_time;
 }
 
+
+
+
+
 void Teacher::set_id(std::string id_)
 {
     id = id_;
@@ -275,6 +279,44 @@ std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const Stu
     return teachers;
 }
 
+void Teacher::set_state_block(int day, int hour, BlockState state)
+{
+    if(day >= 0 && day < 7 && hour >= 0 && hour < 12)
+    {
+        weekly_schedule[day][hour].state = state;
+        if(state != OCUPADO)
+        {
+            weekly_schedule[day][hour].id_subject = "";
+        }
+    }
+}
+
+
+void Teacher::assign_block(int day, int hour, const std::string &subject_id)
+{
+    if(day >= 0 && day < 7 && hour >= 0 && hour < 12)
+    {
+        weekly_schedule[day][hour].state = OCUPADO;
+        weekly_schedule[day][hour].id_subject = subject_id;
+    }
+}
+
+bool Teacher::available_block(int day, int hour) const
+{
+    if(day >= 0 && day < 7 && hour >= 0 && hour < 12)
+    {
+        if(weekly_schedule[day][hour].state == DISPONIBLE)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+
+
+
 
 void Section::set_teacher_section(Teacher teacher_)
 {
@@ -301,6 +343,7 @@ Teacher Section::get_teacher_section()
     return teacher;
 }
 
+
 Subject Section::get_subject_section()
 {
     return subject;
@@ -313,3 +356,4 @@ size_t Section::get_id_section()
 {
     return id_section;
 }
+

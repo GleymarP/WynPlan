@@ -2,6 +2,8 @@
 #define HOMEPAGE_H
 
 #include <QMainWindow>
+#include <studyplanwindow.h>
+#include <teacherswindow.h>
 
 namespace Ui {
 class HomePage;
@@ -17,6 +19,9 @@ public:
 
 private slots:
 
+
+
+    void on_teacher_button_clicked();
 
 private:
     Ui::HomePage *ui;

@@ -72,18 +72,39 @@ public:
 
 };
 
+enum BlockState
+{
+    NO_DISPONIBLE,
+    DISPONIBLE,
+    OCUPADO
+};
+
+struct TimeBlock
+{
+    BlockState state = DISPONIBLE;
+    std::string id_subject = "";
+};
+
+
+
 class Teacher
 {
 private:
     std::string id;
     std::string  full_name;
     std::vector<Subject> subjects;
+
+
     std::vector<Schedule> availability;
+
+    TimeBlock weekly_schedule [7][12];
+
 public:
     void set_id(std::string id_);
     void set_full_name(std::string full_name_);
     void set_subjects(std::vector<Subject> subjects_);
-    void set_availability(std::vector<Schedule> availability_);
+
+     void set_availability(std::vector<Schedule> availability_);
 
     std::string get_id() const;
     std::string get_full_name() const;
@@ -91,6 +112,11 @@ public:
     std::vector<Schedule> get_availability() const;
 
     static std::vector<Teacher> load_from_json (const QString &file_path, const StudyPlan &study_plan);
+
+    void assign_block(int day, int hour, const std::string& subject_id);
+    void set_state_block(int day, int hour, BlockState state);
+    bool available_block(int day, int hour) const;
+
 };
 
 class Section

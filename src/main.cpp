@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
     QString path_json_teacher = ":/resources/teachers.json";
     std::vector<Teacher> teachers = Teacher::load_from_json(path_json_teacher, plan);
 
+
    /* qDebug() << "=== PROFESORES CARGADOS ===";
     qDebug() << "Total de profesores:" << teachers.size();
     qDebug() << "-----------------------------------";
@@ -55,13 +56,14 @@ int main(int argc, char *argv[])
         }
     }*/
 
+
     NetworkGraph network(teachers, first_semester.get_subjects_semester());
     network.print_graph();
 
-    StudyPlanWindow studywindow(plan);
-    studywindow.show();
-    //HomePage homepage;
-    //homepage.show();
+    //StudyPlanWindow studywindow(plan);
+    //studywindow.show();
+    HomePage homepage;
+    homepage.show();
 
     return a.exec();
 }

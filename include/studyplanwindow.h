@@ -19,6 +19,8 @@ public:
 private slots:
     void on_comboBox_studyplan_currentTextChanged(const QString &arg1);
 
+
+
 private:
     StudyPlan plan_;
     Ui::StudyPlanWindow *ui;

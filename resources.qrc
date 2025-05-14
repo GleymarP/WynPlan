@@ -7,5 +7,6 @@
         <file>resources/images/section.png</file>
         <file>resources/images/studyplan.png</file>
         <file>resources/images/teacher.png</file>
+        <file>resources/images/search.png</file>
     </qresource>
 </RCC>

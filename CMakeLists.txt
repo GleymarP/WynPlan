@@ -92,12 +92,15 @@ qt_add_executable(WynPlan
     include/studyplanwindow.h
     src/studyplanwindow.cpp
     ui/studyplanwindow.ui
-    include/teacherwindow.h
-    src/teacherwindow.cpp
-    ui/teacherwindow.ui
+
+
+
     include/schedulewindow.h
     src/schedulewindow.cpp
     ui/schedulewindow.ui
+    include/teacherswindow.h
+    src/teacherswindow.cpp
+    ui/teacherswindow.ui
 )
 
 target_link_libraries(WynPlan PRIVATE
