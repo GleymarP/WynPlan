@@ -314,7 +314,10 @@ bool Teacher::available_block(int day, int hour) const
 }
 
 
-
+const TimeBlock& Teacher::get_timeblock(int day, int hour) const
+{
+    return weekly_schedule[day][hour];
+}
 
 
 

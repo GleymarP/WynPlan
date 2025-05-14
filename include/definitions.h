@@ -116,6 +116,7 @@ public:
     void assign_block(int day, int hour, const std::string& subject_id);
     void set_state_block(int day, int hour, BlockState state);
     bool available_block(int day, int hour) const;
+    const TimeBlock& get_timeblock(int day, int hour) const;
 
 };
 
