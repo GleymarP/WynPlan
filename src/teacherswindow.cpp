@@ -41,20 +41,30 @@ void TeachersWindow::on_search_button_clicked()
         return;
     }
 
-    auto it = std::find_if(teachers_.begin(), teachers_.end(), [&](const Teacher& t) {
-        return QString::fromStdString(t.get_id()) == input_id;
-    });
 
-    if (it == teachers_.end()) {
+    bool found_id = false;
+    Teacher found_teacher;
+
+    for(const auto& teacher: teachers_)
+    {
+        if(QString::fromStdString(teacher.get_id()) == input_id)
+        {
+            found_id = true;
+            found_teacher = teacher;
+        }
+    }
+
+    if(!found_id)
+    {
         QMessageBox::information(this, "No encontrado", "No se encontró un profesor con esa cédula.");
         return;
     }
+    else
+    {
+        ui->label_teacher_id->setText("Cédula: " + QString::fromStdString(found_teacher.get_id()));
+        ui->label_teacher_name->setText("Nombre: " + QString::fromStdString(found_teacher.get_full_name()));
+    }
 
-    const Teacher& found_teacher = *it;
-
-
-    ui->label_teacher_id->setText("Cédula: " + QString::fromStdString(found_teacher.get_id()));
-    ui->label_teacher_name->setText("Nombre: " + QString::fromStdString(found_teacher.get_full_name()));
 
     ui->line_edit_id->clear();
 
