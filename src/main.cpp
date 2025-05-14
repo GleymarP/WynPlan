@@ -60,8 +60,6 @@ int main(int argc, char *argv[])
     NetworkGraph network(teachers, first_semester.get_subjects_semester());
     network.print_graph();
 
-    //StudyPlanWindow studywindow(plan);
-    //studywindow.show();
     HomePage homepage;
     homepage.show();
 

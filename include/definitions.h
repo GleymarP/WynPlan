@@ -14,13 +14,16 @@ class Subject
 private:
     std::string id;
     std::string name;
-public:
+    int required_hours;
 
+public:
     void set_id(std::string id_);
     void set_name(std::string name_);
+    void set_hours(int hours);
 
     std::string get_subject_name() const;
     std::string get_id() const;
+    int get_hours() const;
 };
 
 
@@ -29,8 +32,8 @@ class Semester
 private:
     std::string semester_name;
     std::vector<Subject> subject;
-public:
 
+public:
     void set_semester_name(std::string name);
     void set_subjects(std::vector<Subject> subjects);
 
@@ -43,8 +46,8 @@ class StudyPlan
 private:
     std::string degree;
     std::vector<Semester> semester;
-public:
 
+public:
     void set_degree(std::string name);
     void set_semester(std::vector<Semester> semester_);
 
@@ -61,6 +64,7 @@ private:
     std::string day;
     std::string start_time;
     std::string end_time;
+
 public:
     void set_day(std::string day_);
     void set_start_time(std::string start_time_);
@@ -103,8 +107,7 @@ public:
     void set_id(std::string id_);
     void set_full_name(std::string full_name_);
     void set_subjects(std::vector<Subject> subjects_);
-
-     void set_availability(std::vector<Schedule> availability_);
+    void set_availability(std::vector<Schedule> availability_);
 
     std::string get_id() const;
     std::string get_full_name() const;
@@ -127,6 +130,7 @@ private:
     Subject subject;
     Schedule schedule;
     size_t id_section;
+
 public:
     void set_teacher_section(Teacher teacher_);
     void set_subject_section(Subject subject_);

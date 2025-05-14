@@ -30,3 +30,13 @@ void HomePage::on_teacher_button_clicked()
     this->hide();
 }
 
+void HomePage::on_studyplan_button_clicked()
+{
+    QString path_json = ":/resources/flujograma.json";
+    StudyPlan plan = StudyPlan::load_from_json(path_json);
+    StudyPlanWindow *study_window =  new StudyPlanWindow(plan);
+    connect(study_window, &StudyPlanWindow::back_to_menu, this, &HomePage::show);
+    study_window->show();
+    this->hide();
+}
+

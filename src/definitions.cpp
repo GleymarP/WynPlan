@@ -13,6 +13,10 @@ void Subject::set_name(std::string name_)
 {
     name = name_;
 }
+void Subject::set_hours(int hours)
+{
+    required_hours = hours;
+}
 
 std::string Subject::get_subject_name() const
 {
@@ -21,6 +25,10 @@ std::string Subject::get_subject_name() const
 std::string Subject::get_id() const
 {
     return id;
+}
+int Subject::get_hours() const
+{
+    return required_hours;
 }
 
 void Semester::set_semester_name(std::string name)
