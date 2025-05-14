@@ -2,6 +2,7 @@
 #include "networkgraph.h"
 #include <QApplication>
 #include <homepage.h>
+#include <studyplanwindow.h>
 
 int main(int argc, char *argv[])
 {
@@ -57,9 +58,10 @@ int main(int argc, char *argv[])
     NetworkGraph network(teachers, first_semester.get_subjects_semester());
     network.print_graph();
 
-
-    HomePage homepage;
-    homepage.show();
+    StudyPlanWindow studywindow(plan);
+    studywindow.show();
+    //HomePage homepage;
+    //homepage.show();
 
     return a.exec();
 }
