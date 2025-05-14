@@ -15,7 +15,6 @@ TeachersWindow::~TeachersWindow()
     delete ui;
 }
 
-
 void TeachersWindow::on_menu_button_clicked()
 {
     emit back_to_menu();
@@ -126,17 +125,9 @@ void TeachersWindow::on_search_button_clicked()
             }
         }
 
-
-
     }
 
-
-
-
-
-
     ui->line_edit_id->clear();
-
 
 }
 
