@@ -39,5 +39,9 @@ void StudyPlanWindow::on_comboBox_studyplan_currentTextChanged(const QString &ar
     }
 }
 
-
+void StudyPlanWindow::on_pushButtonMenu_clicked()
+{
+    emit back_to_menu();
+    this->close();
+}
 

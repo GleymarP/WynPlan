@@ -19,9 +19,8 @@ public:
 
 private slots:
 
-
-
     void on_teacher_button_clicked();
+    void on_studyplan_button_clicked();;
 
 private:
     Ui::HomePage *ui;
