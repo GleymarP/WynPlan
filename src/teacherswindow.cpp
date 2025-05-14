@@ -15,8 +15,6 @@ TeachersWindow::~TeachersWindow()
 }
 
 
-
-
 void TeachersWindow::on_menu_button_clicked()
 {
     emit back_to_menu();
@@ -51,6 +49,15 @@ void TeachersWindow::on_search_button_clicked()
         QMessageBox::information(this, "No encontrado", "No se encontró un profesor con esa cédula.");
         return;
     }
+
+    const Teacher& found_teacher = *it;
+
+
+    ui->label_teacher_id->setText("Cédula: " + QString::fromStdString(found_teacher.get_id()));
+    ui->label_teacher_name->setText("Nombre: " + QString::fromStdString(found_teacher.get_full_name()));
+
+    ui->line_edit_id->clear();
+
 
 }
 
