@@ -40,3 +40,23 @@ void HomePage::on_studyplan_button_clicked()
     this->hide();
 }
 
+
+void HomePage::on_section_button_clicked()
+{
+    QString path_json = ":/resources/flujograma.json";
+    StudyPlan plan = StudyPlan::load_from_json(path_json);
+    QString path_json_teacher = ":/resources/teachers.json";
+    std::vector<Teacher> teachers = Teacher::load_from_json(path_json_teacher, plan);
+
+    ScheduleWindow *schedule_window = new ScheduleWindow(plan, teachers);
+    connect(schedule_window, &ScheduleWindow::back_to_menu, this, &HomePage::show);
+    schedule_window->show();
+    this->hide();
+}
+
+
+void HomePage::on_schedule_button_clicked()
+{
+
+}
+

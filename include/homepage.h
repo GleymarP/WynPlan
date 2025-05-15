@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <studyplanwindow.h>
 #include <teacherswindow.h>
+#include <schedulewindow.h>
 
 namespace Ui {
 class HomePage;
@@ -21,6 +22,10 @@ private slots:
 
     void on_teacher_button_clicked();
     void on_studyplan_button_clicked();;
+
+    void on_section_button_clicked();
+
+    void on_schedule_button_clicked();
 
 private:
     Ui::HomePage *ui;
