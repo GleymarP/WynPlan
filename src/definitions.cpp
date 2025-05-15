@@ -111,6 +111,7 @@ StudyPlan StudyPlan::load_from_json(const QString &filePath)
             Subject subject;
             subject.set_name(subject_object["nombre"].toString().toStdString());
             subject.set_id(subject_object["codigo"].toString().toStdString());
+            subject.set_hours(subject_object["horas"].toInt());
             subjects.push_back(subject);
         }
 

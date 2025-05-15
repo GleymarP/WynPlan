@@ -7,6 +7,7 @@
 #include <queue>
 #include <iostream>
 #include <set>
+#include <tuple>
 
 
 
@@ -38,6 +39,7 @@ public:
     bool bfs(std::map<Node, Node>& parent);
 
     int max_flow();
+
 
 private:
     FlowGraph graph;
