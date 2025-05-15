@@ -1,4 +1,3 @@
-
 #ifndef NETWORKGRAPH_H
 #define NETWORKGRAPH_H
 
@@ -12,7 +11,7 @@
 class NetworkGraph
 {
 public:
-    enum class NodeType { Source, Sink, Subject, Teacher};
+    enum class NodeType { Source, Sink, Subject, Teacher, TimeTable}; //Añadir nodo horario profesor
     struct NodeData
     {
         NodeType type;
@@ -30,7 +29,7 @@ public:
     using FlowGraph = Designar::Digraph<NodeData, ArcData>;
     using Node = Designar::Digraph<NetworkGraph::NodeData, NetworkGraph::ArcData>::Node*;
 
-    NetworkGraph(const std::vector<Teacher>& teachers, const std::vector<Subject>& subjects);
+    NetworkGraph(const std::vector<Teacher>& teachers, const std::vector<Subject>& subjects); //Grafo por semestres
 
     void print_graph() const;
 
@@ -41,6 +40,8 @@ private:
 
     std::map<std::string, Node> teacher_nodes;
     std::map<std::string, Node> subject_nodes;
+    std::map<std::pair<int, int>, Node> timetable_nodes;
+
     Node source_node;
     Node sink_node;
 
