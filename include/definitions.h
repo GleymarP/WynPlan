@@ -76,6 +76,24 @@ public:
 
 };
 
+class TimeTable
+{
+private:
+    std::string teacher_id;
+    int day;
+    int hour;
+
+public:
+    void set_teacher_id(std::string id);
+    void set_day(int day_);
+    void set_hour(int hour_);
+
+    std::string get_teacher_id() const;
+    int get_day() const;
+    int get_hour() const;
+};
+
+
 enum BlockState
 {
     NO_DISPONIBLE,
