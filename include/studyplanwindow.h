@@ -13,7 +13,7 @@ class StudyPlanWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit StudyPlanWindow(StudyPlan &plan, QWidget *parent = nullptr);
+    explicit StudyPlanWindow(StudyPlan& plan, QWidget *parent = nullptr);
     ~StudyPlanWindow();
 
 signals:

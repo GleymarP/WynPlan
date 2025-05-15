@@ -2,7 +2,7 @@
 #include "ui_studyplanwindow.h"
 #include "definitions.h"
 
-StudyPlanWindow::StudyPlanWindow(StudyPlan &plan,QWidget *parent)
+StudyPlanWindow::StudyPlanWindow(StudyPlan& plan, QWidget *parent)
     : QMainWindow(parent), plan_(plan)
     , ui(new Ui::StudyPlanWindow)
 {
