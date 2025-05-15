@@ -6,12 +6,14 @@
 #include <map>
 #include <queue>
 #include <iostream>
+#include <set>
+
 
 
 class NetworkGraph
 {
 public:
-    enum class NodeType { Source, Sink, Subject, Teacher, TimeTable}; //Añadir nodo horario profesor
+    enum class NodeType { Source, Sink, Subject, Teacher, TimeTable};
     struct NodeData
     {
         NodeType type;
@@ -29,9 +31,13 @@ public:
     using FlowGraph = Designar::Digraph<NodeData, ArcData>;
     using Node = Designar::Digraph<NetworkGraph::NodeData, NetworkGraph::ArcData>::Node*;
 
-    NetworkGraph(const std::vector<Teacher>& teachers, const std::vector<Subject>& subjects); //Grafo por semestres
+    NetworkGraph(const std::vector<Teacher>& teachers, const std::vector<Subject>& subjects);
 
     void print_graph() const;
+
+    bool bfs(std::map<Node, Node>& parent);
+
+    int max_flow();
 
 private:
     FlowGraph graph;

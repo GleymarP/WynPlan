@@ -59,6 +59,9 @@ int main(int argc, char *argv[])
 
     NetworkGraph network(teachers, first_semester.get_subjects_semester());
     network.print_graph();
+    auto max = network.max_flow();
+
+    std::cout << max;
 
     HomePage homepage;
     homepage.show();
