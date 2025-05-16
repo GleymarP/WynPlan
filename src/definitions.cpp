@@ -306,6 +306,156 @@ std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const Stu
     return teachers;
 }
 
+void Teacher::update_teachers_with_assignments(std::vector<Teacher>& teachers,
+    const std::vector<std::tuple<std::string, std::string, int, int>>& assignments)
+{
+    for (const auto& assignment : assignments)
+    {
+        std::string subject_id = std::get<0>(assignment);
+        std::string teacher_id = std::get<1>(assignment);
+        int day = std::get<2>(assignment);
+        int hour = std::get<3>(assignment);
+        for (auto& teacher : teachers)
+        {
+            if (teacher.get_id() == teacher_id)
+            {
+                TimeBlock block;
+                block.state = OCUPADO;
+                block.id_subject = subject_id;
+                teacher.set_time_block(day, hour, block);
+                break;
+            }
+        }
+    }
+}
+/*
+void save_teachers_json(const std::vector<Teacher>& teachers, const QString& file_path)
+{
+    QJsonArray teachers_array;
+    for(const auto& teacher : teachers)
+    {
+        QJsonObject teacher_obj;
+        teacher_obj["nombre"] = QString::fromStdString(teacher.get_full_name());
+        teacher_obj["cedula"] = QString::fromStdString(teacher.get_id());
+
+        QJsonArray materias_array;
+        for (const auto& subject : teacher.get_subjects())
+        {
+            materias_array.append(QString::fromStdString(subject.get_id()).toInt());
+        }
+        teacher_obj["materias"] = materias_array;
+        QJsonArray weekly_schedule_array;
+        for (int day = 0; day < 7; day++)
+        {
+            QJsonArray day_array;
+            for (int hour = 0; hour < 12; hour++)
+            {
+                TimeBlock block = teacher.get_timeblock(day, hour);
+                QJsonObject block_obj;
+                QString state;
+
+                if(block.state == BlockState::DISPONIBLE)
+                {
+                    state = "DISPONIBLE";
+                }
+                else if(block.state == BlockState::OCUPADO)
+                {
+                    state = "OCUPADO";
+                }
+                else
+                {
+                    state = "NO_DISPONIBLE";
+                }
+
+                block_obj["state"] = state;
+                block_obj["id_subject"] = QString::fromStdString(block.id_subject);
+                day_array.append(block_obj);
+            }
+            weekly_schedule_array.append(day_array);
+        }
+        teacher_obj["weekly_schedule"] = weekly_schedule_array;
+        teachers_array.append(teacher_obj);
+    }
+    QFile file(file_path);
+    if (!file.open(QIODevice::WriteOnly))
+    {
+        qWarning() << "No se pudo abrir el archivo para escritura:" << file_path;
+    }
+    QJsonDocument doc(teachers_array);
+    file.write(doc.toJson());
+    file.close();
+}*/
+/*
+void Teacher::save_teachers_json(const std::vector<Teacher>& teachers, const QString& file_path)
+{
+    if (file_path.startsWith(":/"))
+    {
+        return;
+    }
+    if (file_path.isEmpty())
+    {
+
+        return;
+    }
+
+    QJsonArray teachers_array;
+
+    // Crear array JSON con todos los profesores
+    for (const auto& teacher : teachers) {
+        QJsonObject teacher_obj;
+
+        // 1. Datos básicos
+        teacher_obj["nombre"] = QString::fromStdString(teacher.get_full_name());
+        teacher_obj["cedula"] = QString::fromStdString(teacher.get_id());
+
+        // 2. Materias
+        QJsonArray subjects_array;
+        for (const auto& subject : teacher.get_subjects()) {
+            subjects_array.append(QString::fromStdString(subject.get_id()).toInt());
+        }
+        teacher_obj["materias"] = subjects_array;
+
+        // 3. Weekly Schedule
+        QJsonArray weekly_schedule;
+        for (int day = 0; day < 7; ++day) {
+            QJsonArray day_schedule;
+            for (int hour = 0; hour < 12; ++hour) {
+                TimeBlock block = teacher.get_timeblock(day, hour);
+                QJsonObject block_obj;
+
+                block_obj["state"] = QString::fromStdString(
+                    block.state == BlockState::OCUPADO ? "OCUPADO" :
+                        block.state == BlockState::DISPONIBLE ? "DISPONIBLE" : "NO_DISPONIBLE");
+
+                block_obj["id_subject"] = QString::fromStdString(block.id_subject);
+                day_schedule.append(block_obj);
+            }
+            weekly_schedule.append(day_schedule);
+        }
+        teacher_obj["weekly_schedule"] = weekly_schedule;
+
+        teachers_array.append(teacher_obj);
+    }
+
+    // Guardar a archivo (sobrescribe si existe)
+    QFile file(file_path);
+    if (!file.open(QIODevice::WriteOnly)) {
+        qWarning() << "Error al abrir archivo para escritura:" << file_path;
+        return;
+    }
+
+    file.write(QJsonDocument(teachers_array).toJson(QJsonDocument::Indented));
+    file.close();
+}*/
+
+void Teacher::set_time_block(int day, int hour, const TimeBlock& block)
+{
+    if (day >= 0 && day < 7 && hour >= 0 && hour < 12)
+    {
+        weekly_schedule[day][hour] = block;
+    }
+}
+
 void Teacher::set_state_block(int day, int hour, BlockState state)
 {
     if(day >= 0 && day < 7 && hour >= 0 && hour < 12)
