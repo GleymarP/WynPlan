@@ -2,304 +2,2713 @@
   {
     "nombre": "Derwis Rivas",
     "cedula": "V-10000001",
-    "disponibilidad": [
-      {
-        "dias": ["Lunes", "Martes", "Jueves"],
-        "hora_inicio": "08:00",
-        "hora_fin": "16:00"
-      }
-    ],
-    "materias": [1004, 1012]
+    "materias": [1004, 1012],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Ferrer Maria",
     "cedula": "V-10000002",
-    "disponibilidad": [
-      {
-        "dias": ["Lunes", "Martes", "Jueves"],
-        "hora_inicio": "08:00",
-        "hora_fin": "12:00"
-      }
-    ],
-    "materias": [1004, 1018]
+    "materias": [1004, 1018],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Rosales Richard",
     "cedula": "V-10000003",
-    "disponibilidad": [
-      {
-        "dias": ["Lunes", "Martes", "Jueves"],
-        "hora_inicio": "08:00",
-        "hora_fin": "12:00"
-      }
-    ],
-    "materias": [1004, 1018]
+    "materias": [1004, 1018],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Cedeño Moisés",
     "cedula": "V-10000004",
-    "disponibilidad": [
-      {
-        "dias": ["Martes", "Jueves"],
-        "hora_inicio": "08:00",
-        "hora_fin": "12:00"
-      },
-      {
-        "dias": ["Viernes"],
-        "hora_inicio": "16:00",
-        "hora_fin": "18:00"
-      }
-    ],
-    "materias": [1004, 1018]
+    "materias": [1004, 1018],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Domínguez Andrea",
     "cedula": "V-10000005",
-    "disponibilidad": [
-      {
-        "dias": ["Lunes", "Miércoles"],
-        "hora_inicio": "08:00",
-        "hora_fin": "12:00"
-      },
-      {
-        "dias": ["Viernes"],
-        "hora_inicio": "18:00",
-        "hora_fin": "20:00"
-      }
-    ],
-    "materias": [1004, 1012]
+    "materias": [1004, 1012],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "José Prieto",
     "cedula": "V-10000006",
-    "disponibilidad": [
-      {
-        "dias": ["Martes", "Jueves", "Viernes"],
-        "hora_inicio": "08:00",
-        "hora_fin": "10:00"
-      }
-    ],
-    "materias": [1004]
+    "materias": [1004],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Lorena Zambrano",
     "cedula": "V-10000007",
-    "disponibilidad": [
-      {
-        "dias": ["Martes", "Miércoles", "Viernes"],
-        "hora_inicio": "12:00",
-        "hora_fin": "14:00"
-      }
-    ],
-    "materias": [1004]
+    "materias": [1004],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Vargas Wilmer",
     "cedula": "V-10000008",
-    "disponibilidad": [
-      {
-        "dias": ["Martes", "Miércoles", "Jueves"],
-        "hora_inicio": "08:00",
-        "hora_fin": "10:00"
-      }
-    ],
-    "materias": [1004, 1012]
+    "materias": [1004, 1012],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Orielys Soto",
     "cedula": "V-10000009",
-    "disponibilidad": [
-      {
-        "dias": ["Martes", "Miércoles", "Viernes"],
-        "hora_inicio": "10:00",
-        "hora_fin": "12:00"
-      }
-    ],
-    "materias": [1011]
+    "materias": [1011],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Libardo Zerpa",
     "cedula": "V-10000010",
-    "disponibilidad": [
-      {
-        "dias": ["Lunes", "Miércoles", "Viernes"],
-        "hora_inicio": "10:00",
-        "hora_fin": "12:00"
-      }
-    ],
-    "materias": [1011]
+    "materias": [1011],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Leonardo Lacruz",
     "cedula": "V-10000011",
-    "disponibilidad": [
-      {
-        "dias": ["Miércoles", "Viernes"],
-        "hora_inicio": "10:00",
-        "hora_fin": "12:00"
-      }
-    ],
-    "materias": [1017]
+    "materias": [1017],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Liliana Chirinos",
     "cedula": "V-10000012",
-    "disponibilidad": [
-      {
-        "dias": ["Martes"],
-        "hora_inicio": "08:00",
-        "hora_fin": "10:00"
-      }
-    ],
-    "materias": [1052]
+    "materias": [1052],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Gerardo Nava",
     "cedula": "V-10000013",
-    "disponibilidad": [
-      {
-        "dias": ["Miércoles"],
-        "hora_inicio": "07:00",
-        "hora_fin": "09:00"
-      }
-    ],
-    "materias": [1052]
+    "materias": [1052],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Juan Sebastian Diaz",
     "cedula": "V-10000014",
-    "disponibilidad": [
-      {
-        "dias": ["Martes", "Jueves"],
-        "hora_inicio": "07:00",
-        "hora_fin": "10:00"
-      }
-    ],
-    "materias": [1006]
+    "materias": [1006],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Pedro Araujo",
     "cedula": "V-10000015",
-    "disponibilidad": [
-      {
-        "dias": ["Miércoles", "Jueves"],
-        "hora_inicio": "07:00",
-        "hora_fin": "10:00"
-      }
-    ],
-    "materias": [1006]
+    "materias": [1006],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Jorge Calderon",
     "cedula": "V-10000016",
-    "disponibilidad": [
-      {
-        "dias": ["Lunes", "Jueves"],
-        "hora_inicio": "10:00",
-        "hora_fin": "13:00"
-      }
-    ],
-    "materias": [1006]
+    "materias": [1006],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Andres Puerta",
     "cedula": "V-10000017",
-    "disponibilidad": [
-      {
-        "dias": ["Lunes", "Miércoles"],
-        "hora_inicio": "10:00",
-        "hora_fin": "13:00"
-      }
-    ],
-    "materias": [1006]
+    "materias": [1006],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Juan Cardillo",
     "cedula": "V-10000018",
-    "disponibilidad": [
-      {
-        "dias": ["Miércoles"],
-        "hora_inicio": "14:00",
-        "hora_fin": "16:00"
-      }
-    ],
-    "materias": [1053]
+    "materias": [1053],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Luis Vizcaya",
     "cedula": "V-10000019",
-    "disponibilidad": [
-      {
-        "dias": ["Lunes", "Martes", "Viernes"],
-        "hora_inicio": "08:00",
-        "hora_fin": "10:00"
-      }
-    ],
-    "materias": [1056]
+    "materias": [1056],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Jesus Perez",
     "cedula": "V-10000020",
-    "disponibilidad": [
-      {
-        "dias": ["Lunes", "Miércoles"],
-        "hora_inicio": "08:00",
-        "hora_fin": "10:00"
-      }
-    ],
-    "materias": [1054]
+    "materias": [1054],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Alex Romero",
     "cedula": "V-10000021",
-    "disponibilidad": [
-      {
-        "dias": ["Miércoles"],
-        "hora_inicio": "09:00",
-        "hora_fin": "11:00"
-      },
-      {
-        "dias": ["Viernes"],
-        "hora_inicio": "15:00",
-        "hora_fin": "17:00"
-      }
-    ],
-    "materias": [1055]
+    "materias": [1055],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Junior Altamira",
     "cedula": "V-10000022",
-    "disponibilidad": [
-      {
-        "dias": ["Jueves"],
-        "hora_inicio": "10:00",
-        "hora_fin": "12:00"
-      }
-    ],
-    "materias": [1055]
+    "materias": [1055],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Ronald Sulbaran",
     "cedula": "V-10000023",
-    "disponibilidad": [
-      {
-        "dias": ["Viernes"],
-        "hora_inicio": "12:00",
-        "hora_fin": "14:00"
-      }
-    ],
-    "materias": [1057]
+    "materias": [1057],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   },
   {
     "nombre": "Olivia Rodrigo",
     "cedula": "V-10000024",
-    "disponibilidad": [
-      {
-        "dias": ["Martes"],
-        "hora_inicio": "10:00",
-        "hora_fin": "12:00"
-      }
-    ],
-    "materias": [1039]
+    "materias": [1039],
+    "weekly_schedule":
+    [
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ],
+      [
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""},
+        {"state": "NO_DISPONIBLE", "id_subject": ""}
+      ]
+    ]
   }
 ]

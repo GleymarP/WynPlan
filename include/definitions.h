@@ -139,6 +139,8 @@ public:
     bool available_block(int day, int hour) const;
     const TimeBlock& get_timeblock(int day, int hour) const;
 
+    void set_weekly_schedule(const TimeBlock schedule[7][12]);
+
 };
 
 class Section
