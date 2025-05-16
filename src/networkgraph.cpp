@@ -13,36 +13,55 @@ void NetworkGraph::build_network()
     source_node = graph.insert_node({NodeType::Source, INT_MAX, 0, "source"});
     sink_node = graph.insert_node({NodeType::Sink, INT_MAX, 0, "sink"});
 
-    for(const auto& subject : subjects)
+
+    for (const auto& subject : subjects)
     {
         Node subject_node = graph.insert_node({NodeType::Subject, subject.get_hours(), 0, subject.get_id()});
         subject_nodes[subject.get_id()] = subject_node;
         graph.insert_arc(source_node, subject_node, {subject.get_hours(), 0});
     }
 
-    for(const auto& teacher: teachers)
-    {
-        Node teacher_node = graph.insert_node({NodeType::Teacher, 0, 0,  teacher.get_id()});
-        teacher_nodes[teacher.get_id()] = teacher_node;
-        for (int day = 0; day < 7; day++)
-        {
-            for (int hour = 0; hour < 12; hour++)
-            {
-                if(teacher.available_block(day, hour))
-                {
-                    std::string time_id = "T_" + teacher.get_id() + "_D_" + std::to_string(day) + "_H_" + std::to_string(hour);
-                    Node time_node = graph.insert_node({NodeType::TimeTable, 1, 0 ,time_id});
-                    timetable_nodes[std::make_pair(day, hour)] = time_node;
-                    graph.insert_arc(teacher_node, time_node, {1, 0});
 
-                    for (const Subject& subject : teacher.get_subjects())
+    for (const auto& teacher : teachers)
+    {
+        Node teacher_node = graph.insert_node({NodeType::Teacher, 0, 0, teacher.get_id()});
+        teacher_nodes[teacher.get_id()] = teacher_node;
+
+
+        for (const auto& subject : teacher.get_subjects())
+        {
+            if (subject_nodes.count(subject.get_id()))
+            {
+                graph.insert_arc(subject_nodes[subject.get_id()], teacher_node, {subject.get_hours(), 0});
+            }
+        }
+
+
+        for (int day = 0; day < 7; ++day)
+        {
+            for (int hour = 0; hour < 12; ++hour)
+            {
+                if (teacher.available_block(day, hour))
+                {
+                    std::pair<int, int> time_key = {day, hour};
+                    Node timeblock_node;
+
+
+                    if (!timetable_nodes.count(time_key))
                     {
-                        if (subject_nodes.count(subject.get_id()))
-                        {
-                            graph.insert_arc(subject_nodes[subject.get_id()], time_node, {1, 0});
-                        }
+                        std::string time_id = "D_" + std::to_string(day) + "H_" + std::to_string(hour);
+                        timeblock_node = graph.insert_node({NodeType::Time, 1, 0, time_id});
+                        timetable_nodes[time_key] = timeblock_node;
+
+
+                        graph.insert_arc(timeblock_node, sink_node, {1, 0});
                     }
-                    graph.insert_arc(time_node, sink_node, {1, 0});
+                    else
+                    {
+                        timeblock_node = timetable_nodes[time_key];
+                    }
+
+                    graph.insert_arc(teacher_node, timeblock_node, {1, 0});
                 }
             }
         }
@@ -125,6 +144,41 @@ int NetworkGraph::max_flow()
     return total_flow;
 
 }
+
+std::vector<std::tuple<std::string, std::string, int, int>> NetworkGraph::get_final_assignments() const
+{
+    std::vector<std::tuple<std::string, std::string, int, int>> assignments;
+
+    for (const auto& [subject_id, subject_node] : subject_nodes)
+    {
+        for (auto arc_st : graph.adjacent_arcs(subject_node))
+        {
+            if (arc_st->get_info().flow > 0)
+            {
+                Node teacher_node = arc_st->get_tgt_node();
+                std::string teacher_id = teacher_node->get_info().id;
+
+                for (auto arc_tt : graph.adjacent_arcs(teacher_node))
+                {
+                    if (arc_tt->get_info().flow > 0)
+                    {
+                        Node timeblock_node = arc_tt->get_tgt_node();
+                        const std::string& time_id = timeblock_node->get_info().id;
+
+                        int day, hour;
+                        if (sscanf(time_id.c_str(), "D_%dH_%d", &day, &hour) == 2)
+                        {
+                            assignments.emplace_back(subject_id, teacher_id, day, hour);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return assignments;
+}
+
 
 void NetworkGraph::print_graph() const
 {

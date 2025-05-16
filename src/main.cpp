@@ -60,7 +60,20 @@ int main(int argc, char *argv[])
     NetworkGraph network(teachers, first_semester.get_subjects_semester());
     network.print_graph();
     auto max = network.max_flow();
+    network.print_graph();
 
+
+
+
+    auto assignments = network.get_final_assignments();
+
+    for (const auto& [subject_id, teacher_id, day, hour] : assignments)
+    {
+        std::cout << "Subject: " << subject_id
+                  << ", Teacher: " << teacher_id
+                  << ", Day: " << day
+                  << ", Hour: " << hour << std::endl;
+    }
 
     std::cout << max;
 

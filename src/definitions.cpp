@@ -340,10 +340,6 @@ void Section::set_subject_section(Subject subject_)
     subject = subject_;
 }
 
-void Section::set_schedule_section(Schedule schedule_)
-{
-    schedule = schedule_;
-}
 
 void Section::set_id_section(size_t id_section_)
 {
@@ -360,12 +356,19 @@ Subject Section::get_subject_section()
 {
     return subject;
 }
-Schedule Section::get_schedule_section()
-{
-    return schedule;
-}
+
 size_t Section::get_id_section()
 {
     return id_section;
+}
+
+void Section::add_timeblock(int day, int hour)
+{
+    assigned_blocks.emplace_back(day, hour);
+}
+
+const std::vector<std::pair<int, int>>& Section::get_assigned_blocks() const
+{
+    return assigned_blocks;
 }
 

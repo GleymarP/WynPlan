@@ -58,6 +58,7 @@ public:
 };
 
 
+//borrar esto luego
 class Schedule
 {
 private:
@@ -76,6 +77,7 @@ public:
 
 };
 
+// borrar esto luego
 class TimeTable
 {
 private:
@@ -107,8 +109,6 @@ struct TimeBlock
     std::string id_subject = "";
 };
 
-
-
 class Teacher
 {
 private:
@@ -116,12 +116,12 @@ private:
     std::string  full_name;
     std::vector<Subject> subjects;
 
-
     std::vector<Schedule> availability;
 
     TimeBlock weekly_schedule [7][12];
 
 public:
+
     void set_id(std::string id_);
     void set_full_name(std::string full_name_);
     void set_subjects(std::vector<Subject> subjects_);
@@ -146,19 +146,20 @@ class Section
 private:
     Teacher teacher;
     Subject subject;
-    Schedule schedule;
+    std::vector<std::pair<int, int>> assigned_blocks;
     size_t id_section;
 
 public:
     void set_teacher_section(Teacher teacher_);
     void set_subject_section(Subject subject_);
-    void set_schedule_section(Schedule schedule_);
     void set_id_section(size_t id_section_);
 
     Teacher get_teacher_section();
     Subject get_subject_section();
-    Schedule get_schedule_section();
     size_t get_id_section();
+
+    void add_timeblock(int day, int hour);
+    const std::vector<std::pair<int, int>>& get_assigned_blocks() const;
 };
 
 #endif // DEFINITIONS_H

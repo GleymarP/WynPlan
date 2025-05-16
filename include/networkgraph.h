@@ -10,11 +10,10 @@
 #include <tuple>
 
 
-
 class NetworkGraph
 {
 public:
-    enum class NodeType { Source, Sink, Subject, Teacher, TimeTable};
+    enum class NodeType { Source, Sink, Subject, Teacher, Time};
     struct NodeData
     {
         NodeType type;
@@ -39,6 +38,8 @@ public:
     bool bfs(std::map<Node, Node>& parent);
 
     int max_flow();
+
+    std::vector<std::tuple<std::string, std::string, int, int>> get_final_assignments() const;
 
 
 private:
