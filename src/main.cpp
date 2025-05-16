@@ -3,6 +3,8 @@
 #include <QApplication>
 #include <homepage.h>
 #include <studyplanwindow.h>
+#include <QStandardPaths>
+#include <QDir>
 
 int main(int argc, char *argv[])
 {
@@ -64,6 +66,11 @@ int main(int argc, char *argv[])
 
 
     auto assignments = network.get_final_assignments();
+    Teacher::update_teachers_with_assignments(teachers, assignments);
+    //Teacher::save_teachers_json(teachers, path_json_teacher);
+    //QString output_path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/teachers.json";
+    //Teacher::save_teachers_json(teachers, output_path);
+
 
     for (const auto& [subject_id, teacher_id, day, hour] : assignments)
     {
@@ -73,7 +80,7 @@ int main(int argc, char *argv[])
                   << ", Hour: " << hour << std::endl;
     }
 
-    std::cout << max;
+    //std::cout << max;
 
     HomePage homepage;
     homepage.show();

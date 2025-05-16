@@ -133,6 +133,10 @@ public:
     std::vector<Schedule> get_availability() const;
 
     static std::vector<Teacher> load_from_json (const QString &file_path, const StudyPlan &study_plan);
+    static void update_teachers_with_assignments(std::vector<Teacher>& teachers,
+        const std::vector<std::tuple<std::string, std::string, int, int>>& assignments);
+    void set_time_block(int day, int hour, const TimeBlock& block);
+    static void save_teachers_json(const std::vector<Teacher>& teachers, const QString& file_path);
 
     void assign_block(int day, int hour, const std::string& subject_id);
     void set_state_block(int day, int hour, BlockState state);
