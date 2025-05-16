@@ -197,6 +197,16 @@ std::vector<Schedule> Teacher::get_availability() const
 {
     return availability;
 }
+void Teacher::set_weekly_schedule(const TimeBlock schedule[7][12])
+{
+    for(int i = 0; i < 7; i++)
+    {
+        for(int j = 0; j < 12; j++)
+        {
+            weekly_schedule[i][j] = schedule[i][j];
+        }
+    }
+}
 
 std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const StudyPlan &study_plan)
 {
@@ -226,28 +236,6 @@ std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const Stu
 
         teacher.set_full_name(teacher_obj["nombre"].toString().toStdString());
         teacher.set_id(teacher_obj["cedula"].toString().toStdString());
-
-        std::vector<Schedule> availability;
-        QJsonArray availability_aaray = teacher_obj["disponibilidad"].toArray();
-
-        for(const QJsonValue& avail_value : availability_aaray)
-        {
-            QJsonObject avail_obj = avail_value.toObject();
-            QString start = avail_obj["hora_inicio"].toString();
-            QString end = avail_obj["hora_fin"].toString();
-            QJsonArray days_array = avail_obj["dias"].toArray();
-
-            for(const QJsonValue &day_value : days_array)
-            {
-                Schedule schedule;
-                schedule.set_day(day_value.toString().toStdString());
-                schedule.set_start_time(start.toStdString());
-                schedule.set_end_time(end.toStdString());
-                availability.push_back(schedule);
-            }
-        }
-
-        teacher.set_availability(availability);
 
         std::vector<Subject> subjects;
         QJsonArray subjects_array = teacher_obj["materias"].toArray();
@@ -281,10 +269,40 @@ std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const Stu
             }
         }
         teacher.set_subjects(subjects);
+
+
+        if(teacher_obj.contains("weekly_schedule"))
+        {
+            TimeBlock weekly_schedule[7][12];
+            QJsonArray days_array = teacher_obj["weekly_schedule"].toArray();
+
+            for(int day = 0; day < days_array.size() && day < 7; day++)
+            {
+                QJsonArray hours_array = days_array[day].toArray();
+                for(int hour = 0; hour < hours_array.size() && hour < 12; hour++)
+                {
+                    QJsonObject block_obj = hours_array[hour].toObject();
+                    TimeBlock block;
+                    std::string state = block_obj["state"].toString().toStdString();
+                    if(state == "DISPONIBLE")
+                    {
+                        block.state = BlockState::DISPONIBLE;
+                    }
+                    else if(state == "OCUPADO")
+                    {
+                        std::string id_sub = block_obj["id_subject"].toString().toStdString();
+                        block.state = BlockState::OCUPADO;
+                        block.id_subject = id_sub;
+                    }
+                    else block.state = BlockState::NO_DISPONIBLE;
+
+                    weekly_schedule[day][hour] = block;
+                }
+            }
+            teacher.set_weekly_schedule(weekly_schedule);
+        }
         teachers.push_back(teacher);
-
     }
-
     return teachers;
 }
 
