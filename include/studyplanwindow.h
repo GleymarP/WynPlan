@@ -22,8 +22,6 @@ signals:
 private slots:
     void on_comboBox_studyplan_currentTextChanged(const QString &arg1);
 
-
-
     void on_pushButtonMenu_clicked();
 
 private:

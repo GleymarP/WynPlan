@@ -63,8 +63,6 @@ int main(int argc, char *argv[])
     network.print_graph();
 
 
-
-
     auto assignments = network.get_final_assignments();
 
     for (const auto& [subject_id, teacher_id, day, hour] : assignments)

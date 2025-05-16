@@ -22,8 +22,8 @@
      <rect>
       <x>884</x>
       <y>294</y>
-      <width>166</width>
-      <height>166</height>
+      <width>150</width>
+      <height>150</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -38,8 +38,8 @@
      <rect>
       <x>421</x>
       <y>294</y>
-      <width>166</width>
-      <height>166</height>
+      <width>150</width>
+      <height>150</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -54,8 +54,8 @@
      <rect>
       <x>432</x>
       <y>594</y>
-      <width>166</width>
-      <height>166</height>
+      <width>150</width>
+      <height>150</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -70,8 +70,8 @@
      <rect>
       <x>884</x>
       <y>594</y>
-      <width>166</width>
-      <height>166</height>
+      <width>150</width>
+      <height>150</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -93,14 +93,15 @@
     <property name="font">
      <font>
       <family>Montserrat</family>
-      <pointsize>24</pointsize>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(70, 70, 122);</string>
     </property>
     <property name="text">
-     <string>Horarios</string>
+     <string>HORARIOS</string>
     </property>
    </widget>
    <widget class="QLabel" name="teacher_label">
@@ -115,14 +116,15 @@
     <property name="font">
      <font>
       <family>Montserrat</family>
-      <pointsize>24</pointsize>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(70, 70, 122);</string>
     </property>
     <property name="text">
-     <string>Profesor</string>
+     <string>PROFESOR</string>
     </property>
    </widget>
    <widget class="QLabel" name="studyplan_label">
@@ -137,14 +139,15 @@
     <property name="font">
      <font>
       <family>Montserrat</family>
-      <pointsize>24</pointsize>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(70, 70, 122);</string>
     </property>
     <property name="text">
-     <string>Flujograma</string>
+     <string>FLUJOGRAMA</string>
     </property>
    </widget>
    <widget class="QLabel" name="section_label">
@@ -159,14 +162,15 @@
     <property name="font">
      <font>
       <family>Montserrat</family>
-      <pointsize>24</pointsize>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(70, 70, 122);</string>
     </property>
     <property name="text">
-     <string>Sección</string>
+     <string>SECCIÓN</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">

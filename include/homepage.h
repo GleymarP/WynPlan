@@ -5,6 +5,7 @@
 #include <studyplanwindow.h>
 #include <teacherswindow.h>
 #include <schedulewindow.h>
+#include <sectionwindow.h>
 
 namespace Ui {
 class HomePage;
@@ -21,7 +22,7 @@ public:
 private slots:
 
     void on_teacher_button_clicked();
-    void on_studyplan_button_clicked();;
+    void on_studyplan_button_clicked();
 
     void on_section_button_clicked();
 
@@ -29,6 +30,11 @@ private slots:
 
 private:
     Ui::HomePage *ui;
+    const QString path_studyplan_json = ":/resources/flujograma.json";
+    const QString path_teachers_json = ":/resources/teachers.json";
+    StudyPlan plan;
+    std::vector<Teacher> teachers;
+
 };
 
 #endif // HOMEPAGE_H

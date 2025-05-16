@@ -83,7 +83,6 @@ qt_add_executable(WynPlan
 
     resources.qrc
     src/definitions.cpp
-    include/schedulesolver.h
     include/networkgraph.h
     src/networkgraph.cpp
     include/homepage.h
@@ -92,15 +91,15 @@ qt_add_executable(WynPlan
     include/studyplanwindow.h
     src/studyplanwindow.cpp
     ui/studyplanwindow.ui
-
-
-
     include/schedulewindow.h
     src/schedulewindow.cpp
     ui/schedulewindow.ui
     include/teacherswindow.h
     src/teacherswindow.cpp
     ui/teacherswindow.ui
+    include/sectionwindow.h
+    src/sectionwindow.cpp
+    ui/sectionwindow.ui
 )
 
 target_link_libraries(WynPlan PRIVATE

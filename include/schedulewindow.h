@@ -13,7 +13,7 @@ class ScheduleWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ScheduleWindow(StudyPlan& plan, std::vector<Teacher>& teacher, QWidget *parent = nullptr);
+    explicit ScheduleWindow(StudyPlan& plan, QWidget *parent = nullptr);
     ~ScheduleWindow();
 
 signals:
@@ -22,10 +22,12 @@ signals:
 private slots:
     void on_pushButton_menu_clicked();
 
+    void on_pushButton_clicked();
+
 private:
-    StudyPlan plan_;
-    std::vector<Teacher>& teacher_;
+
     Ui::ScheduleWindow *ui;
+    StudyPlan plan_;
 };
 
 #endif // SCHEDULEWINDOW_H

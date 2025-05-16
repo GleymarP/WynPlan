@@ -21,7 +21,7 @@ color: rgb(0, 0, 0);</string>
    <widget class="QPushButton" name="menu_button">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>50</x>
       <y>50</y>
       <width>225</width>
       <height>82</height>
@@ -37,8 +37,8 @@ color: rgb(0, 0, 0);</string>
    <widget class="QLabel" name="teachers_label">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>165</y>
+      <x>60</x>
+      <y>160</y>
       <width>181</width>
       <height>41</height>
      </rect>
@@ -46,21 +46,22 @@ color: rgb(0, 0, 0);</string>
     <property name="font">
      <font>
       <family>Montserrat</family>
-      <pointsize>20</pointsize>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(70, 70, 122);</string>
+     <string notr="true">color: rgb(119, 102, 198);</string>
     </property>
     <property name="text">
-     <string>Profesores</string>
+     <string>PROFESOR</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="line_edit_id">
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>240</y>
+      <y>230</y>
       <width>181</width>
       <height>41</height>
      </rect>
@@ -96,7 +97,7 @@ color: rgb(0, 0, 0);</string>
     <property name="geometry">
      <rect>
       <x>240</x>
-      <y>240</y>
+      <y>230</y>
       <width>31</width>
       <height>31</height>
      </rect>
