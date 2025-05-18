@@ -394,14 +394,14 @@ const TimeBlock& Teacher::get_timeblock(int day, int hour) const
 
 
 
-void Section::set_teacher_section(Teacher teacher_)
+void Section::set_teacher_section(std::string teacher)
 {
-    teacher = teacher_;
+    teacher_id = teacher;
 }
 
-void Section::set_subject_section(Subject subject_)
+void Section::set_subject_section(std::string subject)
 {
-    subject = subject_;
+    subject_id = subject;
 }
 
 
@@ -410,15 +410,15 @@ void Section::set_id_section(size_t id_section_)
     id_section = id_section_;
 }
 
-Teacher Section::get_teacher_section()
+std::string Section::get_teacher_section()
 {
-    return teacher;
+    return teacher_id;
 }
 
 
-Subject Section::get_subject_section()
+std::string Section::get_subject_section()
 {
-    return subject;
+    return subject_id;
 }
 
 size_t Section::get_id_section()
@@ -434,5 +434,99 @@ void Section::add_timeblock(int day, int hour)
 const std::vector<std::pair<int, int>>& Section::get_assigned_blocks() const
 {
     return assigned_blocks;
+}
+
+void Assigment::set_semester_name(std::string name)
+{
+    semester_name = name;
+}
+
+void Assigment::set_sections_vector(std::vector<Section> vector)
+{
+    sections_vector = vector;
+}
+
+void Assigment::set_option(std::string option_)
+{
+    option = option_;
+}
+
+std::vector<Assigment> Assigment::load_from_json(const QString &file_path, const StudyPlan &study_plan, std::vector<Teacher>& teachers)
+{
+    std::vector<Assigment> assignments;
+    QFile file(file_path);
+
+    if (!file.open(QIODevice::ReadOnly))
+    {
+        return assignments;
+    }
+
+    QByteArray data = file.readAll();
+    QJsonDocument doc = QJsonDocument::fromJson(data);
+
+    if (doc.isNull() || !doc.isArray())
+    {
+        return assignments;
+    }
+
+    QJsonArray assignments_array = doc.array();
+    size_t counter = 0;
+
+    for(const QJsonValue& assignments_value : assignments_array)
+    {
+        QJsonObject assigment_obj = assignments_value.toObject();
+        Assigment  assignment;
+        assignment.set_option(assigment_obj["Option"].toString().toStdString());
+        assignment.set_semester_name(assigment_obj["Semester"].toString().toStdString());
+        QJsonArray assignment_array = assigment_obj["Assignment"].toArray();
+
+        std::map<std::pair<std::string, std::string>, Section> sections_map;
+        for(const QJsonValue& assignment_value : assignment_array)
+        {
+            Section section;
+            QJsonObject assig_object = assignment_value.toObject();
+            std::string teacher_id = assig_object["teacher_id"].toString().toStdString();
+            std::string subject_id = assig_object["subject_id"].toString().toStdString();
+            int day = assig_object["day"].toString().toInt();
+            int hour = assig_object["hour"].toString().toInt();
+
+            auto key_id = std::make_pair(teacher_id, subject_id);
+
+            if (sections_map.find(key_id) == sections_map.end())
+            {
+                Section section;
+                section.set_teacher_section(teacher_id);
+                section.set_subject_section(subject_id);
+                section.set_id_section(counter++);
+                sections_map[key_id] = section;
+            }
+            sections_map[key_id].add_timeblock(day, hour);
+
+            //Para actualizar profesor - borrar luego si no se utiliza
+            for (Teacher& teacher : teachers)
+            {
+                if (teacher.get_id() == teacher_id)
+                {
+                    TimeBlock block;
+                    block.state = BlockState::OCUPADO;
+                    block.id_subject = subject_id;
+                    teacher.set_time_block(day, hour, block);
+                    break;
+                }
+            }
+            //
+        }
+
+        std::vector<Section> sections_vector;
+
+        for (auto& pair : sections_map)
+        {
+            sections_vector.push_back(pair.second);
+        }
+        assignment.set_sections_vector(sections_vector);
+        assignments.push_back(assignment);
+    }
+
+    return assignments;
 }
 
