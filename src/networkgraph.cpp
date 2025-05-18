@@ -148,32 +148,48 @@ int NetworkGraph::max_flow()
 std::vector<std::tuple<std::string, std::string, int, int>> NetworkGraph::get_final_assignments() const
 {
     std::vector<std::tuple<std::string, std::string, int, int>> assignments;
+    std::set<std::string> assigned_subjects;
 
     for (const auto& [subject_id, subject_node] : subject_nodes)
     {
-        for (auto arc_st : graph.adjacent_arcs(subject_node))
+        bool subject_assigned = false;
+
+        for (auto arc_subject : graph.adjacent_arcs(subject_node))
         {
-            if (arc_st->get_info().flow > 0)
+            if (arc_subject->get_info().flow > 0)
             {
-                Node teacher_node = arc_st->get_tgt_node();
+                Node teacher_node = arc_subject->get_tgt_node();
                 std::string teacher_id = teacher_node->get_info().id;
 
-                for (auto arc_tt : graph.adjacent_arcs(teacher_node))
+                for (auto arc_time : graph.adjacent_arcs(teacher_node))
                 {
-                    if (arc_tt->get_info().flow > 0)
+                    if (arc_time->get_info().flow > 0)
                     {
-                        Node timeblock_node = arc_tt->get_tgt_node();
+                        Node timeblock_node = arc_time->get_tgt_node();
                         const std::string& time_id = timeblock_node->get_info().id;
 
                         int day, hour;
                         if (sscanf(time_id.c_str(), "D_%dH_%d", &day, &hour) == 2)
                         {
                             assignments.emplace_back(subject_id, teacher_id, day, hour);
+                            subject_assigned = true;
                         }
                     }
                 }
             }
+
         }
+
+        if(subject_assigned)
+        {
+            assigned_subjects.insert(subject_id);
+        }
+    }
+    if(assigned_subjects.size() < subject_nodes.size())
+    {
+        qDebug() << "No se pudieron asignar todas las materias requeridas para el semestre :c";
+        return {};
+
     }
 
     return assignments;
