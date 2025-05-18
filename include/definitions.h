@@ -123,22 +123,38 @@ public:
 class Section
 {
 private:
-    Teacher teacher;
-    Subject subject;
+    std::string teacher_id;
+    std::string subject_id;
     std::vector<std::pair<int, int>> assigned_blocks;
     size_t id_section;
 
 public:
-    void set_teacher_section(Teacher teacher_);
-    void set_subject_section(Subject subject_);
+    void set_teacher_section(std::string teacher_id_);
+    void set_subject_section(std::string subject_id_);
     void set_id_section(size_t id_section_);
+    void set_blocks(std::vector<std::pair<int, int>> blocks);
 
-    Teacher get_teacher_section();
-    Subject get_subject_section();
+    std::string get_teacher_section();
+    std::string get_subject_section();
     size_t get_id_section();
 
     void add_timeblock(int day, int hour);
     const std::vector<std::pair<int, int>>& get_assigned_blocks() const;
+};
+
+class Assigment
+{
+private:
+    std::string semester_name;
+    std::vector<Section> sections_vector;
+    std::string option;
+
+public:
+    void set_semester_name(std::string name);
+    void set_sections_vector(std::vector<Section> vector);
+    void set_option(std::string option_);
+
+    static std::vector<Assigment> load_from_json(const QString &file_path, const StudyPlan &study_plan, std::vector<Teacher>& teachers);
 };
 
 #endif // DEFINITIONS_H
