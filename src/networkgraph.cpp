@@ -225,7 +225,7 @@ void NetworkGraph::save_assignment(std::vector<std::tuple<std::string, std::stri
     {
         QJsonObject obj = item.toObject();
 
-        if(obj.contains("Option") && obj["Semester"].toString() == semester.get_semester_name())
+        if(obj.contains("Option") && obj["Semester"].toString().toStdString() == semester.get_semester_name())
         {
             QString option = obj["Option"].toString();
             int num = option.mid(7).toInt();
