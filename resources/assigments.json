@@ -1,0 +1,212 @@
+[
+    {
+        "Assignment": [
+            {
+                "day": "0",
+                "hour": "1",
+                "subject_id": "1004",
+                "teacher_id": "V-10000001"
+            },
+            {
+                "day": "0",
+                "hour": "5",
+                "subject_id": "1004",
+                "teacher_id": "V-10000001"
+            },
+            {
+                "day": "0",
+                "hour": "6",
+                "subject_id": "1004",
+                "teacher_id": "V-10000001"
+            },
+            {
+                "day": "0",
+                "hour": "7",
+                "subject_id": "1004",
+                "teacher_id": "V-10000001"
+            },
+            {
+                "day": "1",
+                "hour": "0",
+                "subject_id": "1006",
+                "teacher_id": "V-10000014"
+            },
+            {
+                "day": "1",
+                "hour": "1",
+                "subject_id": "1006",
+                "teacher_id": "V-10000014"
+            },
+            {
+                "day": "1",
+                "hour": "2",
+                "subject_id": "1006",
+                "teacher_id": "V-10000014"
+            },
+            {
+                "day": "1",
+                "hour": "3",
+                "subject_id": "1006",
+                "teacher_id": "V-10000014"
+            },
+            {
+                "day": "2",
+                "hour": "2",
+                "subject_id": "1053",
+                "teacher_id": "V-10000018"
+            },
+            {
+                "day": "2",
+                "hour": "3",
+                "subject_id": "1053",
+                "teacher_id": "V-10000018"
+            },
+            {
+                "day": "2",
+                "hour": "5",
+                "subject_id": "1053",
+                "teacher_id": "V-10000018"
+            },
+            {
+                "day": "2",
+                "hour": "6",
+                "subject_id": "1053",
+                "teacher_id": "V-10000018"
+            },
+            {
+                "day": "0",
+                "hour": "2",
+                "subject_id": "1054",
+                "teacher_id": "V-10000020"
+            },
+            {
+                "day": "0",
+                "hour": "3",
+                "subject_id": "1054",
+                "teacher_id": "V-10000020"
+            },
+            {
+                "day": "0",
+                "hour": "4",
+                "subject_id": "1054",
+                "teacher_id": "V-10000020"
+            },
+            {
+                "day": "2",
+                "hour": "4",
+                "subject_id": "1054",
+                "teacher_id": "V-10000020"
+            }
+        ],
+        "Option": "Opción 1",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 2",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 3",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 4",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 5",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 6",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 7",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 8",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 9",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 10",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 11",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 12",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 13",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 14",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 15",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 16",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 17",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 18",
+        "Semester": "Semestre 1"
+    },
+    {
+        "Assignment": [
+        ],
+        "Option": "Opción 19",
+        "Semester": "Semestre 1"
+    }
+]

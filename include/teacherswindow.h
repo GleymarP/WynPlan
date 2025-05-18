@@ -30,9 +30,17 @@ private slots:
 
     bool validate_id(const QString& id);
 
+    void on_tableWidget_cellClicked(int row, int column);
+
+    void on_button_modify_states_clicked();
+
+    void on_button_save_changes_clicked();
+
 private:
     Ui::TeachersWindow *ui;
     std::vector<Teacher> teachers_;
+    bool edit_mode_enabled = false;
+    Teacher current_teacher;
 };
 
 #endif // TEACHERSWINDOW_H
