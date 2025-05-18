@@ -40,7 +40,7 @@ public:
     int max_flow();
 
     std::vector<std::tuple<std::string, std::string, int, int>> get_final_assignments() const;
-
+    static void save_assignment(std::vector<std::tuple<std::string, std::string, int, int>> assignments, const QString& file_path, const Semester& semester);
 
 private:
     FlowGraph graph;

@@ -63,11 +63,9 @@ endif()
 
 set(PROJECT_SOURCES
     src/main.cpp
-
-
-
     resources/flujograma.json
     resources/teachers.json
+    resources/assigments.json
     src/definitions.cpp
 )
 
