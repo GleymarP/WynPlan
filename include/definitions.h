@@ -57,27 +57,6 @@ public:
     static StudyPlan load_from_json(const QString &filePath);
 };
 
-
-//borrar esto luego
-class Schedule
-{
-private:
-    std::string day;
-    std::string start_time;
-    std::string end_time;
-
-public:
-    void set_day(std::string day_);
-    void set_start_time(std::string start_time_);
-    void set_end_time(std::string end_time_);
-
-    std::string get_day() const;
-    std::string get_start_time() const;
-    std::string get_end_time() const;
-
-};
-
-// borrar esto luego
 class TimeTable
 {
 private:
@@ -115,9 +94,6 @@ private:
     std::string id;
     std::string  full_name;
     std::vector<Subject> subjects;
-
-    std::vector<Schedule> availability;
-
     TimeBlock weekly_schedule [7][12];
 
 public:
@@ -125,26 +101,23 @@ public:
     void set_id(std::string id_);
     void set_full_name(std::string full_name_);
     void set_subjects(std::vector<Subject> subjects_);
-    void set_availability(std::vector<Schedule> availability_);
 
     std::string get_id() const;
     std::string get_full_name() const;
     std::vector<Subject> get_subjects() const;
-    std::vector<Schedule> get_availability() const;
-
-    static std::vector<Teacher> load_from_json (const QString &file_path, const StudyPlan &study_plan);
-    static void update_teachers_with_assignments(std::vector<Teacher>& teachers,
-        const std::vector<std::tuple<std::string, std::string, int, int>>& assignments);
-    void set_time_block(int day, int hour, const TimeBlock& block);
-    static void save_teachers_json(const std::vector<Teacher>& teachers, const QString& file_path);
-
-    void assign_block(int day, int hour, const std::string& subject_id);
-    void set_state_block(int day, int hour, BlockState state);
-    bool available_block(int day, int hour) const;
     const TimeBlock& get_timeblock(int day, int hour) const;
 
-    void set_weekly_schedule(const TimeBlock schedule[7][12]);
+    static std::vector<Teacher> load_from_json (const QString &file_path, const StudyPlan &study_plan);
+    static void save_teachers_json(const std::vector<Teacher>& teachers, const QString& file_path);
+    static void update_teachers_with_assignments(std::vector<Teacher>& teachers,
+        const std::vector<std::tuple<std::string, std::string, int, int>>& assignments);
 
+    bool available_block(int day, int hour) const;
+    void assign_block(int day, int hour, const std::string& subject_id);
+
+    void set_state_block(int day, int hour, BlockState state);
+    void set_time_block(int day, int hour, const TimeBlock& block);
+    void set_weekly_schedule(const TimeBlock schedule[7][12]);
 };
 
 class Section

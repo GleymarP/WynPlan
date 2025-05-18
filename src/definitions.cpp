@@ -123,41 +123,6 @@ StudyPlan StudyPlan::load_from_json(const QString &filePath)
     return plan;
 }
 
-
-void Schedule::set_day(std::string day_)
-{
-    day = day_;
-}
-
-void Schedule::set_start_time(std::string start_time_)
-{
-    start_time = start_time_;
-}
-
-void Schedule::set_end_time(std::string end_time_)
-{
-    end_time = end_time_;
-}
-
-std::string Schedule::get_day() const
-{
-    return day;
-}
-
-std::string Schedule::get_start_time() const
-{
-    return start_time;
-}
-
-std::string Schedule::get_end_time() const
-{
-    return end_time;
-}
-
-
-
-
-
 void Teacher::set_id(std::string id_)
 {
     id = id_;
@@ -171,11 +136,6 @@ void Teacher::set_full_name(std::string full_name_)
 void Teacher::set_subjects(std::vector<Subject> subjects_)
 {
     subjects = subjects_;
-}
-
-void Teacher::set_availability(std::vector<Schedule> available_schedule_)
-{
-    availability = available_schedule_;
 }
 
 std::string Teacher::get_id() const
@@ -193,10 +153,6 @@ std::vector<Subject> Teacher::get_subjects() const
     return subjects;
 }
 
-std::vector<Schedule> Teacher::get_availability() const
-{
-    return availability;
-}
 void Teacher::set_weekly_schedule(const TimeBlock schedule[7][12])
 {
     for(int i = 0; i < 7; i++)
@@ -328,8 +284,8 @@ void Teacher::update_teachers_with_assignments(std::vector<Teacher>& teachers,
         }
     }
 }
-/*
-void save_teachers_json(const std::vector<Teacher>& teachers, const QString& file_path)
+
+void Teacher::save_teachers_json(const std::vector<Teacher>& teachers, const QString& file_path)
 {
     QJsonArray teachers_array;
     for(const auto& teacher : teachers)
@@ -376,77 +332,17 @@ void save_teachers_json(const std::vector<Teacher>& teachers, const QString& fil
         teacher_obj["weekly_schedule"] = weekly_schedule_array;
         teachers_array.append(teacher_obj);
     }
+
     QFile file(file_path);
     if (!file.open(QIODevice::WriteOnly))
     {
         qWarning() << "No se pudo abrir el archivo para escritura:" << file_path;
     }
+
     QJsonDocument doc(teachers_array);
     file.write(doc.toJson());
     file.close();
-}*/
-/*
-void Teacher::save_teachers_json(const std::vector<Teacher>& teachers, const QString& file_path)
-{
-    if (file_path.startsWith(":/"))
-    {
-        return;
-    }
-    if (file_path.isEmpty())
-    {
-
-        return;
-    }
-
-    QJsonArray teachers_array;
-
-    // Crear array JSON con todos los profesores
-    for (const auto& teacher : teachers) {
-        QJsonObject teacher_obj;
-
-        // 1. Datos básicos
-        teacher_obj["nombre"] = QString::fromStdString(teacher.get_full_name());
-        teacher_obj["cedula"] = QString::fromStdString(teacher.get_id());
-
-        // 2. Materias
-        QJsonArray subjects_array;
-        for (const auto& subject : teacher.get_subjects()) {
-            subjects_array.append(QString::fromStdString(subject.get_id()).toInt());
-        }
-        teacher_obj["materias"] = subjects_array;
-
-        // 3. Weekly Schedule
-        QJsonArray weekly_schedule;
-        for (int day = 0; day < 7; ++day) {
-            QJsonArray day_schedule;
-            for (int hour = 0; hour < 12; ++hour) {
-                TimeBlock block = teacher.get_timeblock(day, hour);
-                QJsonObject block_obj;
-
-                block_obj["state"] = QString::fromStdString(
-                    block.state == BlockState::OCUPADO ? "OCUPADO" :
-                        block.state == BlockState::DISPONIBLE ? "DISPONIBLE" : "NO_DISPONIBLE");
-
-                block_obj["id_subject"] = QString::fromStdString(block.id_subject);
-                day_schedule.append(block_obj);
-            }
-            weekly_schedule.append(day_schedule);
-        }
-        teacher_obj["weekly_schedule"] = weekly_schedule;
-
-        teachers_array.append(teacher_obj);
-    }
-
-    // Guardar a archivo (sobrescribe si existe)
-    QFile file(file_path);
-    if (!file.open(QIODevice::WriteOnly)) {
-        qWarning() << "Error al abrir archivo para escritura:" << file_path;
-        return;
-    }
-
-    file.write(QJsonDocument(teachers_array).toJson(QJsonDocument::Indented));
-    file.close();
-}*/
+}
 
 void Teacher::set_time_block(int day, int hour, const TimeBlock& block)
 {

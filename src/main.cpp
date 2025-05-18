@@ -29,35 +29,8 @@ int main(int argc, char *argv[])
         }
     }
 
-
-
     QString path_json_teacher = ":/resources/teachers.json";
     std::vector<Teacher> teachers = Teacher::load_from_json(path_json_teacher, plan);
-
-
-   /* qDebug() << "=== PROFESORES CARGADOS ===";
-    qDebug() << "Total de profesores:" << teachers.size();
-    qDebug() << "-----------------------------------";
-
-    for (const Teacher& teacher : teachers) {
-        qDebug() << "\nProfesor:" << QString::fromStdString(teacher.get_full_name());
-        qDebug() << "cedula: " << QString::fromStdString(teacher.get_id());
-
-        qDebug() << "Horarios disponibles:";
-        for (const Schedule& avail : teacher.get_availability()) {
-            qDebug() << "- Día:" << QString::fromStdString(avail.get_day())
-            << "de" << QString::fromStdString(avail.get_start_time())
-            << "a" << QString::fromStdString(avail.get_end_time());
-        }
-
-        qDebug() << "Materias:";
-        for (const Subject& subject : teacher.get_subjects()) {
-            qDebug() << "-" << QString::fromStdString(subject.get_subject_name())
-            << "(Código:" << QString::fromStdString(subject.get_id())
-            << ")";
-        }
-    }*/
-
 
     NetworkGraph network(teachers, first_semester.get_subjects_semester());
     network.print_graph();
@@ -67,10 +40,8 @@ int main(int argc, char *argv[])
 
     auto assignments = network.get_final_assignments();
     Teacher::update_teachers_with_assignments(teachers, assignments);
-    //Teacher::save_teachers_json(teachers, path_json_teacher);
-    //QString output_path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/teachers.json";
-    //Teacher::save_teachers_json(teachers, output_path);
-
+    Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
+    NetworkGraph::save_assignment(assignments, QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", first_semester);
 
     for (const auto& [subject_id, teacher_id, day, hour] : assignments)
     {
@@ -79,8 +50,6 @@ int main(int argc, char *argv[])
                   << ", Day: " << day
                   << ", Hour: " << hour << std::endl;
     }
-
-    //std::cout << max;
 
     HomePage homepage;
     homepage.show();
