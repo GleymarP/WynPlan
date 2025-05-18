@@ -38,18 +38,20 @@ int main(int argc, char *argv[])
     network.print_graph();
 
 
-    auto assignments = network.get_final_assignments();
-    Teacher::update_teachers_with_assignments(teachers, assignments);
+    //auto assignments = network.get_final_assignments();
+    //Teacher::update_teachers_with_assignments(teachers, assignments);
+    //Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
+    //NetworkGraph::save_assignment(assignments, QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", first_semester);
+    std::vector<Assigment> assign = Assigment::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", plan, teachers);
     Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
-    NetworkGraph::save_assignment(assignments, QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", first_semester);
 
-    for (const auto& [subject_id, teacher_id, day, hour] : assignments)
+    /*for (const auto& [subject_id, teacher_id, day, hour] : assignments)
     {
         std::cout << "Subject: " << subject_id
                   << ", Teacher: " << teacher_id
                   << ", Day: " << day
                   << ", Hour: " << hour << std::endl;
-    }
+    }*/
 
     HomePage homepage;
     homepage.show();
