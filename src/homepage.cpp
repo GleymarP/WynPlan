@@ -6,6 +6,7 @@ HomePage::HomePage(QWidget *parent)
     , ui(new Ui::HomePage)
     , plan(StudyPlan::load_from_json(path_studyplan_json))
     , teachers(Teacher::load_from_json(path_teachers_json, plan))
+    , assigments(Assigment::load_from_json(path_assigments_json, plan, teachers))
 {
     ui->setupUi(this);
 }
@@ -35,7 +36,7 @@ void HomePage::on_studyplan_button_clicked()
 
 void HomePage::on_section_button_clicked()
 {
-    SectionWindow *section_window = new SectionWindow();
+    SectionWindow *section_window = new SectionWindow(plan, assigments, teachers);
     connect(section_window, &SectionWindow::back_to_menu, this, &HomePage::show);
     section_window->show();
     this->hide();

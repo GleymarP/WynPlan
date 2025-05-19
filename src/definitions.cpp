@@ -530,3 +530,16 @@ std::vector<Assigment> Assigment::load_from_json(const QString &file_path, const
     return assignments;
 }
 
+std::string Assigment::get_semester_name()
+{
+    return semester_name;
+}
+
+std::string Assigment::get_option()
+{
+    return option;
+}
+std::vector<Section> Assigment::get_sections_vector()
+{
+    return sections_vector;
+}

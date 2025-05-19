@@ -18,6 +18,9 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -57,7 +60,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox_2">
+   <widget class="QComboBox" name="comboBox_option">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -70,25 +73,6 @@
      <font>
       <family>Montserrat</family>
       <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 250, 250);
-color: rgb(0, 0, 0);</string>
-    </property>
-   </widget>
-   <widget class="QListView" name="listView">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>210</y>
-      <width>661</width>
-      <height>411</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Montserrat</family>
      </font>
     </property>
     <property name="styleSheet">
@@ -119,7 +103,7 @@ color: rgb(255, 255, 255);</string>
      <string>Eliminar</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="comboBox_semester">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -204,15 +188,38 @@ background-color: rgb(46, 194, 126);</string>
      <string>+</string>
     </property>
    </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>210</y>
+      <width>661</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Montserrat</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 250, 250);
+color: rgb(0, 0, 0);</string>
+    </property>
+   </widget>
    <zorder>label</zorder>
    <zorder>pushButton_menu</zorder>
-   <zorder>comboBox_2</zorder>
+   <zorder>comboBox_option</zorder>
    <zorder>pushButton_delete_section</zorder>
    <zorder>label_4</zorder>
    <zorder>pushButton_modify_section</zorder>
    <zorder>pushButton_create_section</zorder>
-   <zorder>comboBox</zorder>
-   <zorder>listView</zorder>
+   <zorder>comboBox_semester</zorder>
+   <zorder>listWidget</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
