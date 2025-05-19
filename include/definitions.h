@@ -154,6 +154,10 @@ public:
     void set_sections_vector(std::vector<Section> vector);
     void set_option(std::string option_);
 
+    std::string get_semester_name();
+    std::string get_option();
+    std::vector<Section> get_sections_vector();
+
     static std::vector<Assigment> load_from_json(const QString &file_path, const StudyPlan &study_plan, std::vector<Teacher>& teachers);
 };
 

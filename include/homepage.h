@@ -32,9 +32,10 @@ private:
     Ui::HomePage *ui;
     const QString path_studyplan_json = ":/resources/flujograma.json";
     const QString path_teachers_json = ":/resources/teachers.json";
+    const QString path_assigments_json = QCoreApplication::applicationDirPath() + "/../../resources/assigments.json";
     StudyPlan plan;
     std::vector<Teacher> teachers;
-
+    std::vector<Assigment> assigments;
 };
 
 #endif // HOMEPAGE_H
