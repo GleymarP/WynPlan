@@ -16,9 +16,9 @@ void NetworkGraph::build_network()
 
     for (const auto& subject : subjects)
     {
-        Node subject_node = graph.insert_node({NodeType::Subject, subject.get_hours(), 0, subject.get_id()});
+        Node subject_node = graph.insert_node({NodeType::Subject, subject.get_required_hours(), 0, subject.get_id()});
         subject_nodes[subject.get_id()] = subject_node;
-        graph.insert_arc(source_node, subject_node, {subject.get_hours(), 0});
+        graph.insert_arc(source_node, subject_node, {subject.get_required_hours(), 0});
     }
 
 
@@ -32,7 +32,7 @@ void NetworkGraph::build_network()
         {
             if (subject_nodes.count(subject.get_id()))
             {
-                graph.insert_arc(subject_nodes[subject.get_id()], teacher_node, {subject.get_hours(), 0});
+                graph.insert_arc(subject_nodes[subject.get_id()], teacher_node, {subject.get_required_hours(), 0});
             }
         }
 

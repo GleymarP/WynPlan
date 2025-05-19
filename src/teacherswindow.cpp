@@ -68,74 +68,79 @@ void TeachersWindow::on_search_button_clicked()
     else
     {
         current_teacher = found_teacher;
-        ui->label_teacher_id->setText("Cédula: " + QString::fromStdString(found_teacher.get_id()));
-        ui->label_teacher_name->setText("Nombre: " + QString::fromStdString(found_teacher.get_full_name()));
-
-
-        ui->tableWidget->show();
-        ui->button_modify_states->show();
-        ui->button_modify->show();
-        ui->button_delete->show();
-        QStringList days = { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
-        QStringList hours;
-
-        for(int i = 0; i < 12; ++i)
-        {
-            hours << QString("%1:00").arg(7 + i);
-        }
-
-        ui->tableWidget->clear();
-        ui->tableWidget->setRowCount(12);
-        ui->tableWidget->setColumnCount(7);
-        ui->tableWidget->setHorizontalHeaderLabels(days);
-        ui->tableWidget->setVerticalHeaderLabels(hours);
-
-        ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-        ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-
-        for(int day = 0; day < 7; ++day)
-        {
-            for(int hour = 0; hour < 12; ++hour)
-            {
-                const TimeBlock& block = found_teacher.get_timeblock(day, hour);
-
-                QString text;
-
-                switch (block.state)
-                {
-                    case NO_DISPONIBLE:
-                        text = "X";
-                        break;
-                    case DISPONIBLE:
-                        text = "";
-                        break;
-                    case OCUPADO:
-                        text = QString::fromStdString(block.id_subject);
-                        break;
-                }
-
-                QTableWidgetItem* item = new QTableWidgetItem(text);
-                if (block.state == NO_DISPONIBLE)
-                {
-                    item->setBackground(QColor(217, 217, 217));
-                }
-                else if(block.state == OCUPADO)
-                {
-                    item->setBackground(QColor(255, 107, 108));
-                }
-                else
-                {
-                    item->setBackground(QColor(179, 240, 174));
-                }
-
-                    ui->tableWidget->setItem(hour, day, item);
-            }
-        }
-
+        update_window();
     }
 
     ui->line_edit_id->clear();
 
+}
+
+void TeachersWindow::update_window()
+{
+
+    ui->label_teacher_id->setText("Cédula: " + QString::fromStdString(current_teacher.get_id()));
+    ui->label_teacher_name->setText("Nombre: " + QString::fromStdString(current_teacher.get_full_name()));
+
+
+    ui->tableWidget->show();
+    ui->button_modify_states->show();
+    ui->button_modify->show();
+    ui->button_delete->show();
+    QStringList days = { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
+    QStringList hours;
+
+    for(int i = 0; i < 12; ++i)
+    {
+        hours << QString("%1:00").arg(7 + i);
+    }
+
+    ui->tableWidget->clear();
+    ui->tableWidget->setRowCount(12);
+    ui->tableWidget->setColumnCount(7);
+    ui->tableWidget->setHorizontalHeaderLabels(days);
+    ui->tableWidget->setVerticalHeaderLabels(hours);
+
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    for(int day = 0; day < 7; ++day)
+    {
+        for(int hour = 0; hour < 12; ++hour)
+        {
+            const TimeBlock& block = current_teacher.get_timeblock(day, hour);
+
+            QString text;
+
+            switch (block.state)
+            {
+            case NO_DISPONIBLE:
+                text = "X";
+                break;
+            case DISPONIBLE:
+                text = "";
+                break;
+            case OCUPADO:
+                text = QString::fromStdString(block.id_subject);
+                break;
+            }
+
+            QTableWidgetItem* item = new QTableWidgetItem(text);
+            if (block.state == NO_DISPONIBLE)
+            {
+                item->setBackground(QColor(217, 217, 217));
+            }
+            else if(block.state == OCUPADO)
+            {
+                item->setBackground(QColor(255, 107, 108));
+            }
+            else
+            {
+                item->setBackground(QColor(179, 240, 174));
+            }
+
+            ui->tableWidget->setItem(hour, day, item);
+        }
+    }
 }
 
 
@@ -271,5 +276,42 @@ void TeachersWindow::on_button_delete_clicked()
     {
         QMessageBox::information(this, "Cancelado", "No se realizó ninguna acción");
     }
+}
+
+
+void TeachersWindow::on_button_modify_clicked()
+{
+    TeacherDialog dialog(this);
+    dialog.set_edit_mode(true);
+    dialog.set_teacher(current_teacher);
+
+
+
+    if(dialog.exec() == QDialog::Accepted)
+    {
+        Teacher update = dialog.get_update_teacher();
+        for(auto& teacher :  teachers_)
+        {
+            if(teacher.get_id() == update.get_id())
+            {
+                update.set_subjects(current_teacher.get_subjects());
+                update.set_weekly_schedule(current_teacher.get_weekly_schedule());
+
+
+                teacher = update;
+                break;
+            }
+        }
+
+        Teacher::save_teachers_json(teachers_, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
+        QMessageBox::information(this,"Actualizado", "Datos del profesor actualizados ");
+
+        current_teacher = update;
+
+        update_window();
+
+    }
+
+
 }
 

@@ -101,6 +101,9 @@ qt_add_executable(WynPlan
     include/teachereditordialog.h
     src/teachereditordialog.cpp
     ui/teachereditordialog.ui
+    include/teacherdialog.h
+    src/teacherdialog.cpp
+    ui/teacherdialog.ui
 
 )
 

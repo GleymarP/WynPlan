@@ -393,6 +393,11 @@ const TimeBlock& Teacher::get_timeblock(int day, int hour) const
 }
 
 
+const Teacher::WeeklySchedule& Teacher::get_weekly_schedule() const
+{
+    return weekly_schedule;
+}
+
 
 void Section::set_teacher_section(std::string teacher)
 {

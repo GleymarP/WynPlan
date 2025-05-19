@@ -106,11 +106,13 @@ public:
     std::string get_full_name() const;
     std::vector<Subject> get_subjects() const;
     const TimeBlock& get_timeblock(int day, int hour) const;
+    using WeeklySchedule = TimeBlock[7][12];
+    const WeeklySchedule & get_weekly_schedule() const;
 
     static std::vector<Teacher> load_from_json (const QString &file_path, const StudyPlan &study_plan);
     static void save_teachers_json(const std::vector<Teacher>& teachers, const QString& file_path);
     static void update_teachers_with_assignments(std::vector<Teacher>& teachers,
-        const std::vector<std::tuple<std::string, std::string, int, int>>& assignments);
+    const std::vector<std::tuple<std::string, std::string, int, int>>& assignments);
 
     bool available_block(int day, int hour) const;
     void assign_block(int day, int hour, const std::string& subject_id);

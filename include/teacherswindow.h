@@ -7,6 +7,7 @@
 #include <QRegularExpressionMatch>
 #include <definitions.h>
 #include <teachereditordialog.h>
+#include <teacherdialog.h>
 
 namespace Ui {
 class TeachersWindow;
@@ -38,6 +39,10 @@ private slots:
     void on_button_save_changes_clicked();
 
     void on_button_delete_clicked();
+
+    void on_button_modify_clicked();
+
+    void update_window();
 
 private:
     Ui::TeachersWindow *ui;
