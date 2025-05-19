@@ -83,6 +83,9 @@ background-color: rgb(243, 243, 255);</string>
    <property name="text">
     <string>TextLabel</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
   </widget>
   <widget class="QLabel" name="label_teacher_subjects">
    <property name="geometry">
@@ -139,6 +142,7 @@ background-color: rgb(243, 243, 255);</string>
     <font>
      <family>Montserrat</family>
      <pointsize>16</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -146,6 +150,9 @@ background-color: rgb(243, 243, 255);</string>
    </property>
    <property name="text">
     <string>TextLabel</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="Line" name="line">

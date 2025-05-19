@@ -1,10 +1,11 @@
 #include "teacherswindow.h"
 #include "ui_teacherswindow.h"
 
-TeachersWindow::TeachersWindow(std::vector<Teacher>& teacher, QWidget *parent)
+TeachersWindow::TeachersWindow(std::vector<Teacher>& teacher, StudyPlan& plan, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::TeachersWindow)
     , teachers_(teacher)
+    , plan_(plan)
 {
     ui->setupUi(this);
     ui->tableWidget->hide();
@@ -278,12 +279,28 @@ void TeachersWindow::on_button_delete_clicked()
     }
 }
 
+std::vector<Subject> TeachersWindow::get_all_subjects()
+{
+    std::vector<Subject> all_subjects;
+
+    for(const auto& semester : plan_.get_semester())
+    {
+        const auto& subjects_semester = semester.get_subjects_semester();
+
+        all_subjects.insert(all_subjects.end(), subjects_semester.begin(), subjects_semester.end());
+    }
+
+    return all_subjects;
+}
 
 void TeachersWindow::on_button_modify_clicked()
 {
+    std::vector<Subject> subjects = get_all_subjects();
+
     TeacherDialog dialog(this);
     dialog.set_edit_mode(true);
     dialog.set_teacher(current_teacher);
+    dialog.set_available_subjects(subjects);
 
 
 
@@ -294,10 +311,7 @@ void TeachersWindow::on_button_modify_clicked()
         {
             if(teacher.get_id() == update.get_id())
             {
-                update.set_subjects(current_teacher.get_subjects());
                 update.set_weekly_schedule(current_teacher.get_weekly_schedule());
-
-
                 teacher = update;
                 break;
             }
@@ -312,6 +326,12 @@ void TeachersWindow::on_button_modify_clicked()
 
     }
 
+
+}
+
+
+void TeachersWindow::on_pushButton_clicked()
+{
 
 }
 

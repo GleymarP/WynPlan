@@ -46,6 +46,38 @@ Teacher TeacherDialog::get_update_teacher() const
     return editable_teacher;
 }
 
+void TeacherDialog::set_available_subjects(const std::vector<Subject> &all_subjects)
+{
+    available_subjects = all_subjects;
+
+    ui->listWidget_subjects->clear();
+
+    for(const auto& subject : all_subjects)
+    {
+        QListWidgetItem* item = new QListWidgetItem(QString::fromStdString(subject.get_subject_name()));
+        item->setData(Qt::UserRole, QString::fromStdString(subject.get_id()));
+        item->setFlags(item->flags() | Qt::ItemIsUserCheckable);
+        item->setCheckState(Qt::Unchecked);
+        ui->listWidget_subjects->addItem(item);
+    }
+
+    for(int i = 0; i < ui->listWidget_subjects->count(); ++i)
+    {
+        QListWidgetItem* item = ui->listWidget_subjects->item(i);
+        QString id = item->data(Qt::UserRole).toString();
+        for(const auto& subject : editable_teacher.get_subjects())
+        {
+            if(QString::fromStdString(subject.get_id()) == id)
+            {
+                item->setCheckState(Qt::Checked);
+                break;
+            }
+        }
+    }
+
+
+}
+
 void TeacherDialog::on_pushButton_ok_clicked()
 {
     if(is_editing)
@@ -66,6 +98,27 @@ void TeacherDialog::on_pushButton_ok_clicked()
             return;
         }
 
+        std::vector<Subject> seleted_subjects;
+
+        for(int i = 0; i < ui->listWidget_subjects->count(); ++i)
+        {
+            QListWidgetItem* item = ui->listWidget_subjects->item(i);
+            if(item->checkState() == Qt::Checked)
+            {
+                QString id = item->data(Qt::UserRole).toString();
+
+                auto it = std::find_if(available_subjects.begin(), available_subjects.end(), [&](const Subject& subj)
+                                       {
+                                           return QString::fromStdString(subj.get_id()) == id;
+                                       });
+
+                if (it != available_subjects.end()) {
+                    seleted_subjects.push_back(*it);
+                }
+            }
+        }
+
+        editable_teacher.set_subjects(seleted_subjects);
         editable_teacher.set_id(id.toStdString());
         editable_teacher.set_full_name(name.toStdString());
 

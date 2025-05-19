@@ -23,6 +23,8 @@ public:
 
     Teacher get_update_teacher() const;
 
+    void set_available_subjects(const std::vector<Subject>& all_subjects);
+
 
 
 private slots:
@@ -34,6 +36,7 @@ private:
     Ui::TeacherDialog *ui;
     Teacher editable_teacher;
     bool is_editing = false;
+    std::vector<Subject> available_subjects;
 };
 
 #endif // TEACHERDIALOG_H

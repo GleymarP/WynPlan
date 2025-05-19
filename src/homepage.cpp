@@ -18,8 +18,8 @@ HomePage::~HomePage()
 
 
 void HomePage::on_teacher_button_clicked()
-{  
-    TeachersWindow *teacher_window = new TeachersWindow(teachers);
+{
+    TeachersWindow *teacher_window = new TeachersWindow(teachers, plan);
     connect(teacher_window, &TeachersWindow::back_to_menu, this, &HomePage::show);
     teacher_window->show();
     this->hide();
