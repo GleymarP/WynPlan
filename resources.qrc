@@ -8,5 +8,6 @@
         <file>resources/images/studyplan.png</file>
         <file>resources/images/teacher.png</file>
         <file>resources/images/search.png</file>
+        <file>resources/images/frame.png</file>
     </qresource>
 </RCC>

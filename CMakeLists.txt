@@ -98,6 +98,10 @@ qt_add_executable(WynPlan
     include/sectionwindow.h
     src/sectionwindow.cpp
     ui/sectionwindow.ui
+    include/teachereditordialog.h
+    src/teachereditordialog.cpp
+    ui/teachereditordialog.ui
+
 )
 
 target_link_libraries(WynPlan PRIVATE
