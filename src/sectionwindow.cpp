@@ -14,6 +14,9 @@ SectionWindow::SectionWindow(StudyPlan& plan_, std::vector<Assigment>& assigment
     {
         ui->comboBox_semester->addItem(QString::fromStdString(semester.get_semester_name()));
     }
+    ui->listWidget->setSelectionMode(QAbstractItemView::NoSelection);
+    ui->listWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->listWidget->setFocusPolicy(Qt::NoFocus);
 }
 
 SectionWindow::~SectionWindow()
@@ -44,11 +47,13 @@ void SectionWindow::on_comboBox_semester_currentTextChanged(const QString &arg1)
 
 void SectionWindow::on_comboBox_option_currentTextChanged(const QString &arg1)
 {
+    QString current_semester = ui->comboBox_semester->currentText();
     std::string text_changed = arg1.toStdString();
     ui->listWidget->clear();
+
     for(Assigment& assigment : assigments)
     {
-        if(text_changed == assigment.get_option())
+        if(text_changed == assigment.get_option() && assigment.get_semester_name() == current_semester.toStdString())
         {
             Semester semester_value;
 
@@ -70,7 +75,7 @@ void SectionWindow::on_comboBox_option_currentTextChanged(const QString &arg1)
 
             for(Section&  section : sections)
             {
-                //ui->listWidget->addItem("Id section: " + QString::number(section.get_id_section()));
+                ui->listWidget->addItem("Id section: " + QString::number(section.get_id_section()));
                 for(Subject& subject : semester_value.get_subjects_semester())
                 {
                     if(subject.get_id() == section.get_subject_section())
@@ -140,9 +145,8 @@ void SectionWindow::on_comboBox_option_currentTextChanged(const QString &arg1)
                 {
                     ui->listWidget->addItem(get_hour(hour_start) + " - " + get_hour(hour_end + 1));
                 }
+                ui->listWidget->addItem("");
             }
-            //ui->listWidget->addItem(QString::fromStdString(assigment.get_semester_name()));
-            //ui->listWidget->addItem(QString::fromStdString(assigment.get_option()));
         }
     }
 }

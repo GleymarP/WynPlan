@@ -23,7 +23,7 @@ public:
 
     std::string get_subject_name() const;
     std::string get_id() const;
-    int get_hours() const;
+    int get_required_hours() const;
 };
 
 

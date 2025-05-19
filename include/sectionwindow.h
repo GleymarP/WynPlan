@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "definitions.h"
+#include <QListView>
+#include <QStringListModel>
 
 namespace Ui {
 class SectionWindow;

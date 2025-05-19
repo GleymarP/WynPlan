@@ -26,7 +26,7 @@ std::string Subject::get_id() const
 {
     return id;
 }
-int Subject::get_hours() const
+int Subject::get_required_hours() const
 {
     return required_hours;
 }
@@ -481,9 +481,9 @@ std::vector<Assigment> Assigment::load_from_json(const QString &file_path, const
         QJsonArray assignment_array = assigment_obj["Assignment"].toArray();
 
         std::map<std::pair<std::string, std::string>, Section> sections_map;
+
         for(const QJsonValue& assignment_value : assignment_array)
         {
-            Section section;
             QJsonObject assig_object = assignment_value.toObject();
             std::string teacher_id = assig_object["teacher_id"].toString().toStdString();
             std::string subject_id = assig_object["subject_id"].toString().toStdString();
@@ -502,7 +502,6 @@ std::vector<Assigment> Assigment::load_from_json(const QString &file_path, const
             }
             sections_map[key_id].add_timeblock(day, hour);
 
-            //Para actualizar profesor - borrar luego si no se utiliza
             for (Teacher& teacher : teachers)
             {
                 if (teacher.get_id() == teacher_id)
@@ -514,7 +513,6 @@ std::vector<Assigment> Assigment::load_from_json(const QString &file_path, const
                     break;
                 }
             }
-            //
         }
 
         std::vector<Section> sections_vector;
