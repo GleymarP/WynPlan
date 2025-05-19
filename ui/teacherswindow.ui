@@ -454,6 +454,63 @@ color: rgb(70, 70, 122);</string>
      <string>Guardar cambios</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="button_modify">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>610</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(119, 102, 198);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Modificar profesor</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_delete">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>670</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 107, 108);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Eliminar profesor</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>170</y>
+      <width>31</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(143, 240, 164);</string>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

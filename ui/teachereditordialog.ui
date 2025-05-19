@@ -14,38 +14,14 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">background-color: rgb(255, 255, 255);
+background-color: rgb(243, 243, 255);</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>670</y>
-     <width>341</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat</family>
-     <pointsize>16</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Orientation::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_teacher_name">
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>130</y>
+     <y>170</y>
      <width>411</width>
      <height>21</height>
     </rect>
@@ -67,7 +43,7 @@
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>210</y>
+     <y>250</y>
      <width>421</width>
      <height>17</height>
     </rect>
@@ -85,11 +61,11 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label__question">
+  <widget class="QLabel" name="label_question">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>600</y>
+     <x>120</x>
+     <y>640</y>
      <width>411</width>
      <height>20</height>
     </rect>
@@ -112,7 +88,7 @@
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>290</y>
+     <y>330</y>
      <width>121</width>
      <height>17</height>
     </rect>
@@ -134,7 +110,7 @@
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>290</y>
+     <y>330</y>
      <width>256</width>
      <height>192</height>
     </rect>
@@ -146,8 +122,11 @@
      <bold>false</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
   </widget>
-  <widget class="QLabel" name="label_5">
+  <widget class="QLabel" name="label_title">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -182,40 +161,40 @@
     <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_ok">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>730</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(119, 102, 198);</string>
+   </property>
+   <property name="text">
+    <string>Ok</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_cancel">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>730</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(222, 221, 218);
+color: rgb(70, 70, 122);</string>
+   </property>
+   <property name="text">
+    <string>Cancelar</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>TeacherEditorDialog</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>rejected()</signal>
-   <receiver>TeacherEditorDialog</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

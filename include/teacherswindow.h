@@ -6,6 +6,7 @@
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <definitions.h>
+#include <teachereditordialog.h>
 
 namespace Ui {
 class TeachersWindow;
@@ -35,6 +36,8 @@ private slots:
     void on_button_modify_states_clicked();
 
     void on_button_save_changes_clicked();
+
+    void on_button_delete_clicked();
 
 private:
     Ui::TeachersWindow *ui;

@@ -10,6 +10,8 @@ TeachersWindow::TeachersWindow(std::vector<Teacher>& teacher, QWidget *parent)
     ui->tableWidget->hide();
     ui->button_save_changes->hide();
     ui->button_modify_states->hide();
+    ui->button_delete->hide();
+    ui->button_modify->hide();
     connect(ui->line_edit_id, &QLineEdit::returnPressed, this, &TeachersWindow::on_search_button_clicked);
 }
 
@@ -72,6 +74,8 @@ void TeachersWindow::on_search_button_clicked()
 
         ui->tableWidget->show();
         ui->button_modify_states->show();
+        ui->button_modify->show();
+        ui->button_delete->show();
         QStringList days = { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
         QStringList hours;
 
@@ -225,5 +229,47 @@ void TeachersWindow::on_button_save_changes_clicked()
     edit_mode_enabled = false;
     ui->button_modify_states->setEnabled(true);
     ui->button_save_changes->hide();
+}
+
+
+void TeachersWindow::on_button_delete_clicked()
+{
+    TeacherEditorDialog dialog(this);
+    dialog.set_teacher_info(current_teacher);
+
+    if(dialog.exec() == QDialog::Accepted && dialog.is_deletion_confirmed())
+    {
+
+        std::vector<Teacher> teachers_temp;
+
+        for(const auto& teacher : teachers_)
+        {
+            if(teacher.get_id() == current_teacher.get_id())
+            {
+                continue;
+            }
+            else
+            {
+                teachers_temp.push_back(teacher);
+            }
+        }
+
+        teachers_ = teachers_temp;
+
+        Teacher::save_teachers_json(teachers_, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
+        QMessageBox::information(this, "Eliminado","Profesor eliminado correctamente" );
+
+        ui->tableWidget->hide();
+        ui->button_modify_states->hide();
+        ui->button_modify->hide();
+        ui->button_delete->hide();
+        ui->label_teacher_id->hide();
+        ui->label_teacher_name->hide();
+
+    }
+    else
+    {
+        QMessageBox::information(this, "Cancelado", "No se realizó ninguna acción");
+    }
 }
 
