@@ -33,23 +33,16 @@ public:
 
     NetworkGraph(const std::vector<Teacher>& teachers, const std::vector<Subject>& subjects);
 
-    void print_graph() const;
-
     bool bfs(std::map<Node, Node>& parent);
-
     int max_flow();
+    std::vector<Section> get_final_assign_section() const;
 
-    std::vector<std::tuple<std::string, std::string, int, int>> get_final_assignments() const;
-    static void save_assignment(std::vector<std::tuple<std::string, std::string, int, int>> assignments, const QString& file_path, const Semester& semester);
-
-    int get_required_hours_for_subject(const std::string& subject_id);
-
-
+    //borrar luego - test
+    void print_graph() const;
 
 private:
     FlowGraph graph;
-    //const std::vector<Teacher>& teachers;
-    //const std::vector<Subject>& subjects;
+
     std::vector<Teacher> teachers;
     std::vector<Subject> subjects;
 

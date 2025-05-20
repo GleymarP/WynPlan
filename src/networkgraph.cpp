@@ -145,16 +145,20 @@ int NetworkGraph::max_flow()
 
 }
 
-std::vector<std::tuple<std::string, std::string, int, int>> NetworkGraph::get_final_assignments() const
+std::vector<Section> NetworkGraph::get_final_assign_section() const
 {
-    std::vector<std::tuple<std::string, std::string, int, int>> assignments;
+    std::vector<Section> sections;
     std::set<std::string> assigned_subjects;
     std::set<std::pair<int, int>> used_time_blocks;
+    size_t section_counter = 0;
+
+    std::map<std::pair<std::string, std::string>, std::vector<std::pair<int, int>>> teacher_subject_blocks;
 
     for (const auto& [subject_id, subject_node] : subject_nodes)
     {
         int required_hours = 0;
         bool subject_assigned = false;
+
         for (const auto& subject : subjects)
         {
             if (subject.get_id() == subject_id)
@@ -163,6 +167,7 @@ std::vector<std::tuple<std::string, std::string, int, int>> NetworkGraph::get_fi
                 break;
             }
         }
+
         if(required_hours == 0)
         {
             continue;
@@ -197,11 +202,13 @@ std::vector<std::tuple<std::string, std::string, int, int>> NetworkGraph::get_fi
 
                 if (available_vector.size() >= required_hours)
                 {
-                    for (int i = 0; i < required_hours && i < available_vector.size(); i++)
+                    auto key = std::make_pair(teacher_id, subject_id);
+
+                    for (int i = 0; i < required_hours; i++)
                     {
                         auto [day, hour] = available_vector[i];
-                        assignments.emplace_back(subject_id, teacher_id, day, hour);
-                        used_time_blocks.insert({day, hour});
+                        teacher_subject_blocks[key].push_back(std::make_pair(day, hour));
+                        used_time_blocks.insert(std::make_pair(day, hour));
                     }
                     subject_assigned = true;
                     break;
@@ -218,29 +225,31 @@ std::vector<std::tuple<std::string, std::string, int, int>> NetworkGraph::get_fi
             qDebug() << "No se pudo asignar la materia" << subject_id;
         }
     }
+
+    for (auto& [teacher_subject, blocks] : teacher_subject_blocks)
+    {
+        Section section;
+        section.set_teacher_section(teacher_subject.first);
+        section.set_subject_section(teacher_subject.second);
+        section.set_id_section(section_counter++);
+
+        std::sort(blocks.begin(), blocks.end(), [](const auto& a, const auto& b)
+        {
+            return a.first < b.first || (a.first == b.first && a.second < b.second);
+        });
+
+        section.set_blocks(blocks);
+        sections.push_back(section);
+    }
+
     if(assigned_subjects.size() < subject_nodes.size())
     {
         qDebug() << "No se pudieron asignar todas las materias requeridas para el semestre :c";
         return {};
-
-    }
-    return assignments;
-}
-
-int NetworkGraph::get_required_hours_for_subject(const std::string& subject_id)
-{
-    for (const auto& subject : subjects)
-    {
-        if (subject.get_id() == subject_id)
-        {
-            return subject.get_required_hours();
-        }
     }
 
-    qDebug() << "Advertencia: Materia con ID" << subject_id << "no encontrada";
-    return 0;
+    return sections;
 }
-
 
 void NetworkGraph::print_graph() const
 {
@@ -269,120 +278,3 @@ void NetworkGraph::print_graph() const
                  << ", Flow:" << info.flow << "]";
     });
 }
-
-void NetworkGraph::save_assignment(std::vector<std::tuple<std::string, std::string, int, int>> assignments, const QString& file_path, const Semester& semester)
-{
-    QJsonDocument doc;
-    QFile file(file_path);
-    QJsonArray assignments_array;
-    if(file.exists() && file.open(QIODevice::ReadOnly))
-    {
-        doc = QJsonDocument::fromJson(file.readAll());
-        file.close();
-        assignments_array = doc.array();
-    }
-    int option_counter = 1;
-
-    for(const auto& item : assignments_array)
-    {
-        QJsonObject obj = item.toObject();
-
-        if(obj.contains("Option") && obj["Semester"].toString().toStdString() == semester.get_semester_name())
-        {
-            QString option = obj["Option"].toString();
-            int num = option.mid(7).toInt();
-            if(num >= option_counter)
-            {
-               option_counter = num + 1;
-            }
-        }
-    }
-
-    QJsonObject option;
-
-    option["Option"] = "Opción " + QString::number(option_counter);
-    option["Semester"] = QString::fromStdString(semester.get_semester_name());
-
-    QJsonArray new_assignments_array;
-
-    for (const auto& [subject_id, teacher_id, day, hour] : assignments)
-    {
-        QJsonObject assignment;
-        assignment["subject_id"] = QString::fromStdString(subject_id);
-        assignment["teacher_id"] = QString::fromStdString(teacher_id);
-        assignment["day"] = QString::number(day);
-        assignment["hour"] = QString::number(hour);
-        new_assignments_array.append(assignment);
-    }
-    option["Assignment"] = new_assignments_array;
-    assignments_array.append(option);
-
-    if(file.open(QIODevice::WriteOnly))
-    {
-        file.write(QJsonDocument(assignments_array).toJson());
-        file.close();
-    }
-    else
-    {
-        qWarning() << "No se pudo abrir el archivo para escritura:" << file_path;
-    }
-}
-
-/*
-void Teacher::save_teachers_json(const std::vector<Teacher>& teachers, const QString& file_path)
-{
-    QJsonArray teachers_array;
-    for(const auto& teacher : teachers)
-    {
-        QJsonObject teacher_obj;
-        teacher_obj["nombre"] = QString::fromStdString(teacher.get_full_name());
-        teacher_obj["cedula"] = QString::fromStdString(teacher.get_id());
-
-        QJsonArray materias_array;
-        for (const auto& subject : teacher.get_subjects())
-        {
-            materias_array.append(QString::fromStdString(subject.get_id()).toInt());
-        }
-        teacher_obj["materias"] = materias_array;
-        QJsonArray weekly_schedule_array;
-        for (int day = 0; day < 7; day++)
-        {
-            QJsonArray day_array;
-            for (int hour = 0; hour < 12; hour++)
-            {
-                TimeBlock block = teacher.get_timeblock(day, hour);
-                QJsonObject block_obj;
-                QString state;
-
-                if(block.state == BlockState::DISPONIBLE)
-                {
-                    state = "DISPONIBLE";
-                }
-                else if(block.state == BlockState::OCUPADO)
-                {
-                    state = "OCUPADO";
-                }
-                else
-                {
-                    state = "NO_DISPONIBLE";
-                }
-
-                block_obj["state"] = state;
-                block_obj["id_subject"] = QString::fromStdString(block.id_subject);
-                day_array.append(block_obj);
-            }
-            weekly_schedule_array.append(day_array);
-        }
-        teacher_obj["weekly_schedule"] = weekly_schedule_array;
-        teachers_array.append(teacher_obj);
-    }
-    QFile file(file_path);
-    if (!file.open(QIODevice::WriteOnly))
-    {
-        qWarning() << "No se pudo abrir el archivo para escritura:" << file_path;
-    }
-    QJsonDocument doc(teachers_array);
-    file.write(doc.toJson());
-    file.close();
-}*/
-

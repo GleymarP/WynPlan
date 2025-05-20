@@ -13,41 +13,41 @@ int main(int argc, char *argv[])
     QString path_json = ":/resources/flujograma.json";
     StudyPlan plan = StudyPlan::load_from_json(path_json);
 
-    /*qDebug() << "\n=== DETALLES DEL PLAN DE ESTUDIOS ===";
-    qDebug() << "Nombre del programa:" << QString::fromStdString(plan.get_degree());
-    qDebug() << "Total de semestres:" << plan.get_semester().size();*/
+    QString path_json_teacher = ":/resources/teachers.json";
+    std::vector<Teacher> teachers = Teacher::load_from_json(path_json_teacher, plan);
+
+    QString path_assign_json = QCoreApplication::applicationDirPath() + "/../../resources/assign.json";
+    std::vector<Assigment> assign = Assigment::load_from_json_assing(path_assign_json, plan, teachers);
 
     auto semesters = plan.get_semester();
     Semester first_semester;
 
     for(const auto& semester : semesters)
     {
-        if(semester.get_semester_name() == "Semestre 1")
+        if(semester.get_semester_name() == "Semestre 2")
         {
             first_semester = semester;
             break;
         }
     }
 
-    QString path_json_teacher = ":/resources/teachers.json";
-    std::vector<Teacher> teachers = Teacher::load_from_json(path_json_teacher, plan);
-
     NetworkGraph network(teachers, first_semester.get_subjects_semester());
     network.print_graph();
     auto max = network.max_flow();
     network.print_graph();
 
-
-    auto assignments = network.get_final_assignments();
-    //Teacher::update_teachers_with_assignments(teachers, assignments);
-    //Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
-    //std::vector<Assigment> assign = Assigment::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", plan, teachers);
-    //Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
-    if(!assignments.empty())
+    auto section_veector = network.get_final_assign_section();
+    if(!section_veector.empty())
     {
-        //NetworkGraph::save_assignment(assignments, QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", first_semester);
-        //std::vector<Assigment> assign = Assigment::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", plan, teachers);
-        //Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
+        Assigment assignments;
+        assignments.set_sections_vector(section_veector);
+        assignments.set_semester_name(first_semester.get_semester_name());
+        assignments.set_option("Opción 4");
+        assign.push_back(assignments);
+        Assigment::save_assigments_json(assign, path_assign_json, plan);
+        assign = Assigment::load_from_json_assing(path_assign_json, plan, teachers);
+        Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
+        teachers = Teacher::load_from_json(path_json_teacher, plan);
     }
 
     Semester second_semester;
@@ -61,27 +61,6 @@ int main(int argc, char *argv[])
         }
     }
 
-    //teachers = Teacher::load_from_json(path_json_teacher, plan);
-
-    NetworkGraph network2(teachers, second_semester.get_subjects_semester());
-    auto max2 = network2.max_flow();
-
-    auto assignments2 = network2.get_final_assignments();
-
-    if(!assignments2.empty())
-    {
-        //NetworkGraph::save_assignment(assignments2, QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", second_semester);
-        //std::vector<Assigment> assign = Assigment::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", plan, teachers);
-        //Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
-    }
-
-    for (const auto& [subject_id, teacher_id, day, hour] : assignments)
-    {
-        std::cout << "Subject: " << subject_id
-                  << ", Teacher: " << teacher_id
-                  << ", Day: " << day
-                  << ", Hour: " << hour << std::endl;
-    }
 
     HomePage homepage;
     homepage.show();

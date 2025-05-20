@@ -58,24 +58,6 @@ public:
     static StudyPlan load_from_json(const QString &filePath);
 };
 
-class TimeTable
-{
-private:
-    std::string teacher_id;
-    int day;
-    int hour;
-
-public:
-    void set_teacher_id(std::string id);
-    void set_day(int day_);
-    void set_hour(int hour_);
-
-    std::string get_teacher_id() const;
-    int get_day() const;
-    int get_hour() const;
-};
-
-
 enum BlockState
 {
     NO_DISPONIBLE,
@@ -98,6 +80,7 @@ private:
     TimeBlock weekly_schedule [7][12];
 
 public:
+    using WeeklySchedule = TimeBlock[7][12];
 
     void set_id(std::string id_);
     void set_full_name(std::string full_name_);
@@ -107,20 +90,17 @@ public:
     std::string get_full_name() const;
     std::vector<Subject> get_subjects() const;
     const TimeBlock& get_timeblock(int day, int hour) const;
-    using WeeklySchedule = TimeBlock[7][12];
-    const WeeklySchedule & get_weekly_schedule() const;
-
-    static std::vector<Teacher> load_from_json (const QString &file_path, const StudyPlan &study_plan);
-    static void save_teachers_json(const std::vector<Teacher>& teachers, const QString& file_path);
-    static void update_teachers_with_assignments(std::vector<Teacher>& teachers,
-    const std::vector<std::tuple<std::string, std::string, int, int>>& assignments);
-
-    bool available_block(int day, int hour) const;
-    void assign_block(int day, int hour, const std::string& subject_id);
+    const WeeklySchedule& get_weekly_schedule() const;
 
     void set_state_block(int day, int hour, BlockState state);
     void set_time_block(int day, int hour, const TimeBlock& block);
     void set_weekly_schedule(const TimeBlock schedule[7][12]);
+
+    static std::vector<Teacher> load_from_json (const QString &file_path, const StudyPlan &study_plan);
+    static void save_teachers_json(const std::vector<Teacher>& teachers, const QString& file_path);
+
+    bool available_block(int day, int hour) const;
+    void assign_block(int day, int hour, const std::string& subject_id);
 };
 
 class Section
@@ -162,7 +142,6 @@ public:
     std::vector<Section> get_sections_vector();
 
     static std::vector<Assigment> load_from_json_assing(const QString &file_path, StudyPlan& study_plan, std::vector<Teacher>& teachers);
-    static std::vector<Assigment> load_from_json(const QString &file_path, const StudyPlan &study_plan, std::vector<Teacher>& teachers);
     static void save_assigments_json(std::vector<Assigment>& assignments, const QString& file_path, StudyPlan&  plan_);
 };
 
