@@ -25,11 +25,12 @@ private slots:
 
     void on_pushButton_clicked();
 
-
-
     void on_pushButton_generate_schedule_clicked();
 
     void on_comboBox_schedule_currentTextChanged(const QString &arg1);
+
+    void update_table();
+
 
 private:
 
@@ -37,6 +38,8 @@ private:
     StudyPlan plan_;
     std::vector<Teacher> teachers_;
     Semester current_semester;
+    std::vector<Assigment> assignments;
+
 };
 
 #endif // SCHEDULEWINDOW_H

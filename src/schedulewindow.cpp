@@ -1,11 +1,12 @@
 #include "schedulewindow.h"
 #include "ui_schedulewindow.h"
 
-ScheduleWindow::ScheduleWindow(StudyPlan& plan, std::vector<Teacher>& teachers, QWidget *parent)
+ScheduleWindow::ScheduleWindow(StudyPlan& plan, std::vector<Teacher>& teachers, std::vector<Assigment>& assigments, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::ScheduleWindow)
     , plan_(plan)
     , teachers_(teachers)
+    , assignments_(assigments)
 {
     ui->setupUi(this);
     ui->tableWidget->hide();
@@ -28,12 +29,9 @@ void ScheduleWindow::on_pushButton_menu_clicked()
     this->close();
 }
 
-
-void ScheduleWindow::on_pushButton_clicked()
+void ScheduleWindow::update_table()
 {
-    ui->tableWidget->show();
     ui->tableWidget->clear();
-
     QStringList days = { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
     QStringList hours;
 
@@ -52,12 +50,27 @@ void ScheduleWindow::on_pushButton_clicked()
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
 
+void ScheduleWindow::on_pushButton_clicked()
+{
+    ui->tableWidget->show();
+    ui->tableWidget->clear();
 
+    update_table();
+
+}
 
 void ScheduleWindow::on_pushButton_generate_schedule_clicked()
 {
+
     ui->tableWidget->clear();
     std::vector<Subject> semester_subjects = current_semester.get_subjects_semester();
+
+    NetworkGraph network_graph(teachers_, semester_subjects);
+    network_graph.max_flow();
+
+    std::vector<Section> sections = network_graph.get_final_assign_section();
+
+
 
 
 }

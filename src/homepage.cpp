@@ -6,7 +6,6 @@ HomePage::HomePage(QWidget *parent)
     , ui(new Ui::HomePage)
     , plan(StudyPlan::load_from_json(path_studyplan_json))
     , teachers(Teacher::load_from_json(path_teachers_json, plan))
-    //, assigments(Assigment::load_from_json(path_assigments_json, plan, teachers))
     , assigments(Assigment::load_from_json_assing(path_assign_json, plan, teachers))
 {
     ui->setupUi(this);
@@ -53,7 +52,7 @@ void HomePage::on_section_button_clicked()
 
 void HomePage::on_schedule_button_clicked()
 {
-    ScheduleWindow *schedule_window = new ScheduleWindow(plan, teachers);
+    ScheduleWindow *schedule_window = new ScheduleWindow(plan, teachers, assigments);
     connect(schedule_window, &ScheduleWindow::back_to_menu, this, &HomePage::show);
     schedule_window->show();
     this->hide();
