@@ -2,8 +2,8 @@
 
 using Node = Designar::Digraph<NetworkGraph::NodeData, NetworkGraph::ArcData>::Node*;
 
-NetworkGraph::NetworkGraph(const std::vector<Teacher>& teachers, const std::vector<Subject>& subjects)
-    : teachers(teachers), subjects(subjects)
+NetworkGraph::NetworkGraph(const std::vector<Teacher>& teachers_, const std::vector<Subject>& subjects_)
+    : teachers(teachers_), subjects(subjects_)
 {
     build_network();
 }
@@ -149,10 +149,24 @@ std::vector<std::tuple<std::string, std::string, int, int>> NetworkGraph::get_fi
 {
     std::vector<std::tuple<std::string, std::string, int, int>> assignments;
     std::set<std::string> assigned_subjects;
+    std::set<std::pair<int, int>> used_time_blocks;
 
     for (const auto& [subject_id, subject_node] : subject_nodes)
     {
+        int required_hours = 0;
         bool subject_assigned = false;
+        for (const auto& subject : subjects)
+        {
+            if (subject.get_id() == subject_id)
+            {
+                required_hours = subject.get_required_hours();
+                break;
+            }
+        }
+        if(required_hours == 0)
+        {
+            continue;
+        }
 
         for (auto arc_subject : graph.adjacent_arcs(subject_node))
         {
@@ -160,6 +174,7 @@ std::vector<std::tuple<std::string, std::string, int, int>> NetworkGraph::get_fi
             {
                 Node teacher_node = arc_subject->get_tgt_node();
                 std::string teacher_id = teacher_node->get_info().id;
+                std::vector<std::pair<int, int>> available_vector;
 
                 for (auto arc_time : graph.adjacent_arcs(teacher_node))
                 {
@@ -171,18 +186,36 @@ std::vector<std::tuple<std::string, std::string, int, int>> NetworkGraph::get_fi
                         int day, hour;
                         if (sscanf(time_id.c_str(), "D_%dH_%d", &day, &hour) == 2)
                         {
-                            assignments.emplace_back(subject_id, teacher_id, day, hour);
-                            subject_assigned = true;
+                            auto time_slot = std::make_pair(day, hour);
+                            if (used_time_blocks.count(time_slot) == 0)
+                            {
+                                available_vector.push_back(time_slot);
+                            }
                         }
                     }
                 }
-            }
 
+                if (available_vector.size() >= required_hours)
+                {
+                    for (int i = 0; i < required_hours && i < available_vector.size(); i++)
+                    {
+                        auto [day, hour] = available_vector[i];
+                        assignments.emplace_back(subject_id, teacher_id, day, hour);
+                        used_time_blocks.insert({day, hour});
+                    }
+                    subject_assigned = true;
+                    break;
+                }
+            }
         }
 
         if(subject_assigned)
         {
             assigned_subjects.insert(subject_id);
+        }
+        else
+        {
+            qDebug() << "No se pudo asignar la materia" << subject_id;
         }
     }
     if(assigned_subjects.size() < subject_nodes.size())
@@ -191,8 +224,21 @@ std::vector<std::tuple<std::string, std::string, int, int>> NetworkGraph::get_fi
         return {};
 
     }
-
     return assignments;
+}
+
+int NetworkGraph::get_required_hours_for_subject(const std::string& subject_id)
+{
+    for (const auto& subject : subjects)
+    {
+        if (subject.get_id() == subject_id)
+        {
+            return subject.get_required_hours();
+        }
+    }
+
+    qDebug() << "Advertencia: Materia con ID" << subject_id << "no encontrada";
+    return 0;
 }
 
 
