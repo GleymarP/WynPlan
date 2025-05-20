@@ -33,6 +33,7 @@ private:
     const QString path_studyplan_json = ":/resources/flujograma.json";
     const QString path_teachers_json = ":/resources/teachers.json";
     const QString path_assigments_json = QCoreApplication::applicationDirPath() + "/../../resources/assigments.json";
+    const QString path_assign_json = QCoreApplication::applicationDirPath() + "/../../resources/assign.json";
     StudyPlan plan;
     std::vector<Teacher> teachers;
     std::vector<Assigment> assigments;

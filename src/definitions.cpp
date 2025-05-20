@@ -546,3 +546,159 @@ std::vector<Section> Assigment::get_sections_vector()
 {
     return sections_vector;
 }
+
+bool Semester::has_subject(const std::string& subject_id, std::vector<Subject>& subjects)
+{
+    for (const auto& subject : subjects)
+    {
+        if (subject.get_id() == subject_id)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+void Assigment::save_assigments_json(std::vector<Assigment>& assignments, const QString& file_path, StudyPlan&  plan_)
+{
+    //QJsonDocument doc;
+    QFile file(file_path);
+    QJsonArray root_array;
+
+    for(Assigment& assignment : assignments)
+    {
+        bool semester_exists = false;
+        for(Semester& semester : plan_.get_semester())
+        {
+            if(semester.get_semester_name() == assignment.get_semester_name())
+            {
+                semester_exists = true;
+                break;
+            }
+        }
+
+        if(!semester_exists)
+        {
+            qWarning() << "Semestre" << QString::fromStdString(assignment.get_semester_name())
+            << "no encontrado en el plan de estudios";
+            continue;
+        }
+
+        QJsonObject assignment_obj;
+        assignment_obj["Semester"] = QString::fromStdString(assignment.get_semester_name());
+        assignment_obj["Option"] = QString::fromStdString(assignment.get_option());
+
+        QJsonArray sections_array;
+        for(Section& section : assignment.get_sections_vector())
+        {
+            QJsonObject section_obj;
+            section_obj["teacher_id"] = QString::fromStdString(section.get_teacher_section());
+            section_obj["subject_id"] = QString::fromStdString(section.get_subject_section());
+            section_obj["section_id"] = static_cast<int>(section.get_id_section());
+
+            QJsonArray blocks_array;
+            for(const auto& block : section.get_assigned_blocks())
+            {
+                QJsonObject block_obj;
+                block_obj["day"] = block.first;
+                block_obj["hour"] = block.second;
+                blocks_array.append(block_obj);
+            }
+            section_obj["time_blocks"] = blocks_array;
+            sections_array.append(section_obj);
+        }
+        assignment_obj["sections"] = sections_array;
+        root_array.append(assignment_obj);
+    }
+
+    if(file.open(QIODevice::WriteOnly | QIODevice::Truncate))
+    {
+        file.write(QJsonDocument(root_array).toJson());
+        file.close();
+    }
+    else
+    {
+        qWarning() << "No se pudo abrir el archivo para escritura:" << file_path;
+    }
+}
+std::vector<Assigment> Assigment::load_from_json_assing(const QString &file_path, StudyPlan& study_plan, std::vector<Teacher>& teachers)
+{
+    std::vector<Assigment> assignments;
+    QFile file(file_path);
+
+    if (!file.open(QIODevice::ReadOnly))
+    {
+        qWarning() << "No se pudo abrir el archivo:" << file_path;
+        return assignments;
+    }
+
+    QByteArray data = file.readAll();
+    QJsonDocument doc = QJsonDocument::fromJson(data);
+
+    if (doc.isNull() || !doc.isArray())
+    {
+        qWarning() << "Archivo JSON inválido o no es un array:" << file_path;
+        return assignments;
+    }
+
+    QJsonArray root_array = doc.array();
+    size_t section_counter = 0;
+
+    for(const QJsonValue& assignment_value : root_array)
+    {
+        if (!assignment_value.isObject()) continue;
+
+        QJsonObject assignment_obj = assignment_value.toObject();
+        Assigment assignment;
+
+        assignment.set_semester_name(assignment_obj["Semester"].toString().toStdString());
+        assignment.set_option(assignment_obj["Option"].toString().toStdString());
+
+        QJsonArray sections_array = assignment_obj["sections"].toArray();
+        std::vector<Section> sections;
+
+        for(const QJsonValue& section_value : sections_array)
+        {
+            if (!section_value.isObject()) continue;
+
+            QJsonObject section_obj = section_value.toObject();
+            Section section;
+
+            section.set_teacher_section(section_obj["teacher_id"].toString().toStdString());
+            section.set_subject_section(section_obj["subject_id"].toString().toStdString());
+            section.set_id_section(section_obj["section_id"].toInt());
+
+            QJsonArray time_blocks = section_obj["time_blocks"].toArray();
+            for(const QJsonValue& block_value : time_blocks)
+            {
+                if (!block_value.isObject()) continue;
+
+                QJsonObject block_obj = block_value.toObject();
+                int day = block_obj["day"].toInt();
+                int hour = block_obj["hour"].toInt();
+
+                section.add_timeblock(day, hour);
+
+                for (Teacher& teacher : teachers)
+                {
+                    if (teacher.get_id() == section.get_teacher_section())
+                    {
+                        TimeBlock block;
+                        block.state = BlockState::OCUPADO;
+                        block.id_subject = section.get_subject_section();
+                        teacher.set_time_block(day, hour, block);
+                        break;
+                    }
+                }
+            }
+
+            sections.push_back(section);
+            section_counter++;
+        }
+
+        assignment.set_sections_vector(sections);
+        assignments.push_back(assignment);
+    }
+
+    return assignments;
+}

@@ -45,9 +45,9 @@ int main(int argc, char *argv[])
     //Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
     if(!assignments.empty())
     {
-        NetworkGraph::save_assignment(assignments, QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", first_semester);
-        std::vector<Assigment> assign = Assigment::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", plan, teachers);
-        Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
+        //NetworkGraph::save_assignment(assignments, QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", first_semester);
+        //std::vector<Assigment> assign = Assigment::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", plan, teachers);
+        //Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
     }
 
     Semester second_semester;
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    teachers = Teacher::load_from_json(path_json_teacher, plan);
+    //teachers = Teacher::load_from_json(path_json_teacher, plan);
 
     NetworkGraph network2(teachers, second_semester.get_subjects_semester());
     auto max2 = network2.max_flow();
@@ -70,9 +70,9 @@ int main(int argc, char *argv[])
 
     if(!assignments2.empty())
     {
-        NetworkGraph::save_assignment(assignments2, QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", second_semester);
-        std::vector<Assigment> assign = Assigment::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", plan, teachers);
-        Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
+        //NetworkGraph::save_assignment(assignments2, QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", second_semester);
+        //std::vector<Assigment> assign = Assigment::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/assigments.json", plan, teachers);
+        //Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
     }
 
     for (const auto& [subject_id, teacher_id, day, hour] : assignments)

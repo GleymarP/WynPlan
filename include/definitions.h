@@ -39,6 +39,7 @@ public:
 
     std::string get_semester_name() const;
     std::vector<Subject> get_subjects_semester() const;
+    bool has_subject(const std::string& subject_id, std::vector<Subject>& subjects);
 };
 
 class StudyPlan
@@ -160,7 +161,9 @@ public:
     std::string get_option();
     std::vector<Section> get_sections_vector();
 
+    static std::vector<Assigment> load_from_json_assing(const QString &file_path, StudyPlan& study_plan, std::vector<Teacher>& teachers);
     static std::vector<Assigment> load_from_json(const QString &file_path, const StudyPlan &study_plan, std::vector<Teacher>& teachers);
+    static void save_assigments_json(std::vector<Assigment>& assignments, const QString& file_path, StudyPlan&  plan_);
 };
 
 #endif // DEFINITIONS_H
