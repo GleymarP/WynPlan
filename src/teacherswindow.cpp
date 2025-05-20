@@ -326,12 +326,26 @@ void TeachersWindow::on_button_modify_clicked()
 
     }
 
-
 }
-
 
 void TeachersWindow::on_pushButton_clicked()
 {
+    std::vector<Subject> subjects = get_all_subjects();
+    TeacherDialog dialog(this);
+    dialog.set_edit_mode(false);
+    dialog.set_available_subjects(subjects);
+
+    if(dialog.exec() == QDialog::Accepted)
+    {
+        Teacher new_teacher = dialog.get_update_teacher();
+        teachers_.push_back(new_teacher);
+        Teacher::save_teachers_json(teachers_ , QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
+        QMessageBox::information(this, "Agregado", "Nuevo profesor agregado");
+
+        current_teacher = new_teacher;
+
+        update_window();
+    }
 
 }
 

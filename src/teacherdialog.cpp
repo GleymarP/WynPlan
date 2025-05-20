@@ -80,50 +80,55 @@ void TeacherDialog::set_available_subjects(const std::vector<Subject> &all_subje
 
 void TeacherDialog::on_pushButton_ok_clicked()
 {
-    if(is_editing)
+
+    QString id = ui->lineEdit_id->text().trimmed();
+    QString name = ui->lineEdit_name->text().trimmed();
+
+    if(id.isEmpty() || name.isEmpty())
     {
-        QString id = ui->lineEdit_id->text().trimmed();
-        QString name = ui->lineEdit_name->text().trimmed();
+        QMessageBox::warning(this, "Campos vacios", "Por favor, llene todos los campos");
+        return;
+    }
 
-        if(id.isEmpty() || name.isEmpty())
+    static const QRegularExpression format_id("^[VE]-\\d{6,8}$");
+    if(!format_id.match(id).hasMatch())
+    {
+        QMessageBox::warning(this, "Formato inválido", "Ingrese una cédula válida (ej: V-12345678, E-8765432)." );
+        return;
+    }
+
+    std::vector<Subject> seleted_subjects;
+
+    for(int i = 0; i < ui->listWidget_subjects->count(); ++i)
+    {
+        QListWidgetItem* item = ui->listWidget_subjects->item(i);
+        if(item->checkState() == Qt::Checked)
         {
-            QMessageBox::warning(this, "Campos vacios", "Por favor, llene todos los campos");
-            return;
-        }
+            QString id = item->data(Qt::UserRole).toString();
 
-        static const QRegularExpression format_id("^[VE]-\\d{6,8}$");
-        if(!format_id.match(id).hasMatch())
-        {
-            QMessageBox::warning(this, "Formato inválido", "Ingrese una cédula válida (ej: V-12345678, E-8765432)." );
-            return;
-        }
-
-        std::vector<Subject> seleted_subjects;
-
-        for(int i = 0; i < ui->listWidget_subjects->count(); ++i)
-        {
-            QListWidgetItem* item = ui->listWidget_subjects->item(i);
-            if(item->checkState() == Qt::Checked)
+            auto it = std::find_if(available_subjects.begin(), available_subjects.end(), [&](const Subject& subj)
             {
-                QString id = item->data(Qt::UserRole).toString();
+                return QString::fromStdString(subj.get_id()) == id;
+            });
 
-                auto it = std::find_if(available_subjects.begin(), available_subjects.end(), [&](const Subject& subj)
-                                       {
-                                           return QString::fromStdString(subj.get_id()) == id;
-                                       });
-
-                if (it != available_subjects.end()) {
-                    seleted_subjects.push_back(*it);
-                }
+            if (it != available_subjects.end())
+            {
+                seleted_subjects.push_back(*it);
             }
         }
-
-        editable_teacher.set_subjects(seleted_subjects);
-        editable_teacher.set_id(id.toStdString());
-        editable_teacher.set_full_name(name.toStdString());
-
-        accept();
     }
+
+    if(seleted_subjects.empty())
+    {
+        QMessageBox::warning(this, "Materias vacías", "Debe seleccionar al menos una materia.");
+        return;
+    }
+
+    editable_teacher.set_subjects(seleted_subjects);
+    editable_teacher.set_id(id.toStdString());
+    editable_teacher.set_full_name(name.toStdString());
+
+    accept();
 
 }
 
