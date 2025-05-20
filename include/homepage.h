@@ -28,6 +28,8 @@ private slots:
 
     void on_schedule_button_clicked();
 
+    void reload_data();
+
 private:
     Ui::HomePage *ui;
     const QString path_studyplan_json = ":/resources/flujograma.json";

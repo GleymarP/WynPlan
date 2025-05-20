@@ -17,9 +17,15 @@ HomePage::~HomePage()
     delete ui;
 }
 
+void HomePage::reload_data()
+{
+    teachers = Teacher::load_from_json(path_teachers_json, plan);
+    assigments = Assigment::load_from_json_assing(path_assign_json, plan, teachers);
+}
 
 void HomePage::on_teacher_button_clicked()
 {
+    reload_data();
     TeachersWindow *teacher_window = new TeachersWindow(teachers, plan);
     connect(teacher_window, &TeachersWindow::back_to_menu, this, &HomePage::show);
     teacher_window->show();
@@ -37,6 +43,7 @@ void HomePage::on_studyplan_button_clicked()
 
 void HomePage::on_section_button_clicked()
 {
+    reload_data();
     SectionWindow *section_window = new SectionWindow(plan, assigments, teachers);
     connect(section_window, &SectionWindow::back_to_menu, this, &HomePage::show);
     section_window->show();

@@ -129,10 +129,10 @@ color: rgb(0, 0, 0);</string>
     </property>
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>190</y>
-      <width>701</width>
-      <height>451</height>
+      <x>380</x>
+      <y>120</y>
+      <width>971</width>
+      <height>801</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -194,10 +194,10 @@ background-color: rgb(46, 194, 126);</string>
     </property>
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>210</y>
-      <width>661</width>
-      <height>411</height>
+      <x>400</x>
+      <y>140</y>
+      <width>931</width>
+      <height>761</height>
      </rect>
     </property>
     <property name="font">

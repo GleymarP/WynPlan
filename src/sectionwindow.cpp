@@ -9,16 +9,20 @@ SectionWindow::SectionWindow(StudyPlan& plan_, std::vector<Assigment>& assigment
     , teachers(teachers_)
 {
     ui->setupUi(this);
+    ui->listWidget->clear();
     std::vector<Semester> semesters = plan_.get_semester();
+
     for(const auto &semester : semesters)
     {
         ui->comboBox_semester->addItem(QString::fromStdString(semester.get_semester_name()));
     }
+
     ui->listWidget->setSelectionMode(QAbstractItemView::NoSelection);
     ui->listWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->listWidget->setFocusPolicy(Qt::NoFocus);
     ui->pushButton_modify_section->hide();
     qApp->setStyleSheet("QMessageBox QLabel { color: black; }");
+
 }
 
 SectionWindow::~SectionWindow()
@@ -251,6 +255,12 @@ QString get_hour(int hour)
 
 void SectionWindow::on_pushButton_delete_section_clicked()
 {
+    if (assigments.empty())
+    {
+        QMessageBox::warning(this, "Advertencia", "No hay secciones para eliminar.");
+        return;
+    }
+
     sectiondialog dialog(this);
     dialog.set_option_info(current_assigment);
     if(dialog.exec() == QDialog::Accepted && dialog.is_deletion_confirmed())
@@ -269,13 +279,14 @@ void SectionWindow::on_pushButton_delete_section_clicked()
                 assigments_temp.push_back(assigment);
             }
         }
+
         assigments = assigments_temp;
         Assigment::save_assigments_json(assigments, QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan);
         Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
-        Assigment::load_from_json_assing(QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan, teachers);
         QMessageBox::information(this, "Eliminado","Sección eliminada correctamente");
         ui->listWidget->clear();
         ui->comboBox_option->clear();
+
         for(Assigment& assigment : assigments)
         {
             if(current_txt == assigment.get_semester_name())
