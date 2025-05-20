@@ -104,6 +104,10 @@ qt_add_executable(WynPlan
     include/teacherdialog.h
     src/teacherdialog.cpp
     ui/teacherdialog.ui
+    include/sectiondialog.h
+    src/sectiondialog.cpp
+    ui/sectiondialog.ui
+    resources/assign.json
 
 )
 

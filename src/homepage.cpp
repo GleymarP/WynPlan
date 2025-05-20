@@ -6,7 +6,8 @@ HomePage::HomePage(QWidget *parent)
     , ui(new Ui::HomePage)
     , plan(StudyPlan::load_from_json(path_studyplan_json))
     , teachers(Teacher::load_from_json(path_teachers_json, plan))
-    , assigments(Assigment::load_from_json(path_assigments_json, plan, teachers))
+    //, assigments(Assigment::load_from_json(path_assigments_json, plan, teachers))
+    , assigments(Assigment::load_from_json_assing(path_assign_json, plan, teachers))
 {
     ui->setupUi(this);
 }
