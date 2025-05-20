@@ -340,6 +340,29 @@ color: rgb(255, 255, 255);</string>
      <string>Ver horario</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_generate_schedule">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>360</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Montserrat</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(143, 240, 164);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Generar horario</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

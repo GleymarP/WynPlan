@@ -53,7 +53,7 @@ void HomePage::on_section_button_clicked()
 
 void HomePage::on_schedule_button_clicked()
 {
-    ScheduleWindow *schedule_window = new ScheduleWindow(plan);
+    ScheduleWindow *schedule_window = new ScheduleWindow(plan, teachers);
     connect(schedule_window, &ScheduleWindow::back_to_menu, this, &HomePage::show);
     schedule_window->show();
     this->hide();
