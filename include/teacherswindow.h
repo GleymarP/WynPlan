@@ -8,6 +8,7 @@
 #include <definitions.h>
 #include <teachereditordialog.h>
 #include <teacherdialog.h>
+#include <set>
 
 namespace Ui {
 class TeachersWindow;

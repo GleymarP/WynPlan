@@ -9,6 +9,7 @@ TeachersWindow::TeachersWindow(std::vector<Teacher>& teacher, StudyPlan& plan, Q
 {
     ui->setupUi(this);
     ui->tableWidget->hide();
+    ui->tableWidget->setEnabled(false);
     ui->button_save_changes->hide();
     ui->button_modify_states->hide();
     ui->button_delete->hide();
@@ -133,6 +134,20 @@ void TeachersWindow::update_window()
             else if(block.state == OCUPADO)
             {
                 item->setBackground(QColor(255, 107, 108));
+                QString subject_id = QString::fromStdString(block.id_subject);
+                QString subject_name;
+                for(const auto& subject : current_teacher.get_subjects())
+                {
+                    if(QString::fromStdString(subject.get_id()) == subject_id)
+                    {
+                        subject_name = QString::fromStdString(subject.get_subject_name());
+                        break;
+                    }
+                }
+                if(!subject_name.isEmpty())
+                {
+                    item->setToolTip(subject_name);
+                }
             }
             else
             {
@@ -213,6 +228,7 @@ void TeachersWindow::on_tableWidget_cellClicked(int row, int column)
 void TeachersWindow::on_button_modify_states_clicked()
 {
     edit_mode_enabled = true;
+    ui->tableWidget->setEnabled(true);
     ui->button_modify_states->setEnabled(false);
     ui->button_save_changes->show();
 
@@ -233,7 +249,10 @@ void TeachersWindow::on_button_save_changes_clicked()
 
     Teacher::save_teachers_json(teachers_, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
     edit_mode_enabled = false;
+    ui->tableWidget->setEnabled(false);
+    ui->tableWidget->clearSelection();
     ui->button_modify_states->setEnabled(true);
+
     ui->button_save_changes->hide();
 }
 
@@ -307,11 +326,53 @@ void TeachersWindow::on_button_modify_clicked()
     if(dialog.exec() == QDialog::Accepted)
     {
         Teacher update = dialog.get_update_teacher();
-        for(auto& teacher :  teachers_)
+
+
+        std::vector<std::string> removed_subject_ids;
+
+        std::vector<Subject> prev_subjects = current_teacher.get_subjects();
+        std::vector<Subject> new_subjects = update.get_subjects();
+
+        std::set<std::string> new_ids;
+
+        for(const auto&  subject : new_subjects)
+        {
+            new_ids.insert(subject.get_id());
+        }
+
+        for(const auto& old_subject : prev_subjects)
+        {
+            if(!new_ids.count(old_subject.get_id()))
+            {
+                removed_subject_ids.push_back(old_subject.get_id());
+            }
+        }
+
+        for(int day = 0; day < 7; ++day)
+        {
+            for(int hour = 0; hour < 12; ++hour)
+            {
+                TimeBlock block = current_teacher.get_timeblock(day, hour);
+                if(block.state == OCUPADO)
+                {
+                    for(const auto& removed_id : removed_subject_ids)
+                    {
+                        if(block.id_subject == removed_id)
+                        {
+                            block.state = DISPONIBLE;
+                            block.id_subject = "";
+                            update.set_time_block(day, hour, block);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        for(auto& teacher: teachers_)
         {
             if(teacher.get_id() == update.get_id())
             {
-                update.set_weekly_schedule(current_teacher.get_weekly_schedule());
                 teacher = update;
                 break;
             }
