@@ -222,7 +222,7 @@ std::vector<Section> NetworkGraph::get_final_assign_section() const
         }
         else
         {
-            qDebug() << "No se pudo asignar la materia" << subject_id;
+            //qDebug() << "No se pudo asignar la materia" << subject_id;
         }
     }
 
@@ -244,7 +244,7 @@ std::vector<Section> NetworkGraph::get_final_assign_section() const
 
     if(assigned_subjects.size() < subject_nodes.size())
     {
-        qDebug() << "No se pudieron asignar todas las materias requeridas para el semestre :c";
+        //qDebug() << "No se pudieron asignar todas las materias requeridas para el semestre :c";
         return {};
     }
 
