@@ -49,6 +49,8 @@ private slots:
 
     std::vector<Subject> get_all_subjects();
 
+
+
 private:
     Ui::TeachersWindow *ui;
     std::vector<Teacher> teachers_;

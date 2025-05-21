@@ -14,6 +14,8 @@ TeachersWindow::TeachersWindow(std::vector<Teacher>& teacher, StudyPlan& plan, Q
     ui->button_modify_states->hide();
     ui->button_delete->hide();
     ui->button_modify->hide();
+    ui->line_edit_id->setPlaceholderText("Ej: V-10716009 o Taylor Swift");
+
     connect(ui->line_edit_id, &QLineEdit::returnPressed, this, &TeachersWindow::on_search_button_clicked);
 }
 
@@ -57,6 +59,7 @@ void TeachersWindow::on_search_button_clicked()
     }
 
     QString lower_input = input.toLower();
+
     std::vector<Teacher> matches;
 
     for (const auto& teacher : teachers_)

@@ -83,6 +83,7 @@ void TeacherDialog::on_pushButton_ok_clicked()
 
     QString id = ui->lineEdit_id->text().trimmed();
     QString name = ui->lineEdit_name->text().trimmed();
+    QString name_uppercase = get_uppercase(name);
 
     if(id.isEmpty() || name.isEmpty())
     {
@@ -126,12 +127,25 @@ void TeacherDialog::on_pushButton_ok_clicked()
 
     editable_teacher.set_subjects(seleted_subjects);
     editable_teacher.set_id(id.toStdString());
-    editable_teacher.set_full_name(name.toStdString());
+    editable_teacher.set_full_name(name_uppercase.toStdString());
 
     accept();
 
 }
 
+QString TeacherDialog::get_uppercase(QString input)
+{
+    QStringList words = input.toLower().split(' ', Qt::SkipEmptyParts);
+    for(auto& word : words)
+    {
+        if(!word.isEmpty())
+        {
+            word[0] = word[0].toUpper();
+        }
+    }
+
+    return words.join(' ');
+}
 
 void TeacherDialog::on_pushButton_cancel_clicked()
 {

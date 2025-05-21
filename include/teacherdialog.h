@@ -25,7 +25,7 @@ public:
 
     void set_available_subjects(const std::vector<Subject>& all_subjects);
 
-
+    QString get_uppercase(QString input);
 
 private slots:
     void on_pushButton_ok_clicked();
