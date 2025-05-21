@@ -1,22 +1,19 @@
 #include "addsubjectdialog.h"
 #include "ui_addsubjectdialog.h"
 
-AddSubjectDialog::AddSubjectDialog(const StudyPlan& plan, QWidget *parent)
+AddSubjectDialog::AddSubjectDialog(std::vector<Semester>& semestres, std::vector<Subject>& subjects, QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::AddSubjectDialog)
-    , plan_(plan)
+    , semestres_(semestres)
+    , subjects_(subjects)
 {
     ui->setupUi(this);
+    ui->label_question->setText("¿Desea añadir esta materia?");
 }
 
 AddSubjectDialog::~AddSubjectDialog()
 {
     delete ui;
-}
-
-void AddSubjectDialog::set_info(Subject& subject)
-{
-    ui->label_question->setText("¿Desea añadir esta materia?");
 }
 
 Subject AddSubjectDialog::get_subject()
@@ -26,8 +23,8 @@ Subject AddSubjectDialog::get_subject()
 
 void AddSubjectDialog::on_pushButton_ok_clicked()
 {
-    QString id = ui->textEdit_id_subject->toPlainText().trimmed();
-    QString name = ui->textEdit_subject_name->toPlainText().trimmed();
+    QString id = ui->textEdit_id_subject->toPlainText().simplified();
+    QString name = ui->textEdit_subject_name->toPlainText().simplified();
 
     if(id.isEmpty() || name.isEmpty())
     {
@@ -39,7 +36,10 @@ void AddSubjectDialog::on_pushButton_ok_clicked()
     std::string text_name = name.toStdString();
     bool found = false;
 
-    for(Semester& semester : plan_.get_semester())
+    ui->label_aviso_repetido_id->clear();
+    ui->label_aviso_repetido_nombre->clear();
+
+    for(Semester& semester : semestres_)
     {
         for(Subject& subject : semester.get_subjects_semester())
         {
@@ -47,14 +47,39 @@ void AddSubjectDialog::on_pushButton_ok_clicked()
             {
                 ui->label_aviso_repetido_id->setText("Código de materia repetido");
                 found = true;
+                break;
             }
             if(text_name == subject.get_subject_name())
             {
                 ui->label_aviso_repetido_nombre->setText("Nombre de materia repetido");
-                found = true;;
+                found = true;
+                break;
+            }
+        }
+        if(found == true)
+        {
+            break;
+        }
+    }
+    if(found != true)
+    {
+        for(Subject& subject : subjects_)
+        {
+            if(text_id == subject.get_id())
+            {
+                ui->label_aviso_repetido_id->setText("Código de materia repetido en este semestre");
+                found = true;
+                break;
+            }
+            if(text_name == subject.get_subject_name())
+            {
+                ui->label_aviso_repetido_nombre->setText("Nombre de materia repetido en este semestre");
+                found = true;
+                break;
             }
         }
     }
+
     if(found == true)
     {
         QMessageBox::warning(this, "Campos incorrectos", "Por favor, cambie el código y/o el  nombre de la materia");

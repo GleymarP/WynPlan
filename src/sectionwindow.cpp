@@ -83,7 +83,6 @@ void SectionWindow::on_comboBox_option_currentTextChanged(const QString &arg1)
 
             for(Section&  section : sections)
             {
-                ui->listWidget->addItem("Id section: " + QString::number(section.get_id_section()));
                 for(Subject& subject : semester_value.get_subjects_semester())
                 {
                     if(subject.get_id() == section.get_subject_section())
