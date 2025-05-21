@@ -6,7 +6,7 @@ ScheduleWindow::ScheduleWindow(StudyPlan& plan, std::vector<Teacher>& teachers, 
     , ui(new Ui::ScheduleWindow)
     , plan_(plan)
     , teachers_(teachers)
-    , assignments_(assigments)
+    , assignments(assigments)
 {
     ui->setupUi(this);
     ui->tableWidget->hide();

@@ -108,6 +108,13 @@ qt_add_executable(WynPlan
     src/sectiondialog.cpp
     ui/sectiondialog.ui
     resources/assign.json
+    include/inicialconfig.h
+    src/inicialconfig.cpp
+    ui/inicialconfig.ui
+    include/addsubjectdialog.h
+    src/addsubjectdialog.cpp
+    ui/addsubjectdialog.ui
+
 
 )
 

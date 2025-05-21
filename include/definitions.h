@@ -56,6 +56,7 @@ public:
     std::vector<Semester> get_semester() const;
 
     static StudyPlan load_from_json(const QString &filePath);
+    static void save_studyplan_json(const StudyPlan& studyplan, const QString& file_path);
 };
 
 enum BlockState
