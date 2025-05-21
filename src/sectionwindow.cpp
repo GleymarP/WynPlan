@@ -25,7 +25,7 @@ SectionWindow::SectionWindow(StudyPlan& plan_, std::vector<Assigment>& assigment
     ui->listWidget->setSelectionMode(QAbstractItemView::NoSelection);
     ui->listWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->listWidget->setFocusPolicy(Qt::NoFocus);
-    ui->pushButton_modify_section->hide();
+
     qApp->setStyleSheet("QMessageBox QLabel { color: black; }");
 
 }

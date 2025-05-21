@@ -37,40 +37,55 @@ bool TeachersWindow::validate_id(const QString &id)
 void TeachersWindow::on_search_button_clicked()
 {
 
-    QString input_id = ui->line_edit_id->text().trimmed();
+    QString input = ui->line_edit_id->text().trimmed();
 
-    if (input_id.isEmpty()) {
-        QMessageBox::warning(this, "Error", "Ingrese una cédula.");
-        return;
-    }
-
-    if (!validate_id(input_id)) {
-        QMessageBox::warning(this, "Formato inválido", "Ingrese una cédula válida (ej: V-12345678, E-8765432).");
-        return;
-    }
-
-
-    bool found_id = false;
-    Teacher found_teacher;
-
-    for(const auto& teacher: teachers_)
+    if (input.isEmpty())
     {
-        if(QString::fromStdString(teacher.get_id()) == input_id)
+        QMessageBox::warning(this, "Error", "Ingrese una cédula o nombre.");
+        return;
+    }
+
+    for (const auto& teacher : teachers_)
+    {
+        if (QString::fromStdString(teacher.get_id()) == input)
         {
-            found_id = true;
-            found_teacher = teacher;
+            current_teacher = teacher;
+            update_window();
+            ui->line_edit_id->clear();
+            return;
         }
     }
 
-    if(!found_id)
+    QString lower_input = input.toLower();
+    std::vector<Teacher> matches;
+
+    for (const auto& teacher : teachers_)
     {
-        QMessageBox::information(this, "No encontrado", "No se encontró un profesor con esa cédula.");
+        QString name = QString::fromStdString(teacher.get_full_name()).toLower();
+        if (name.contains(lower_input))
+        {
+            matches.push_back(teacher);
+        }
+    }
+
+    if (matches.empty())
+    {
+        QMessageBox::information(this, "No encontrado", "No se encontró un profesor con esa cédula o nombre.");
         return;
+    }
+    else if (matches.size() == 1)
+    {
+        current_teacher = matches[0];
+        update_window();
     }
     else
     {
-        current_teacher = found_teacher;
-        update_window();
+        QString message = "Se encontraron múltiples coincidencias:\n\n";
+        for (const auto& t : matches)
+        {
+            message += QString::fromStdString(t.get_full_name()) + " (" + QString::fromStdString(t.get_id()) + ")\n";
+        }
+        QMessageBox::information(this, "Múltiples coincidencias", message);
     }
 
     ui->line_edit_id->clear();
