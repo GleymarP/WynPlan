@@ -17,11 +17,15 @@ HomePage::HomePage(QWidget *parent)
         ui->studyplan_button->setEnabled(false);
         ui->config_button->show();
         ui->config_label->show();
+        ui->label_warning->show();
+        ui->label_warning->setText("No hay un plan de estudio agregado, ve a Añadir Plan de Estudio");
     }
     else if(teachers.empty())
     {
         ui->config_button->hide();
         ui->config_label->hide();
+        ui->label_warning->show();
+        ui->label_warning->setText("No hay profesores agregados, ve a la parte de profesor para añadir");
         ui->schedule_button->setEnabled(false);
         ui->teacher_button->setEnabled(true);
         ui->section_button->setEnabled(false);
@@ -31,6 +35,7 @@ HomePage::HomePage(QWidget *parent)
     {
         ui->config_button->hide();
         ui->config_label->hide();
+        ui->label_warning->hide();
         ui->schedule_button->setEnabled(true);
         ui->teacher_button->setEnabled(true);
         ui->section_button->setEnabled(true);
@@ -100,6 +105,7 @@ void HomePage::handle_back_to_menu()
 {
     this->show();
     plan = StudyPlan::load_from_json(path_studyplan_json);
+    reload_data();
     if(plan.get_semester().empty())
     {
         ui->schedule_button->setEnabled(false);
@@ -108,11 +114,15 @@ void HomePage::handle_back_to_menu()
         ui->studyplan_button->setEnabled(false);
         ui->config_button->show();
         ui->config_label->show();
+        ui->label_warning->show();
+        ui->label_warning->setText("No hay un plan de estudio agregado, ve a Añadir Plan de Estudio");
     }
     else if(teachers.empty())
     {
         ui->config_button->hide();
         ui->config_label->hide();
+        ui->label_warning->show();
+        ui->label_warning->setText("No hay profesores agregados, ve a la parte de profesor para añadir");
         ui->schedule_button->setEnabled(false);
         ui->teacher_button->setEnabled(true);
         ui->section_button->setEnabled(false);
@@ -122,6 +132,7 @@ void HomePage::handle_back_to_menu()
     {
         ui->config_button->hide();
         ui->config_label->hide();
+        ui->label_warning->hide();
         ui->schedule_button->setEnabled(true);
         ui->teacher_button->setEnabled(true);
         ui->section_button->setEnabled(true);

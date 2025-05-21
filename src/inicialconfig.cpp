@@ -21,6 +21,7 @@ InicialConfig::InicialConfig(StudyPlan& plan, QWidget *parent)
     ui->listWidget->hide();
     ui->label_save_materias->hide();
     ui->pushButton_save_semester->hide();
+    ui->pushButton_delete_subject->hide();
 }
 
 InicialConfig::~InicialConfig()
@@ -35,7 +36,7 @@ void InicialConfig::on_pushButton_add_subject_clicked()
     {
         Subject new_subject = dialog.get_subject();
         subjects_vector.push_back(new_subject);
-        QMessageBox::information(this, "Agregado", "Nueva materia agregadaa");
+        QMessageBox::information(this, "Agregado", "Nueva materia agregada");
         update_window();
     }
 }
@@ -82,7 +83,6 @@ void InicialConfig::on_pushButton_save_n_semesters_clicked()
     }
 }
 
-
 void InicialConfig::on_pushButton_save_semester_clicked()
 {
     if(subjects_vector.empty())
@@ -114,7 +114,6 @@ void InicialConfig::on_pushButton_save_semester_clicked()
             emit back_to_menu();
             this->close();
         }
-
     }
 }
 
@@ -140,6 +139,45 @@ void InicialConfig::update_next()
     {
         ui->listWidget->addItem(QString::fromStdString(subject.get_subject_name()));
     }
+    ui->pushButton_delete_subject->hide();
+}
 
+void InicialConfig::on_pushButton_delete_subject_clicked()
+{
+    QListWidgetItem *item = ui->listWidget->currentItem();
+
+    if(subjects_vector.empty())
+    {
+        QMessageBox::warning(this, "No hay materias", "No hay materias para eliminar");
+        return;
+    }
+
+    if(!item)
+    {
+        QMessageBox::warning(this, "Ninguna materia seleccionada", "Por favor, seleccione una materia para eliminar");
+        return;
+    }
+
+    QString textoQString = item->text().trimmed();
+    QMessageBox::StandardButton reply = QMessageBox::question(this, "Eliminar materia", QString("¿Desea eliminar esta materia: " + textoQString + " ?"), QMessageBox::Yes | QMessageBox::No);
+    if(reply == QMessageBox::Yes)
+    {
+        std::vector<Subject> new_subjects;
+        for(Subject& subject : subjects_vector)
+        {
+            if(textoQString.toStdString() != subject.get_subject_name())
+            {
+                new_subjects.push_back(subject);
+            }
+        }
+        subjects_vector = std::move(new_subjects);
+        delete ui->listWidget->takeItem(ui->listWidget->row(item));
+    }
+}
+
+
+void InicialConfig::on_listWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
+{
+    ui->pushButton_delete_subject->show();
 }
 
