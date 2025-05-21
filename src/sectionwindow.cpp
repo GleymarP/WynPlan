@@ -281,8 +281,12 @@ void SectionWindow::on_pushButton_delete_section_clicked()
         }
 
         assigments = assigments_temp;
+
         Assigment::save_assigments_json(assigments, QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan);
+        assigments = Assigment::load_from_json_assing(QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan, teachers);
+        teachers = Teacher::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/teachers.json", plan);
         Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
+
         QMessageBox::information(this, "Eliminado","Sección eliminada correctamente");
         ui->listWidget->clear();
         ui->comboBox_option->clear();

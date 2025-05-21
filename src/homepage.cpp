@@ -52,6 +52,7 @@ void HomePage::on_section_button_clicked()
 
 void HomePage::on_schedule_button_clicked()
 {
+    reload_data();
     ScheduleWindow *schedule_window = new ScheduleWindow(plan, teachers, assigments);
     connect(schedule_window, &ScheduleWindow::back_to_menu, this, &HomePage::show);
     schedule_window->show();

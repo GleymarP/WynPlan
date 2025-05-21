@@ -38,6 +38,7 @@ void ScheduleWindow::update_table()
 {
     ui->tableWidget->hide();
     ui->tableWidget->clear();
+    ui->pushButton_read->show();
 
     bool found_assigment = false;
 
@@ -162,7 +163,16 @@ void ScheduleWindow::on_pushButton_generate_schedule_clicked()
         assigment.set_sections_vector(sections);
         assigment.set_semester_name(current_semester.get_semester_name());
 
-        int number_option = assignments_.size() + 1;
+        int number_option = 1;
+
+        for(auto& assigment : assignments_)
+        {
+            if(assigment.get_semester_name() == current_semester.get_semester_name())
+            {
+                ++number_option;
+            }
+        }
+
         current_option = "Opción " + std::to_string(number_option);
         assigment.set_option(current_option);
 
