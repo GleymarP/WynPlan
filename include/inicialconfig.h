@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <addsubjectdialog.h>
+#include <QListWidget>
+#include <QListWidgetItem>
 
 namespace Ui {
 class InicialConfig;
@@ -24,10 +26,10 @@ signals:
 
 private slots:
     void on_pushButton_add_subject_clicked();
-
     void on_pushButton_save_n_semesters_clicked();
-
     void on_pushButton_save_semester_clicked();
+    void on_pushButton_delete_subject_clicked();
+    void on_listWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
 
 private:
     Ui::InicialConfig *ui;

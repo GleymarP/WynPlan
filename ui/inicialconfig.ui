@@ -350,6 +350,30 @@ color: rgb(243, 243, 255);</string>
      <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_delete_subject">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>800</y>
+      <width>241</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Montserrat</family>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(192, 28, 40);
+color: rgb(243, 243, 255);</string>
+    </property>
+    <property name="text">
+     <string>Eliminar Materia</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
