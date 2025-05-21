@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     QString path_assign_json = QCoreApplication::applicationDirPath() + "/../../resources/assign.json";
     std::vector<Assigment> assign = Assigment::load_from_json_assing(path_assign_json, plan, teachers);
 
-    auto semesters = plan.get_semester();
+    /*auto semesters = plan.get_semester();
     Semester first_semester;
 
     for(const auto& semester : semesters)
@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
             second_semester = semester;
             break;
         }
-    }
+    }*/
 
 
     HomePage homepage;
