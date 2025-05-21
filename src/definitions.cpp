@@ -1,9 +1,5 @@
 #include "definitions.h"
-#include <QFile>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QJsonArray>
-#include <QApplication>
+
 
 //Subjects
 void Subject::set_id(std::string id_)
