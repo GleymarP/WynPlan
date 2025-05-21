@@ -9,5 +9,6 @@
         <file>resources/images/teacher.png</file>
         <file>resources/images/search.png</file>
         <file>resources/images/frame.png</file>
+        <file>resources/images/insight-alt.png</file>
     </qresource>
 </RCC>
