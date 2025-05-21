@@ -9,6 +9,18 @@ HomePage::HomePage(QWidget *parent)
     , assigments(Assigment::load_from_json_assing(path_assign_json, plan, teachers))
 {
     ui->setupUi(this);
+    if(plan.get_semester().empty())
+    {
+        ui->schedule_button->setEnabled(false);
+        ui->teacher_button->setEnabled(false);
+        ui->section_button->setEnabled(false);
+        ui->studyplan_button->setEnabled(false);
+    }
+    else
+    {
+        ui->config_button->hide();
+        ui->config_label->hide();
+    }
 }
 
 HomePage::~HomePage()
@@ -56,6 +68,16 @@ void HomePage::on_schedule_button_clicked()
     ScheduleWindow *schedule_window = new ScheduleWindow(plan, teachers, assigments);
     connect(schedule_window, &ScheduleWindow::back_to_menu, this, &HomePage::show);
     schedule_window->show();
+    this->hide();
+}
+
+
+void HomePage::on_config_button_clicked()
+{
+    reload_data();
+    InicialConfig *incial_window = new InicialConfig(plan);
+    connect(incial_window, &InicialConfig::back_to_menu, this, &HomePage::show);
+    incial_window->show();
     this->hide();
 }
 

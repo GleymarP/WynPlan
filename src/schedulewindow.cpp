@@ -6,7 +6,7 @@ ScheduleWindow::ScheduleWindow(StudyPlan& plan, std::vector<Teacher>& teachers, 
     , ui(new Ui::ScheduleWindow)
     , plan_(plan)
     , teachers_(teachers)
-    , assignments(assigments)
+    , assignments_(assigments)
 {
     ui->setupUi(this);
     ui->tableWidget->hide();
@@ -21,6 +21,7 @@ ScheduleWindow::ScheduleWindow(StudyPlan& plan, std::vector<Teacher>& teachers, 
     {
         ui->pushButton_read->hide();
     }
+    qApp->setStyleSheet("QMessageBox QLabel { color: black; }");
 }
 
 ScheduleWindow::~ScheduleWindow()

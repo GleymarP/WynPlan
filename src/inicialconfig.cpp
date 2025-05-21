@@ -30,7 +30,7 @@ InicialConfig::~InicialConfig()
 
 void InicialConfig::on_pushButton_add_subject_clicked()
 {
-    AddSubjectDialog dialog(plan_, this);
+    AddSubjectDialog dialog(semesters_vector, subjects_vector, this);
     if(dialog.exec() == QDialog::Accepted)
     {
         Subject new_subject = dialog.get_subject();
@@ -38,24 +38,6 @@ void InicialConfig::on_pushButton_add_subject_clicked()
         QMessageBox::information(this, "Agregado", "Nueva materia agregadaa");
         update_window();
     }
-    /*
-     *     std::vector<Subject> subjects = get_all_subjects();
-    TeacherDialog dialog(this);
-    dialog.set_edit_mode(false);
-    dialog.set_available_subjects(subjects);
-
-    if(dialog.exec() == QDialog::Accepted)
-    {
-        Teacher new_teacher = dialog.get_update_teacher();
-        teachers_.push_back(new_teacher);
-        Teacher::save_teachers_json(teachers_ , QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
-        QMessageBox::information(this, "Agregado", "Nuevo profesor agregado");
-
-        current_teacher = new_teacher;
-
-        update_window();
-    }
-     */
 }
 
 void InicialConfig::update_window()
