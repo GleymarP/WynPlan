@@ -9,6 +9,11 @@ SectionWindow::SectionWindow(StudyPlan& plan_, std::vector<Assigment>& assigment
     , teachers(teachers_)
 {
     ui->setupUi(this);
+    ui->listWidget->hide();
+    ui->label_4->hide();
+    ui->label_info->hide();
+    ui->pushButton_delete_section->hide();
+
     ui->listWidget->clear();
     std::vector<Semester> semesters = plan_.get_semester();
 
@@ -57,11 +62,13 @@ void SectionWindow::on_comboBox_option_currentTextChanged(const QString &arg1)
     QString current_semester = ui->comboBox_semester->currentText();
     std::string text_changed = arg1.toStdString();
     ui->listWidget->clear();
+    bool found_assignment = false;
 
     for(Assigment& assigment : assigments)
     {
         if(text_changed == assigment.get_option() && assigment.get_semester_name() == current_semester.toStdString())
         {
+            found_assignment = true;
             current_assigment = assigment;
             Semester semester_value;
 
@@ -155,6 +162,22 @@ void SectionWindow::on_comboBox_option_currentTextChanged(const QString &arg1)
                 ui->listWidget->addItem("");
             }
         }
+    }
+
+    if(found_assignment)
+    {
+        ui->listWidget->show();
+        ui->label_4->show();
+        ui->pushButton_delete_section->show();
+        ui->label_info->hide();
+    }
+    else
+    {
+        ui->listWidget->hide();
+        ui->label_4->hide();
+        ui->pushButton_delete_section->hide();
+        ui->label_info->show();
+
     }
 }
 

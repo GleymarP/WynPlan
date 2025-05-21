@@ -144,7 +144,7 @@ void ScheduleWindow::update_table()
         QMessageBox::information(this, "Sin asignaciones", "Este semestre no tiene asignaciones para la opción seleccionada.");
     }
 
-    ui->tableWidget->setVisible(found_assigment);
+    //ui->tableWidget->setVisible(found_assigment);
 }
 
 

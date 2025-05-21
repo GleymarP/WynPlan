@@ -2,8 +2,8 @@
     {
         "cedula": "V-10000001",
         "materias": [
-            1004,
-            1012
+            "1004",
+            "1012"
         ],
         "nombre": "Derwis Rivas",
         "weekly_schedule": [
@@ -362,8 +362,8 @@
     {
         "cedula": "V-10000002",
         "materias": [
-            1004,
-            1018
+            "1004",
+            "1018"
         ],
         "nombre": "Ferrer Maria",
         "weekly_schedule": [
@@ -722,8 +722,8 @@
     {
         "cedula": "V-10000003",
         "materias": [
-            1004,
-            1018
+            "1004",
+            "1018"
         ],
         "nombre": "Rosales Richard",
         "weekly_schedule": [
@@ -1082,8 +1082,8 @@
     {
         "cedula": "V-10000004",
         "materias": [
-            1004,
-            1018
+            "1004",
+            "1018"
         ],
         "nombre": "Cedeño Moisés",
         "weekly_schedule": [
@@ -1442,8 +1442,8 @@
     {
         "cedula": "V-10000005",
         "materias": [
-            1004,
-            1012
+            "1004",
+            "1012"
         ],
         "nombre": "Domínguez Andrea",
         "weekly_schedule": [
@@ -1802,7 +1802,7 @@
     {
         "cedula": "V-10000006",
         "materias": [
-            1004
+            "1004"
         ],
         "nombre": "José Prieto",
         "weekly_schedule": [
@@ -2161,7 +2161,7 @@
     {
         "cedula": "V-10000007",
         "materias": [
-            1004
+            "1004"
         ],
         "nombre": "Lorena Zambrano",
         "weekly_schedule": [
@@ -2520,8 +2520,8 @@
     {
         "cedula": "V-10000008",
         "materias": [
-            1004,
-            1012
+            "1004",
+            "1012"
         ],
         "nombre": "Vargas Wilmer",
         "weekly_schedule": [
@@ -2880,7 +2880,7 @@
     {
         "cedula": "V-10000009",
         "materias": [
-            1011
+            "1011"
         ],
         "nombre": "Orielys Soto",
         "weekly_schedule": [
@@ -3239,7 +3239,7 @@
     {
         "cedula": "V-10000010",
         "materias": [
-            1011
+            "1011"
         ],
         "nombre": "Libardo Zerpa",
         "weekly_schedule": [
@@ -3598,7 +3598,7 @@
     {
         "cedula": "V-10000011",
         "materias": [
-            1017
+            "1017"
         ],
         "nombre": "Leonardo Lacruz",
         "weekly_schedule": [
@@ -3957,7 +3957,7 @@
     {
         "cedula": "V-10000012",
         "materias": [
-            1052
+            "1052"
         ],
         "nombre": "Liliana Chirinos",
         "weekly_schedule": [
@@ -4316,7 +4316,7 @@
     {
         "cedula": "V-10000013",
         "materias": [
-            1052
+            "1052"
         ],
         "nombre": "Gerardo Nava",
         "weekly_schedule": [
@@ -4675,7 +4675,7 @@
     {
         "cedula": "V-10000014",
         "materias": [
-            1006
+            "1006"
         ],
         "nombre": "Juan Sebastian Diaz",
         "weekly_schedule": [
@@ -5034,7 +5034,7 @@
     {
         "cedula": "V-10000015",
         "materias": [
-            1006
+            "1006"
         ],
         "nombre": "Pedro Araujo",
         "weekly_schedule": [
@@ -5393,7 +5393,7 @@
     {
         "cedula": "V-10000016",
         "materias": [
-            1006
+            "1006"
         ],
         "nombre": "Jorge Calderon",
         "weekly_schedule": [
@@ -5752,7 +5752,7 @@
     {
         "cedula": "V-10000017",
         "materias": [
-            1006
+            "1006"
         ],
         "nombre": "Andres Puerta",
         "weekly_schedule": [
@@ -6111,7 +6111,7 @@
     {
         "cedula": "V-10000018",
         "materias": [
-            1053
+            "1053"
         ],
         "nombre": "Juan Cardillo",
         "weekly_schedule": [
@@ -6470,7 +6470,7 @@
     {
         "cedula": "V-10000019",
         "materias": [
-            1056
+            "1056"
         ],
         "nombre": "Luis Vizcaya",
         "weekly_schedule": [
@@ -6829,7 +6829,7 @@
     {
         "cedula": "V-10000020",
         "materias": [
-            1054
+            "1054"
         ],
         "nombre": "Jesus Perez",
         "weekly_schedule": [
@@ -7188,7 +7188,7 @@
     {
         "cedula": "V-10000021",
         "materias": [
-            1055
+            "1055"
         ],
         "nombre": "Alex Romero",
         "weekly_schedule": [
@@ -7547,7 +7547,7 @@
     {
         "cedula": "V-10000022",
         "materias": [
-            1055
+            "1055"
         ],
         "nombre": "Junior Altamira",
         "weekly_schedule": [
@@ -7906,7 +7906,7 @@
     {
         "cedula": "V-10000023",
         "materias": [
-            1057
+            "1057"
         ],
         "nombre": "Ronald Sulbaran",
         "weekly_schedule": [
@@ -8265,7 +8265,7 @@
     {
         "cedula": "V-10000024",
         "materias": [
-            1039
+            "1039"
         ],
         "nombre": "Olivia Rodrigo",
         "weekly_schedule": [

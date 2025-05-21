@@ -271,7 +271,6 @@ std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const Stu
         for(const QJsonValue& subject_value : subjects_array)
         {
             std::string subject_id = subject_value.toString().toStdString();
-            //QString::number(subject_value.toInt()).toStdString();
             Subject subject_info;
             bool subject_found = false;
 
