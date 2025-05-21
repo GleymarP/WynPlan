@@ -130,6 +130,47 @@ StudyPlan StudyPlan::load_from_json(const QString &filePath)
     plan.set_semester(semesters);
     return plan;
 }
+void StudyPlan::save_studyplan_json(const StudyPlan& plan, const QString& file_path)
+{
+    QJsonObject root;
+    QJsonObject plan_obj;
+
+    plan_obj["nombre"] = QString::fromStdString(plan.get_degree());
+
+    QJsonObject semesters_obj;
+
+    for (Semester& semester : plan.get_semester())
+    {
+        QJsonArray subjects_array;
+
+        for (Subject& subject : semester.get_subjects_semester())
+        {
+            QJsonObject subject_obj;
+            subject_obj["nombre"] = QString::fromStdString(subject.get_subject_name());
+            subject_obj["codigo"] = QString::fromStdString(subject.get_id());
+            subject_obj["horas"] = subject.get_required_hours();
+
+            subjects_array.append(subject_obj);
+        }
+
+        semesters_obj[QString::fromStdString(semester.get_semester_name())] = subjects_array;
+    }
+
+    plan_obj["semestres"] = semesters_obj;
+
+    root["plan_de_estudio"] = plan_obj;
+
+    QFile file(file_path);
+    if (!file.open(QIODevice::WriteOnly))
+    {
+        qWarning() << "No se pudo abrir el archivo para escritura:" << file_path;
+        return;
+    }
+
+    QJsonDocument doc(root);
+    file.write(doc.toJson());
+    file.close();
+}
 
 //Teacher
 void Teacher::set_id(std::string id_)
