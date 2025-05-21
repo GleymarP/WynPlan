@@ -15,11 +15,26 @@ HomePage::HomePage(QWidget *parent)
         ui->teacher_button->setEnabled(false);
         ui->section_button->setEnabled(false);
         ui->studyplan_button->setEnabled(false);
+        ui->config_button->show();
+        ui->config_label->show();
+    }
+    else if(teachers.empty())
+    {
+        ui->config_button->hide();
+        ui->config_label->hide();
+        ui->schedule_button->setEnabled(false);
+        ui->teacher_button->setEnabled(true);
+        ui->section_button->setEnabled(false);
+        ui->studyplan_button->setEnabled(true);
     }
     else
     {
         ui->config_button->hide();
         ui->config_label->hide();
+        ui->schedule_button->setEnabled(true);
+        ui->teacher_button->setEnabled(true);
+        ui->section_button->setEnabled(true);
+        ui->studyplan_button->setEnabled(true);
     }
 }
 
@@ -38,7 +53,7 @@ void HomePage::on_teacher_button_clicked()
 {
     reload_data();
     TeachersWindow *teacher_window = new TeachersWindow(teachers, plan);
-    connect(teacher_window, &TeachersWindow::back_to_menu, this, &HomePage::show);
+    connect(teacher_window, &TeachersWindow::back_to_menu, this, &HomePage::handle_back_to_menu);
     teacher_window->show();
     this->hide();
 }
@@ -76,8 +91,42 @@ void HomePage::on_config_button_clicked()
 {
     reload_data();
     InicialConfig *incial_window = new InicialConfig(plan);
-    connect(incial_window, &InicialConfig::back_to_menu, this, &HomePage::show);
+    connect(incial_window, &InicialConfig::back_to_menu, this, &HomePage::handle_back_to_menu);
     incial_window->show();
     this->hide();
 }
+
+void HomePage::handle_back_to_menu()
+{
+    this->show();
+    plan = StudyPlan::load_from_json(path_studyplan_json);
+    if(plan.get_semester().empty())
+    {
+        ui->schedule_button->setEnabled(false);
+        ui->teacher_button->setEnabled(false);
+        ui->section_button->setEnabled(false);
+        ui->studyplan_button->setEnabled(false);
+        ui->config_button->show();
+        ui->config_label->show();
+    }
+    else if(teachers.empty())
+    {
+        ui->config_button->hide();
+        ui->config_label->hide();
+        ui->schedule_button->setEnabled(false);
+        ui->teacher_button->setEnabled(true);
+        ui->section_button->setEnabled(false);
+        ui->studyplan_button->setEnabled(true);
+    }
+    else
+    {
+        ui->config_button->hide();
+        ui->config_label->hide();
+        ui->schedule_button->setEnabled(true);
+        ui->teacher_button->setEnabled(true);
+        ui->section_button->setEnabled(true);
+        ui->studyplan_button->setEnabled(true);
+    }
+}
+
 

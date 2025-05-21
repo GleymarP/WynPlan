@@ -270,7 +270,8 @@ std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const Stu
 
         for(const QJsonValue& subject_value : subjects_array)
         {
-            std::string subject_id = QString::number(subject_value.toInt()).toStdString();
+            std::string subject_id = subject_value.toString().toStdString();
+            //QString::number(subject_value.toInt()).toStdString();
             Subject subject_info;
             bool subject_found = false;
 
@@ -345,7 +346,7 @@ void Teacher::save_teachers_json(const std::vector<Teacher>& teachers, const QSt
         QJsonArray materias_array;
         for (const auto& subject : teacher.get_subjects())
         {
-            materias_array.append(QString::fromStdString(subject.get_id()).toInt());
+            materias_array.append(QString::fromStdString(subject.get_id()));
         }
         teacher_obj["materias"] = materias_array;
         QJsonArray weekly_schedule_array;
