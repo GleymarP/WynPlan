@@ -5,6 +5,7 @@
 #include <studyplanwindow.h>
 #include <QStandardPaths>
 #include <QDir>
+#include <QPalette>
 
 int main(int argc, char *argv[])
 {
@@ -19,14 +20,14 @@ int main(int argc, char *argv[])
     QString path_assign_json = QCoreApplication::applicationDirPath() + "/../../resources/assign.json";
     std::vector<Assigment> assign = Assigment::load_from_json_assing(path_assign_json, plan, teachers);
 
-    /*
+
     QPalette palette;
     palette.setColor(QPalette::Window, Qt::white);
     palette.setColor(QPalette::WindowText, Qt::black);
     palette.setColor(QPalette::Base, Qt::white);
     palette.setColor(QPalette::Text, Qt::black);
     palette.setColor(QPalette::ButtonText, Qt::black);
-    a.setPalette(palette);*/
+    a.setPalette(palette);
 
 
     HomePage homepage;
