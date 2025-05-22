@@ -37,9 +37,6 @@ public:
     int max_flow();
     std::vector<Section> get_final_assign_section() const;
 
-    //borrar luego - test
-    void print_graph() const;
-
 private:
     FlowGraph graph;
 

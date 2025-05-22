@@ -111,13 +111,13 @@ int NetworkGraph::max_flow()
 
     while(bfs(parent))
     {
-        int path_flow = INT_MAX;
+        int bottleneck = INT_MAX;
 
         for(Node v = sink_node; v != source_node; v = parent[v])
         {
             Node u = parent[v];
             auto arc = graph.search_arc(u, v);
-            path_flow = std::min(path_flow, arc->get_info().capacity - arc->get_info().flow);
+            bottleneck = std::min(bottleneck, arc->get_info().capacity - arc->get_info().flow);
 
         }
 
@@ -125,20 +125,20 @@ int NetworkGraph::max_flow()
         {
             Node u = parent[v];
             auto arc = graph.search_arc(u, v);
-            arc->get_info().flow += path_flow;
+            arc->get_info().flow += bottleneck;
 
             if(auto rev = graph.search_arc(v, u))
             {
-                rev->get_info().flow -= path_flow;
+                rev->get_info().flow -= bottleneck;
 
             }
             else
             {
-                graph.insert_arc(v, u, {0, -path_flow});
+                graph.insert_arc(v, u, {0, -bottleneck});
             }
         }
 
-        total_flow += path_flow;
+        total_flow += bottleneck;
     }
 
     return total_flow;
@@ -220,10 +220,6 @@ std::vector<Section> NetworkGraph::get_final_assign_section() const
         {
             assigned_subjects.insert(subject_id);
         }
-        else
-        {
-            //qDebug() << "No se pudo asignar la materia" << subject_id;
-        }
     }
 
     for (auto& [teacher_subject, blocks] : teacher_subject_blocks)
@@ -244,37 +240,8 @@ std::vector<Section> NetworkGraph::get_final_assign_section() const
 
     if(assigned_subjects.size() < subject_nodes.size())
     {
-        //qDebug() << "No se pudieron asignar todas las materias requeridas para el semestre :c";
         return {};
     }
 
     return sections;
-}
-
-void NetworkGraph::print_graph() const
-{
-
-    qDebug() << "\n=== ESTRUCTURA DEL GRAFO ===";
-    qDebug() << "Nodos totales:" << graph.get_num_nodes();
-    qDebug() << "Arcos totales:" << graph.get_num_arcs();
-
-    qDebug() << "\nNODOS:";
-    graph.for_each_node([&](auto node) {
-        const auto& info = node->get_info();
-        qDebug() << "Label:" << QString::fromStdString(info.id)
-                 << "| Cap:" << info.capacity
-                 << "| Flow:" << info.flow;
-    });
-
-    qDebug() << "\nARCOS:";
-    graph.for_each_arc([&](auto arc) {
-        const auto& info = arc->get_info();
-        const auto& src_label = arc->get_src_node()->get_info().id;
-        const auto& tgt_label = arc->get_tgt_node()->get_info().id;
-
-        qDebug() << QString::fromStdString(src_label)
-                 << "->" << QString::fromStdString(tgt_label)
-                 << "[Cap:" << info.capacity
-                 << ", Flow:" << info.flow << "]";
-    });
 }
