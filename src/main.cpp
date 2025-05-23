@@ -1,9 +1,5 @@
-#include "definitions.h"
-#include "networkgraph.h"
 #include <QApplication>
 #include <homepage.h>
-#include <studyplanwindow.h>
-#include <QStandardPaths>
 #include <QDir>
 #include <QPalette>
 

@@ -21,8 +21,8 @@ public:
     ~HomePage();
 
 private slots:
-
     void on_teacher_button_clicked();
+
     void on_studyplan_button_clicked();
 
     void on_section_button_clicked();
@@ -32,7 +32,10 @@ private slots:
     void reload_data();
 
     void on_config_button_clicked();
+
     void handle_back_to_menu();
+
+    void update_ui();
 
 private:
     Ui::HomePage *ui;

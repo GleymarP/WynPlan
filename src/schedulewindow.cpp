@@ -65,10 +65,8 @@ void ScheduleWindow::update_table()
             ui->tableWidget->setHorizontalHeaderLabels(days);
             ui->tableWidget->setVerticalHeaderLabels(hours);
 
-
             ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
             ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-
 
             std::vector<Section> sections = assigment.get_sections_vector();
             std::map<std::string, QColor> subject_colors;
@@ -191,7 +189,6 @@ void ScheduleWindow::on_pushButton_generate_schedule_clicked()
         ui->tableWidget->hide();
         ui->tableWidget->clear();
         QMessageBox::information(this, "No hay opción disponible", "No se pudieron asignar todas las materias requeridas para el semestre.");
-
 
     }
 

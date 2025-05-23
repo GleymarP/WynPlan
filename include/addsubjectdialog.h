@@ -19,6 +19,7 @@ public:
     ~AddSubjectDialog();
 
     bool is_creation_confirmed() const;
+
     Subject get_subject();
 
 private slots:

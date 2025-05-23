@@ -9,7 +9,6 @@
 #include <set>
 #include <tuple>
 
-
 class NetworkGraph
 {
 public:
@@ -17,24 +16,26 @@ public:
     struct NodeData
     {
         NodeType type;
-        int capacity;
+        int capacity = 0;
         int flow = 0;
         std::string id;
     };
 
     struct ArcData
     {
-        int capacity;
+        int capacity = 0;
         int flow = 0;
     };
 
     using FlowGraph = Designar::Digraph<NodeData, ArcData>;
-    using Node = Designar::Digraph<NetworkGraph::NodeData, NetworkGraph::ArcData>::Node*;
+    using Node = Designar::Digraph<NodeData, ArcData>::Node*;
 
     NetworkGraph(const std::vector<Teacher>& teachers, const std::vector<Subject>& subjects);
 
     bool bfs(std::map<Node, Node>& parent);
+
     int max_flow();
+
     std::vector<Section> get_final_assign_section() const;
 
 private:

@@ -101,7 +101,6 @@ void TeachersWindow::update_window()
     ui->label_teacher_id->setText("Cédula: " + QString::fromStdString(current_teacher.get_id()));
     ui->label_teacher_name->setText("Nombre: " + QString::fromStdString(current_teacher.get_full_name()));
 
-
     ui->tableWidget->show();
     ui->button_modify_states->show();
     ui->button_modify->show();
@@ -339,16 +338,14 @@ void TeachersWindow::on_button_modify_clicked()
     dialog.set_teacher(current_teacher);
     dialog.set_available_subjects(subjects);
 
-
-
     if(dialog.exec() == QDialog::Accepted)
     {
         Teacher update = dialog.get_update_teacher();
 
-
         std::vector<std::string> removed_subject_ids;
 
         std::vector<Subject> prev_subjects = current_teacher.get_subjects();
+
         std::vector<Subject> new_subjects = update.get_subjects();
 
         std::set<std::string> new_ids;

@@ -90,6 +90,7 @@ void InicialConfig::on_pushButton_save_semester_clicked()
         QMessageBox::warning(this, "No se han agregado materias", "Por favor, ingrese las materias del semestre");
         return;
     }
+
     QMessageBox::StandardButton reply = QMessageBox::question(this, "Guardar materias", QString("¿Desea guardar estas materias en este semestre?"), QMessageBox::Yes | QMessageBox::No);
     if(reply == QMessageBox::Yes)
     {
@@ -135,6 +136,7 @@ void InicialConfig::update_next()
 
     ui->label_name_semester->setText(QString::fromStdString(semester_vector_name[var]));
     ui->listWidget->clear();
+
     for(Subject& subject : subjects_vector)
     {
         ui->listWidget->addItem(QString::fromStdString(subject.get_subject_name()));
