@@ -91,7 +91,8 @@ void TeacherDialog::on_pushButton_ok_clicked()
         return;
     }
 
-    static const QRegularExpression format_id("^[VE]-\\d{6,8}$");
+    static const QRegularExpression format_id("^[VE]-\\d+$");
+
     if(!format_id.match(id).hasMatch())
     {
         QMessageBox::warning(this, "Formato inválido", "Ingrese una cédula válida (ej: V-12345678, E-8765432)." );

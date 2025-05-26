@@ -32,7 +32,7 @@ void TeachersWindow::on_menu_button_clicked()
 
 bool TeachersWindow::validate_id(const QString &id)
 {
-    static const QRegularExpression format_id("^[VE]-\\d{6,8}$");
+    static const QRegularExpression format_id("^[VE]-\\d+$");
     return format_id.match(id).hasMatch();
 }
 
