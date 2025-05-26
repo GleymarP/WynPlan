@@ -12,73 +12,43 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
-set(DESIGNAR_DIR "${CMAKE_CURRENT_SOURCE_DIR}/resources/DeSiGNAR-2.0.0")
-set(DESIGNAR_BUILD_DIR "${DESIGNAR_DIR}/build")
-set(DESIGNAR_LIB_NAME "Designar")
 
-find_library(DESIGNAR_LIB
-    NAMES ${DESIGNAR_LIB_NAME}
-    PATHS "${DESIGNAR_BUILD_DIR}"
-    NO_DEFAULT_PATH
-)
 
-if(DESIGNAR_LIB)
-    message(STATUS "Found DeSiGNAR library: ${DESIGNAR_LIB}")
-    set(DESIGNAR_INCLUDE_DIR "${DESIGNAR_DIR}/include")
-else()
-    message(STATUS "DeSiGNAR library not found, compiling it...")
+set(THIRD_PARTY_DIR ${CMAKE_CURRENT_BINARY_DIR}/third_party)
+file(MAKE_DIRECTORY ${THIRD_PARTY_DIR})
 
-    file(MAKE_DIRECTORY ${DESIGNAR_BUILD_DIR})
 
+set(DESIGNAR_DIR ${THIRD_PARTY_DIR}/DeSiGNAR)
+if(NOT EXISTS ${DESIGNAR_DIR})
     execute_process(
-        COMMAND ${CMAKE_COMMAND} -S ${DESIGNAR_DIR} -B ${DESIGNAR_BUILD_DIR}
-        WORKING_DIRECTORY ${DESIGNAR_DIR}
-        RESULT_VARIABLE result
+        COMMAND git clone "https://github.com/R3mmurd/DeSiGNAR.git" DeSiGNAR
+        WORKING_DIRECTORY ${THIRD_PARTY_DIR}
     )
-
-    if(NOT result EQUAL 0)
-        message(FATAL_ERROR "Failed to configure DeSiGNAR")
-    endif()
-
-    execute_process(
-        COMMAND ${CMAKE_COMMAND} --build ${DESIGNAR_BUILD_DIR} --config Release
-        WORKING_DIRECTORY ${DESIGNAR_DIR}
-        RESULT_VARIABLE result
-    )
-
-    if(NOT result EQUAL 0)
-        message(FATAL_ERROR "Failed to build DeSiGNAR")
-    endif()
-
-    find_library(DESIGNAR_LIB
-        NAMES ${DESIGNAR_LIB_NAME}
-        PATHS "${DESIGNAR_BUILD_DIR}"
-        NO_DEFAULT_PATH
-        REQUIRED
-    )
-
-    set(DESIGNAR_INCLUDE_DIR "${DESIGNAR_DIR}/include")
-    message(STATUS "Successfully built DeSiGNAR: ${DESIGNAR_LIB}")
 endif()
+
 
 set(PROJECT_SOURCES
     src/main.cpp
     resources/flujograma.json
     resources/teachers.json
-
-    src/definitions.cpp
 )
 
 include_directories(
     include
-    ${DESIGNAR_INCLUDE_DIR}
+   ${DESIGNAR_DIR}/include
 )
+
+file(GLOB DESIGNAR_SRC
+    "${DESIGNAR_DIR}/src/*.cpp"
+)
+
+add_library(designar STATIC ${DESIGNAR_SRC})
+target_include_directories(designar PUBLIC "${DESIGNAR_DIR}/include")
 
 qt_add_executable(WynPlan
     MANUAL_FINALIZATION
     ${PROJECT_SOURCES}
     include/definitions.h
-
     resources.qrc
     src/definitions.cpp
     include/networkgraph.h
@@ -114,13 +84,11 @@ qt_add_executable(WynPlan
     include/addsubjectdialog.h
     src/addsubjectdialog.cpp
     ui/addsubjectdialog.ui
-
-
 )
 
 target_link_libraries(WynPlan PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
-    ${DESIGNAR_LIB}
+    designar
 )
 
 if(${QT_VERSION} VERSION_LESS 6.1.0)
