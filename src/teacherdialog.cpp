@@ -31,19 +31,19 @@ void TeacherDialog::set_edit_mode(bool editing)
 
 }
 
-void TeacherDialog::set_teacher(const Teacher &teacher)
+void TeacherDialog::set_professor(const Professor &professor)
 {
     if(is_editing)
     {
-        editable_teacher = teacher;
-        ui->lineEdit_name->setText(QString::fromStdString(teacher.get_full_name()));
-        ui->lineEdit_id->setText(QString::fromStdString(teacher.get_id()));
+        editable_professor = professor;
+        ui->lineEdit_name->setText(QString::fromStdString(professor.get_full_name()));
+        ui->lineEdit_id->setText(QString::fromStdString(professor.get_id()));
     }
 }
 
-Teacher TeacherDialog::get_update_teacher() const
+Professor TeacherDialog::get_update_professor() const
 {
-    return editable_teacher;
+    return editable_professor;
 }
 
 void TeacherDialog::set_available_subjects(const std::vector<Subject> &all_subjects)
@@ -65,7 +65,7 @@ void TeacherDialog::set_available_subjects(const std::vector<Subject> &all_subje
     {
         QListWidgetItem* item = ui->listWidget_subjects->item(i);
         QString id = item->data(Qt::UserRole).toString();
-        for(const auto& subject : editable_teacher.get_subjects())
+        for(const auto& subject : editable_professor.get_subjects())
         {
             if(QString::fromStdString(subject.get_id()) == id)
             {
@@ -126,9 +126,9 @@ void TeacherDialog::on_pushButton_ok_clicked()
         return;
     }
 
-    editable_teacher.set_subjects(seleted_subjects);
-    editable_teacher.set_id(id.toStdString());
-    editable_teacher.set_full_name(name_uppercase.toStdString());
+    editable_professor.set_subjects(seleted_subjects);
+    editable_professor.set_id(id.toStdString());
+    editable_professor.set_full_name(name_uppercase.toStdString());
 
     accept();
 

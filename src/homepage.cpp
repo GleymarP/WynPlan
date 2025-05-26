@@ -5,8 +5,8 @@ HomePage::HomePage(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::HomePage)
     , plan(StudyPlan::load_from_json(path_studyplan_json))
-    , teachers(Teacher::load_from_json(path_teachers_json, plan))
-    , assigments(Assigment::load_from_json_assing(path_assign_json, plan, teachers))
+    , professors(Professor::load_from_json(path_professors_json, plan))
+    , assigments(Assigment::load_from_json_assing(path_assign_json, plan, professors))
 {
     ui->setupUi(this);
     update_ui();
@@ -19,16 +19,16 @@ HomePage::~HomePage()
 
 void HomePage::reload_data()
 {
-    teachers = Teacher::load_from_json(path_teachers_json, plan);
-    assigments = Assigment::load_from_json_assing(path_assign_json, plan, teachers);
+    professors = Professor::load_from_json(path_professors_json, plan);
+    assigments = Assigment::load_from_json_assing(path_assign_json, plan, professors);
 }
 
 void HomePage::on_teacher_button_clicked()
 {
     reload_data();
-    TeachersWindow *teacher_window = new TeachersWindow(teachers, plan);
-    connect(teacher_window, &TeachersWindow::back_to_menu, this, &HomePage::handle_back_to_menu);
-    teacher_window->show();
+    TeachersWindow *professor_window = new TeachersWindow(professors, plan);
+    connect(professor_window, &TeachersWindow::back_to_menu, this, &HomePage::handle_back_to_menu);
+    professor_window->show();
     this->hide();
 }
 
@@ -43,7 +43,7 @@ void HomePage::on_studyplan_button_clicked()
 void HomePage::on_section_button_clicked()
 {
     reload_data();
-    SectionWindow *section_window = new SectionWindow(plan, assigments, teachers);
+    SectionWindow *section_window = new SectionWindow(plan, assigments, professors);
     connect(section_window, &SectionWindow::back_to_menu, this, &HomePage::show);
     section_window->show();
     this->hide();
@@ -52,7 +52,7 @@ void HomePage::on_section_button_clicked()
 void HomePage::on_schedule_button_clicked()
 {
     reload_data();
-    ScheduleWindow *schedule_window = new ScheduleWindow(plan, teachers, assigments);
+    ScheduleWindow *schedule_window = new ScheduleWindow(plan, professors, assigments);
     connect(schedule_window, &ScheduleWindow::back_to_menu, this, &HomePage::show);
     schedule_window->show();
     this->hide();
@@ -88,7 +88,7 @@ void HomePage::update_ui()
         ui->label_warning->show();
         ui->label_warning->setText("No hay un plan de estudio agregado, ve a Añadir Plan de Estudio");
     }
-    else if(teachers.empty())
+    else if(professors.empty())
     {
         ui->config_button->hide();
         ui->config_label->hide();

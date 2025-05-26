@@ -168,42 +168,42 @@ void StudyPlan::save_studyplan_json(const StudyPlan& plan, const QString& file_p
     file.close();
 }
 
-//Teacher
-void Teacher::set_id(std::string id_)
+//Professor
+void Professor::set_id(std::string id_)
 {
     id = id_;
 }
-void Teacher::set_full_name(std::string full_name_)
+void Professor::set_full_name(std::string full_name_)
 {
     full_name = full_name_;
 }
-void Teacher::set_subjects(std::vector<Subject> subjects_)
+void Professor::set_subjects(std::vector<Subject> subjects_)
 {
     subjects = subjects_;
 }
 
-std::string Teacher::get_id() const
+std::string Professor::get_id() const
 {
     return id;
 }
-std::string Teacher::get_full_name() const
+std::string Professor::get_full_name() const
 {
     return full_name;
 }
-std::vector<Subject> Teacher::get_subjects() const
+std::vector<Subject> Professor::get_subjects() const
 {
     return subjects;
 }
-const TimeBlock& Teacher::get_timeblock(int day, int hour) const
+const TimeBlock& Professor::get_timeblock(int day, int hour) const
 {
     return weekly_schedule[day][hour];
 }
-const Teacher::WeeklySchedule& Teacher::get_weekly_schedule() const
+const Professor::WeeklySchedule& Professor::get_weekly_schedule() const
 {
     return weekly_schedule;
 }
 
-void Teacher::set_state_block(int day, int hour, BlockState state)
+void Professor::set_state_block(int day, int hour, BlockState state)
 {
     if(day >= 0 && day < 7 && hour >= 0 && hour < 12)
     {
@@ -214,14 +214,14 @@ void Teacher::set_state_block(int day, int hour, BlockState state)
         }
     }
 }
-void Teacher::set_time_block(int day, int hour, const TimeBlock& block)
+void Professor::set_time_block(int day, int hour, const TimeBlock& block)
 {
     if (day >= 0 && day < 7 && hour >= 0 && hour < 12)
     {
         weekly_schedule[day][hour] = block;
     }
 }
-void Teacher::set_weekly_schedule(const TimeBlock schedule[7][12])
+void Professor::set_weekly_schedule(const TimeBlock schedule[7][12])
 {
     for(int i = 0; i < 7; i++)
     {
@@ -232,15 +232,15 @@ void Teacher::set_weekly_schedule(const TimeBlock schedule[7][12])
     }
 }
 
-std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const StudyPlan &study_plan)
+std::vector<Professor> Professor::load_from_json(const QString &file_path, const StudyPlan &study_plan)
 {
-    std::vector<Teacher> teachers;
+    std::vector<Professor> professors;
 
     QFile file(file_path);
 
     if (!file.open(QIODevice::ReadOnly))
     {
-        return teachers;
+        return professors;
     }
 
     QByteArray data = file.readAll();
@@ -248,21 +248,21 @@ std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const Stu
 
     if (doc.isNull() || !doc.isArray())
     {
-        return teachers;
+        return professors;
     }
 
-    QJsonArray teachers_array = doc.array();
+    QJsonArray professors_array = doc.array();
 
-    for(const QJsonValue& teacher_value : teachers_array)
+    for(const QJsonValue& professor_value : professors_array)
     {
-        QJsonObject teacher_obj = teacher_value.toObject();
-        Teacher teacher;
+        QJsonObject professor_obj = professor_value.toObject();
+        Professor professor;
 
-        teacher.set_full_name(teacher_obj["nombre"].toString().toStdString());
-        teacher.set_id(teacher_obj["cedula"].toString().toStdString());
+        professor.set_full_name(professor_obj["nombre"].toString().toStdString());
+        professor.set_id(professor_obj["cedula"].toString().toStdString());
 
         std::vector<Subject> subjects;
-        QJsonArray subjects_array = teacher_obj["materias"].toArray();
+        QJsonArray subjects_array = professor_obj["materias"].toArray();
 
         for(const QJsonValue& subject_value : subjects_array)
         {
@@ -292,13 +292,13 @@ std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const Stu
                 subjects.push_back(subject_info);
             }
         }
-        teacher.set_subjects(subjects);
+        professor.set_subjects(subjects);
 
 
-        if(teacher_obj.contains("weekly_schedule"))
+        if(professor_obj.contains("weekly_schedule"))
         {
             TimeBlock weekly_schedule[7][12];
-            QJsonArray days_array = teacher_obj["weekly_schedule"].toArray();
+            QJsonArray days_array = professor_obj["weekly_schedule"].toArray();
 
             for(int day = 0; day < days_array.size() && day < 7; day++)
             {
@@ -323,34 +323,34 @@ std::vector<Teacher> Teacher::load_from_json(const QString &file_path, const Stu
                     weekly_schedule[day][hour] = block;
                 }
             }
-            teacher.set_weekly_schedule(weekly_schedule);
+            professor.set_weekly_schedule(weekly_schedule);
         }
-        teachers.push_back(teacher);
+        professors.push_back(professor);
     }
-    return teachers;
+    return professors;
 }
-void Teacher::save_teachers_json(const std::vector<Teacher>& teachers, const QString& file_path)
+void Professor::save_professors_json(const std::vector<Professor>& professors, const QString& file_path)
 {
-    QJsonArray teachers_array;
-    for(const auto& teacher : teachers)
+    QJsonArray professors_array;
+    for(const auto& professor : professors)
     {
-        QJsonObject teacher_obj;
-        teacher_obj["nombre"] = QString::fromStdString(teacher.get_full_name());
-        teacher_obj["cedula"] = QString::fromStdString(teacher.get_id());
+        QJsonObject professor_obj;
+        professor_obj["nombre"] = QString::fromStdString(professor.get_full_name());
+        professor_obj["cedula"] = QString::fromStdString(professor.get_id());
 
         QJsonArray materias_array;
-        for (const auto& subject : teacher.get_subjects())
+        for (const auto& subject : professor.get_subjects())
         {
             materias_array.append(QString::fromStdString(subject.get_id()));
         }
-        teacher_obj["materias"] = materias_array;
+        professor_obj["materias"] = materias_array;
         QJsonArray weekly_schedule_array;
         for (int day = 0; day < 7; day++)
         {
             QJsonArray day_array;
             for (int hour = 0; hour < 12; hour++)
             {
-                TimeBlock block = teacher.get_timeblock(day, hour);
+                TimeBlock block = professor.get_timeblock(day, hour);
                 QJsonObject block_obj;
                 QString state;
 
@@ -373,8 +373,8 @@ void Teacher::save_teachers_json(const std::vector<Teacher>& teachers, const QSt
             }
             weekly_schedule_array.append(day_array);
         }
-        teacher_obj["weekly_schedule"] = weekly_schedule_array;
-        teachers_array.append(teacher_obj);
+        professor_obj["weekly_schedule"] = weekly_schedule_array;
+        professors_array.append(professor_obj);
     }
 
     QFile file(file_path);
@@ -383,12 +383,12 @@ void Teacher::save_teachers_json(const std::vector<Teacher>& teachers, const QSt
         qWarning() << "No se pudo abrir el archivo para escritura:" << file_path;
     }
 
-    QJsonDocument doc(teachers_array);
+    QJsonDocument doc(professors_array);
     file.write(doc.toJson());
     file.close();
 }
 
-bool Teacher::available_block(int day, int hour) const
+bool Professor::available_block(int day, int hour) const
 {
     if(day >= 0 && day < 7 && hour >= 0 && hour < 12)
     {
@@ -399,7 +399,7 @@ bool Teacher::available_block(int day, int hour) const
     }
     return false;
 }
-void Teacher::assign_block(int day, int hour, const std::string &subject_id)
+void Professor::assign_block(int day, int hour, const std::string &subject_id)
 {
     if(day >= 0 && day < 7 && hour >= 0 && hour < 12)
     {
@@ -409,9 +409,9 @@ void Teacher::assign_block(int day, int hour, const std::string &subject_id)
 }
 
 //Section
-void Section::set_teacher_section(std::string teacher)
+void Section::set_professor_section(std::string professor)
 {
-    teacher_id = teacher;
+    professor_id = professor;
 }
 void Section::set_subject_section(std::string subject)
 {
@@ -426,9 +426,9 @@ void Section::set_blocks(std::vector<std::pair<int, int>> blocks)
     assigned_blocks =  blocks;
 }
 
-std::string Section::get_teacher_section()
+std::string Section::get_professor_section()
 {
-    return teacher_id;
+    return professor_id;
 }
 std::string Section::get_subject_section()
 {
@@ -475,7 +475,7 @@ std::vector<Section> Assigment::get_sections_vector()
     return sections_vector;
 }
 
-std::vector<Assigment> Assigment::load_from_json_assing(const QString &file_path, StudyPlan& study_plan, std::vector<Teacher>& teachers)
+std::vector<Assigment> Assigment::load_from_json_assing(const QString &file_path, StudyPlan& study_plan, std::vector<Professor>& professors)
 {
     std::vector<Assigment> assignments;
     QFile file(file_path);
@@ -518,7 +518,7 @@ std::vector<Assigment> Assigment::load_from_json_assing(const QString &file_path
             QJsonObject section_obj = section_value.toObject();
             Section section;
 
-            section.set_teacher_section(section_obj["teacher_id"].toString().toStdString());
+            section.set_professor_section(section_obj["professor_id"].toString().toStdString());
             section.set_subject_section(section_obj["subject_id"].toString().toStdString());
             section.set_id_section(section_obj["section_id"].toInt());
 
@@ -533,14 +533,14 @@ std::vector<Assigment> Assigment::load_from_json_assing(const QString &file_path
 
                 section.add_timeblock(day, hour);
 
-                for (Teacher& teacher : teachers)
+                for (Professor& professor : professors)
                 {
-                    if (teacher.get_id() == section.get_teacher_section())
+                    if (professor.get_id() == section.get_professor_section())
                     {
                         TimeBlock block;
                         block.state = BlockState::OCUPADO;
                         block.id_subject = section.get_subject_section();
-                        teacher.set_time_block(day, hour, block);
+                        professor.set_time_block(day, hour, block);
                         break;
                     }
                 }
@@ -588,7 +588,7 @@ void Assigment::save_assigments_json(std::vector<Assigment>& assignments, const 
         for(Section& section : assignment.get_sections_vector())
         {
             QJsonObject section_obj;
-            section_obj["teacher_id"] = QString::fromStdString(section.get_teacher_section());
+            section_obj["professor_id"] = QString::fromStdString(section.get_professor_section());
             section_obj["subject_id"] = QString::fromStdString(section.get_subject_section());
             section_obj["section_id"] = static_cast<int>(section.get_id_section());
 

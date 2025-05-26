@@ -72,7 +72,7 @@ struct TimeBlock
     std::string id_subject = "";
 };
 
-class Teacher
+class Professor
 {
 private:
     std::string id;
@@ -97,8 +97,8 @@ public:
     void set_time_block(int day, int hour, const TimeBlock& block);
     void set_weekly_schedule(const TimeBlock schedule[7][12]);
 
-    static std::vector<Teacher> load_from_json (const QString &file_path, const StudyPlan &study_plan);
-    static void save_teachers_json(const std::vector<Teacher>& teachers, const QString& file_path);
+    static std::vector<Professor> load_from_json (const QString &file_path, const StudyPlan &study_plan);
+    static void save_professors_json(const std::vector<Professor>& professors, const QString& file_path);
 
     bool available_block(int day, int hour) const;
     void assign_block(int day, int hour, const std::string& subject_id);
@@ -107,18 +107,18 @@ public:
 class Section
 {
 private:
-    std::string teacher_id;
+    std::string professor_id;
     std::string subject_id;
     std::vector<std::pair<int, int>> assigned_blocks;
     size_t id_section;
 
 public:
-    void set_teacher_section(std::string teacher_id_);
+    void set_professor_section(std::string professor_id_);
     void set_subject_section(std::string subject_id_);
     void set_id_section(size_t id_section_);
     void set_blocks(std::vector<std::pair<int, int>> blocks);
 
-    std::string get_teacher_section();
+    std::string get_professor_section();
     std::string get_subject_section();
     size_t get_id_section();
 
@@ -142,7 +142,7 @@ public:
     std::string get_option();
     std::vector<Section> get_sections_vector();
 
-    static std::vector<Assigment> load_from_json_assing(const QString &file_path, StudyPlan& study_plan, std::vector<Teacher>& teachers);
+    static std::vector<Assigment> load_from_json_assing(const QString &file_path, StudyPlan& study_plan, std::vector<Professor>& professors);
     static void save_assigments_json(std::vector<Assigment>& assignments, const QString& file_path, StudyPlan&  plan_);
 };
 

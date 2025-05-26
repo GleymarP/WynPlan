@@ -17,11 +17,11 @@ public:
     explicit TeacherDialog(QWidget *parent = nullptr);
     ~TeacherDialog();
 
-    void set_teacher(const Teacher& teacher);
+    void set_professor(const Professor& professor);
 
     void set_edit_mode (bool editing);
 
-    Teacher get_update_teacher() const;
+    Professor get_update_professor() const;
 
     void set_available_subjects(const std::vector<Subject>& all_subjects);
 
@@ -34,7 +34,7 @@ private slots:
 
 private:
     Ui::TeacherDialog *ui;
-    Teacher editable_teacher;
+    Professor editable_professor;
     bool is_editing = false;
     std::vector<Subject> available_subjects;
 };

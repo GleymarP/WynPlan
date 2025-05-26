@@ -14,7 +14,7 @@ class SectionWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit SectionWindow(StudyPlan& plan_, std::vector<Assigment>& assigments_, std::vector<Teacher>& teachers_, QWidget *parent = nullptr);
+    explicit SectionWindow(StudyPlan& plan_, std::vector<Assigment>& assigments_, std::vector<Professor>& professors_, QWidget *parent = nullptr);
     ~SectionWindow();
 
 signals:
@@ -32,7 +32,7 @@ private slots:
 private:
     Ui::SectionWindow *ui;
     std::vector<Assigment> assigments;
-    std::vector<Teacher> teachers;
+    std::vector<Professor> professors;
     StudyPlan plan;
     Assigment current_assigment;
     std::string current_txt;

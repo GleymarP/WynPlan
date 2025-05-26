@@ -1,12 +1,12 @@
 #include "sectionwindow.h"
 #include "ui_sectionwindow.h"
 
-SectionWindow::SectionWindow(StudyPlan& plan_, std::vector<Assigment>& assigments_, std::vector<Teacher>& teachers_, QWidget *parent)
+SectionWindow::SectionWindow(StudyPlan& plan_, std::vector<Assigment>& assigments_, std::vector<Professor>& professors_, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::SectionWindow)
     , plan(plan_)
     , assigments(assigments_)
-    , teachers(teachers_)
+    , professors(professors_)
 {
     ui->setupUi(this);
     ui->listWidget->hide();
@@ -100,12 +100,12 @@ void SectionWindow::on_comboBox_option_currentTextChanged(const QString &arg1)
                     }
                 }
 
-                for(Teacher& teacher : teachers)
+                for(Professor& professor : professors)
                 {
-                    if(section.get_teacher_section() == teacher.get_id())
+                    if(section.get_professor_section() == professor.get_id())
                     {
-                        ui->listWidget->addItem("Profesor: " + QString::fromStdString(teacher.get_full_name()));
-                        ui->listWidget->addItem("ID del profesor: " + QString::fromStdString(teacher.get_id()));
+                        ui->listWidget->addItem("Profesor: " + QString::fromStdString(professor.get_full_name()));
+                        ui->listWidget->addItem("ID del profesor: " + QString::fromStdString(professor.get_id()));
                         break;
                     }
                 }
@@ -305,9 +305,9 @@ void SectionWindow::on_pushButton_delete_section_clicked()
         assigments = assigments_temp;
 
         Assigment::save_assigments_json(assigments, QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan);
-        assigments = Assigment::load_from_json_assing(QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan, teachers);
-        teachers = Teacher::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/teachers.json", plan);
-        Teacher::save_teachers_json(teachers, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
+        assigments = Assigment::load_from_json_assing(QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan, professors);
+        professors = Professor::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/teachers.json", plan);
+        Professor::save_professors_json(professors, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
 
         QMessageBox::information(this, "Eliminado","Sección eliminada correctamente");
         ui->listWidget->clear();

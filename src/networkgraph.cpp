@@ -2,8 +2,8 @@
 
 using Node = Designar::Digraph<NetworkGraph::NodeData, NetworkGraph::ArcData>::Node*;
 
-NetworkGraph::NetworkGraph(const std::vector<Teacher>& teachers_, const std::vector<Subject>& subjects_)
-    : teachers(teachers_), subjects(subjects_)
+NetworkGraph::NetworkGraph(const std::vector<Professor>& professors_, const std::vector<Subject>& subjects_)
+    : professors(professors_), subjects(subjects_)
 {
     build_network();
 }
@@ -22,17 +22,17 @@ void NetworkGraph::build_network()
     }
 
 
-    for (const auto& teacher : teachers)
+    for (const auto& professor : professors)
     {
-        Node teacher_node = graph.insert_node({NodeType::Teacher, 0, 0, teacher.get_id()});
-        teacher_nodes[teacher.get_id()] = teacher_node;
+        Node professor_node = graph.insert_node({NodeType::Professor, 0, 0, professor.get_id()});
+        professor_nodes[professor.get_id()] = professor_node;
 
 
-        for (const auto& subject : teacher.get_subjects())
+        for (const auto& subject : professor.get_subjects())
         {
             if (subject_nodes.count(subject.get_id()))
             {
-                graph.insert_arc(subject_nodes[subject.get_id()], teacher_node, {subject.get_required_hours(), 0});
+                graph.insert_arc(subject_nodes[subject.get_id()], professor_node, {subject.get_required_hours(), 0});
             }
         }
 
@@ -41,7 +41,7 @@ void NetworkGraph::build_network()
         {
             for (int hour = 0; hour < 12; ++hour)
             {
-                if (teacher.available_block(day, hour))
+                if (professor.available_block(day, hour))
                 {
                     std::pair<int, int> time_key = {day, hour};
                     Node timeblock_node;
@@ -61,7 +61,7 @@ void NetworkGraph::build_network()
                         timeblock_node = timetable_nodes[time_key];
                     }
 
-                    graph.insert_arc(teacher_node, timeblock_node, {1, 0});
+                    graph.insert_arc(professor_node, timeblock_node, {1, 0});
                 }
             }
         }
@@ -152,7 +152,7 @@ std::vector<Section> NetworkGraph::get_final_assign_section() const
     std::set<std::pair<int, int>> used_time_blocks;
     size_t section_counter = 0;
 
-    std::map<std::pair<std::string, std::string>, std::vector<std::pair<int, int>>> teacher_subject_blocks;
+    std::map<std::pair<std::string, std::string>, std::vector<std::pair<int, int>>> professor_subject_blocks;
 
     for (const auto& [subject_id, subject_node] : subject_nodes)
     {
@@ -177,11 +177,11 @@ std::vector<Section> NetworkGraph::get_final_assign_section() const
         {
             if (arc_subject->get_info().flow > 0)
             {
-                Node teacher_node = arc_subject->get_tgt_node();
-                std::string teacher_id = teacher_node->get_info().id;
+                Node professor_node = arc_subject->get_tgt_node();
+                std::string professor_id = professor_node->get_info().id;
                 std::vector<std::pair<int, int>> available_vector;
 
-                for (auto arc_time : graph.adjacent_arcs(teacher_node))
+                for (auto arc_time : graph.adjacent_arcs(professor_node))
                 {
                     if (arc_time->get_info().flow > 0)
                     {
@@ -202,12 +202,12 @@ std::vector<Section> NetworkGraph::get_final_assign_section() const
 
                 if (available_vector.size() >= required_hours)
                 {
-                    auto key = std::make_pair(teacher_id, subject_id);
+                    auto key = std::make_pair(professor_id, subject_id);
 
                     for (int i = 0; i < required_hours; i++)
                     {
                         auto [day, hour] = available_vector[i];
-                        teacher_subject_blocks[key].push_back(std::make_pair(day, hour));
+                        professor_subject_blocks[key].push_back(std::make_pair(day, hour));
                         used_time_blocks.insert(std::make_pair(day, hour));
                     }
                     subject_assigned = true;
@@ -222,11 +222,11 @@ std::vector<Section> NetworkGraph::get_final_assign_section() const
         }
     }
 
-    for (auto& [teacher_subject, blocks] : teacher_subject_blocks)
+    for (auto& [professor_subject, blocks] : professor_subject_blocks)
     {
         Section section;
-        section.set_teacher_section(teacher_subject.first);
-        section.set_subject_section(teacher_subject.second);
+        section.set_professor_section(professor_subject.first);
+        section.set_subject_section(professor_subject.second);
         section.set_id_section(section_counter++);
 
         std::sort(blocks.begin(), blocks.end(), [](const auto& a, const auto& b)

@@ -1,10 +1,10 @@
 #include "teacherswindow.h"
 #include "ui_teacherswindow.h"
 
-TeachersWindow::TeachersWindow(std::vector<Teacher>& teacher, StudyPlan& plan, QWidget *parent)
+TeachersWindow::TeachersWindow(std::vector<Professor>& professor, StudyPlan& plan, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::TeachersWindow)
-    , teachers_(teacher)
+    , professors_(professor)
     , plan_(plan)
 {
     ui->setupUi(this);
@@ -47,11 +47,11 @@ void TeachersWindow::on_search_button_clicked()
         return;
     }
 
-    for (const auto& teacher : teachers_)
+    for (const auto& professor : professors_)
     {
-        if (QString::fromStdString(teacher.get_id()) == input)
+        if (QString::fromStdString(professor.get_id()) == input)
         {
-            current_teacher = teacher;
+            current_professor = professor;
             update_window();
             ui->line_edit_id->clear();
             return;
@@ -60,14 +60,14 @@ void TeachersWindow::on_search_button_clicked()
 
     QString lower_input = input.toLower();
 
-    std::vector<Teacher> matches;
+    std::vector<Professor> matches;
 
-    for (const auto& teacher : teachers_)
+    for (const auto& professor : professors_)
     {
-        QString name = QString::fromStdString(teacher.get_full_name()).toLower();
+        QString name = QString::fromStdString(professor.get_full_name()).toLower();
         if (name.contains(lower_input))
         {
-            matches.push_back(teacher);
+            matches.push_back(professor);
         }
     }
 
@@ -78,7 +78,7 @@ void TeachersWindow::on_search_button_clicked()
     }
     else if (matches.size() == 1)
     {
-        current_teacher = matches[0];
+        current_professor = matches[0];
         update_window();
     }
     else
@@ -98,8 +98,8 @@ void TeachersWindow::on_search_button_clicked()
 void TeachersWindow::update_window()
 {
 
-    ui->label_teacher_id->setText("Cédula: " + QString::fromStdString(current_teacher.get_id()));
-    ui->label_teacher_name->setText("Nombre: " + QString::fromStdString(current_teacher.get_full_name()));
+    ui->label_teacher_id->setText("Cédula: " + QString::fromStdString(current_professor.get_id()));
+    ui->label_teacher_name->setText("Nombre: " + QString::fromStdString(current_professor.get_full_name()));
 
     ui->tableWidget->show();
     ui->button_modify_states->show();
@@ -126,7 +126,7 @@ void TeachersWindow::update_window()
     {
         for(int hour = 0; hour < 12; ++hour)
         {
-            const TimeBlock& block = current_teacher.get_timeblock(day, hour);
+            const TimeBlock& block = current_professor.get_timeblock(day, hour);
 
             QString text;
 
@@ -153,7 +153,7 @@ void TeachersWindow::update_window()
                 item->setBackground(QColor(255, 107, 108));
                 QString subject_id = QString::fromStdString(block.id_subject);
                 QString subject_name;
-                for(const auto& subject : current_teacher.get_subjects())
+                for(const auto& subject : current_professor.get_subjects())
                 {
                     if(QString::fromStdString(subject.get_id()) == subject_id)
                     {
@@ -188,7 +188,7 @@ void TeachersWindow::on_tableWidget_cellClicked(int row, int column)
     int hour = row;
     int day = column;
 
-    const TimeBlock block = current_teacher.get_timeblock(day, hour);
+    const TimeBlock block = current_professor.get_timeblock(day, hour);
     QString current_state;
 
     if(block.state == OCUPADO)
@@ -196,7 +196,7 @@ void TeachersWindow::on_tableWidget_cellClicked(int row, int column)
         QString subject_id = QString::fromStdString(block.id_subject);
         QString subject_name;
 
-        for(const auto& subject : current_teacher.get_subjects())
+        for(const auto& subject : current_professor.get_subjects())
         {
             if(QString::fromStdString(subject.get_id()) == subject_id)
             {
@@ -236,7 +236,7 @@ void TeachersWindow::on_tableWidget_cellClicked(int row, int column)
             update_state = DISPONIBLE;
             item->setBackground(QColor(179, 240, 174));
         }
-        current_teacher.set_state_block(day, hour, update_state);
+        current_professor.set_state_block(day, hour, update_state);
     }
 
 }
@@ -255,16 +255,16 @@ void TeachersWindow::on_button_modify_states_clicked()
 
 void TeachersWindow::on_button_save_changes_clicked()
 {
-    for(auto& teacher : teachers_)
+    for(auto& professor : professors_)
     {
-        if(teacher.get_id() == current_teacher.get_id())
+        if(professor.get_id() == current_professor.get_id())
         {
-            teacher = current_teacher;
+            professor = current_professor;
             break;
         }
     }
 
-    Teacher::save_teachers_json(teachers_, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
+    Professor::save_professors_json(professors_, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
     edit_mode_enabled = false;
     ui->tableWidget->setEnabled(false);
     ui->tableWidget->clearSelection();
@@ -277,28 +277,28 @@ void TeachersWindow::on_button_save_changes_clicked()
 void TeachersWindow::on_button_delete_clicked()
 {
     TeacherEditorDialog dialog(this);
-    dialog.set_teacher_info(current_teacher);
+    dialog.set_professor_info(current_professor);
 
     if(dialog.exec() == QDialog::Accepted && dialog.is_deletion_confirmed())
     {
 
-        std::vector<Teacher> teachers_temp;
+        std::vector<Professor> professors_temp;
 
-        for(const auto& teacher : teachers_)
+        for(const auto& professor : professors_)
         {
-            if(teacher.get_id() == current_teacher.get_id())
+            if(professor.get_id() == current_professor.get_id())
             {
                 continue;
             }
             else
             {
-                teachers_temp.push_back(teacher);
+                professors_temp.push_back(professor);
             }
         }
 
-        teachers_ = teachers_temp;
+        professors_ = professors_temp;
 
-        Teacher::save_teachers_json(teachers_, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
+        Professor::save_professors_json(professors_, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
         QMessageBox::information(this, "Eliminado","Profesor eliminado correctamente" );
 
         ui->tableWidget->hide();
@@ -335,16 +335,16 @@ void TeachersWindow::on_button_modify_clicked()
 
     TeacherDialog dialog(this);
     dialog.set_edit_mode(true);
-    dialog.set_teacher(current_teacher);
+    dialog.set_professor(current_professor);
     dialog.set_available_subjects(subjects);
 
     if(dialog.exec() == QDialog::Accepted)
     {
-        Teacher update = dialog.get_update_teacher();
+        Professor update = dialog.get_update_professor();
 
         std::vector<std::string> removed_subject_ids;
 
-        std::vector<Subject> prev_subjects = current_teacher.get_subjects();
+        std::vector<Subject> prev_subjects = current_professor.get_subjects();
 
         std::vector<Subject> new_subjects = update.get_subjects();
 
@@ -367,7 +367,7 @@ void TeachersWindow::on_button_modify_clicked()
         {
             for(int hour = 0; hour < 12; ++hour)
             {
-                TimeBlock block = current_teacher.get_timeblock(day, hour);
+                TimeBlock block = current_professor.get_timeblock(day, hour);
                 if(block.state == OCUPADO)
                 {
                     for(const auto& removed_id : removed_subject_ids)
@@ -384,19 +384,19 @@ void TeachersWindow::on_button_modify_clicked()
             }
         }
 
-        for(auto& teacher: teachers_)
+        for(auto& professor: professors_)
         {
-            if(teacher.get_id() == update.get_id())
+            if(professor.get_id() == update.get_id())
             {
-                teacher = update;
+                professor = update;
                 break;
             }
         }
 
-        Teacher::save_teachers_json(teachers_, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
+        Professor::save_professors_json(professors_, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
         QMessageBox::information(this,"Actualizado", "Datos del profesor actualizados ");
 
-        current_teacher = update;
+        current_professor = update;
 
         update_window();
 
@@ -413,12 +413,12 @@ void TeachersWindow::on_pushButton_clicked()
 
     if(dialog.exec() == QDialog::Accepted)
     {
-        Teacher new_teacher = dialog.get_update_teacher();
-        teachers_.push_back(new_teacher);
-        Teacher::save_teachers_json(teachers_ , QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
+        Professor new_professor = dialog.get_update_professor();
+        professors_.push_back(new_professor);
+        Professor::save_professors_json(professors_ , QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
         QMessageBox::information(this, "Agregado", "Nuevo profesor agregado");
 
-        current_teacher = new_teacher;
+        current_professor = new_professor;
 
         update_window();
     }

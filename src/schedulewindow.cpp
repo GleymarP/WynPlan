@@ -1,11 +1,11 @@
 #include "schedulewindow.h"
 #include "ui_schedulewindow.h"
 
-ScheduleWindow::ScheduleWindow(StudyPlan& plan, std::vector<Teacher>& teachers, std::vector<Assigment>& assigments, QWidget *parent)
+ScheduleWindow::ScheduleWindow(StudyPlan& plan, std::vector<Professor>& professors, std::vector<Assigment>& assigments, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::ScheduleWindow)
     , plan_(plan)
-    , teachers_(teachers)
+    , professors_(professors)
     , assignments_(assigments)
 {
     ui->setupUi(this);
@@ -110,18 +110,18 @@ void ScheduleWindow::update_table()
                             }
                         }
 
-                        std::string teacher_id = section.get_teacher_section();
-                        std::string teacher_name;
+                        std::string professor_id = section.get_professor_section();
+                        std::string professor_name;
 
-                        for(const auto& teacher : teachers_)
+                        for(const auto& professor : professors_)
                         {
-                            if(teacher.get_id() == teacher_id)
+                            if(professor.get_id() == professor_id)
                             {
-                                teacher_name = teacher.get_full_name();
+                                professor_name = professor.get_full_name();
                             }
                         }
 
-                        item->setToolTip(QString::fromStdString("Materia: " + subject_name + "\nProfesor: " + teacher_name));
+                        item->setToolTip(QString::fromStdString("Materia: " + subject_name + "\nProfesor: " + professor_name));
 
                         ui->tableWidget->setItem(hour, day, item);
                     }
@@ -150,7 +150,7 @@ void ScheduleWindow::on_pushButton_generate_schedule_clicked()
     ui->tableWidget->clear();
     std::vector<Subject> semester_subjects = current_semester.get_subjects_semester();
 
-    NetworkGraph network_graph(teachers_, semester_subjects);
+    NetworkGraph network_graph(professors_, semester_subjects);
     network_graph.max_flow();
 
     std::vector<Section> sections = network_graph.get_final_assign_section();
@@ -177,7 +177,7 @@ void ScheduleWindow::on_pushButton_generate_schedule_clicked()
 
         assignments_.push_back(assigment);
         Assigment::save_assigments_json(assignments_, path_assign_json, plan_);
-        assignments_ = Assigment::load_from_json_assing(path_assign_json, plan_, teachers_);
+        assignments_ = Assigment::load_from_json_assing(path_assign_json, plan_, professors_);
 
         ui->comboBox_options->addItem(QString::fromStdString(current_option));
         ui->comboBox_options->setCurrentText(QString::fromStdString(current_option));

@@ -16,7 +16,7 @@ public:
     explicit TeacherEditorDialog(QWidget *parent = nullptr);
     ~TeacherEditorDialog();
 
-    void set_teacher_info(const Teacher& teacher);
+    void set_professor_info(const Professor& professor);
 
     bool is_deletion_confirmed() const;
 

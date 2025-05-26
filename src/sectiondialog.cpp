@@ -31,7 +31,7 @@ void sectiondialog::set_option_info(Assigment& assigment)
         ui->listWidget->addItem("Código de la materia:");
         ui->listWidget->addItem(QString::fromStdString(section.get_subject_section()));
         ui->listWidget->addItem("ID del profesor:");
-        ui->listWidget->addItem(QString::fromStdString(section.get_teacher_section()));
+        ui->listWidget->addItem(QString::fromStdString(section.get_professor_section()));
         ui->listWidget->addItem("\n");
     }
     ui->listWidget->setSelectionMode(QAbstractItemView::NoSelection);

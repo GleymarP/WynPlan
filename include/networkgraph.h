@@ -12,7 +12,7 @@
 class NetworkGraph
 {
 public:
-    enum class NodeType { Source, Sink, Subject, Teacher, Time};
+    enum class NodeType { Source, Sink, Subject, Professor, Time};
     struct NodeData
     {
         NodeType type;
@@ -30,7 +30,7 @@ public:
     using FlowGraph = Designar::Digraph<NodeData, ArcData>;
     using Node = Designar::Digraph<NodeData, ArcData>::Node*;
 
-    NetworkGraph(const std::vector<Teacher>& teachers, const std::vector<Subject>& subjects);
+    NetworkGraph(const std::vector<Professor>& professors, const std::vector<Subject>& subjects);
 
     bool bfs(std::map<Node, Node>& parent);
 
@@ -41,10 +41,10 @@ public:
 private:
     FlowGraph graph;
 
-    std::vector<Teacher> teachers;
+    std::vector<Professor> professors;
     std::vector<Subject> subjects;
 
-    std::map<std::string, Node> teacher_nodes;
+    std::map<std::string, Node> professor_nodes;
     std::map<std::string, Node> subject_nodes;
     std::map<std::pair<int, int>, Node> timetable_nodes;
 

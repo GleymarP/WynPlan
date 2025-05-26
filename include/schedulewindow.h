@@ -15,7 +15,7 @@ class ScheduleWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ScheduleWindow(StudyPlan& plan, std::vector<Teacher>& teachers, std::vector<Assigment>& assigments, QWidget *parent = nullptr);
+    explicit ScheduleWindow(StudyPlan& plan, std::vector<Professor>& professors, std::vector<Assigment>& assigments, QWidget *parent = nullptr);
     ~ScheduleWindow();
 
 signals:
@@ -38,7 +38,7 @@ private:
 
     Ui::ScheduleWindow *ui;
     StudyPlan plan_;
-    std::vector<Teacher> teachers_;
+    std::vector<Professor> professors_;
     Semester current_semester;
     std::string current_option;
     std::vector<Assigment> assignments_;
