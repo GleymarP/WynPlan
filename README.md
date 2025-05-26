@@ -3,7 +3,7 @@
 
   
 
-**WynPlan** es un sistema para gestionar la asignación de horarios desarrollado con **C++**, **Qt 6**, y la librería externa **DeSiGNAR**.
+**WynPlan** es un sistema para gestionar la asignación de horarios desarrollado con **C++**, **Qt 6**, y la biblioteca externa **DeSiGNAR**.
 
 Este proyecto está configurado con CMake y no requiere Qt Creator para compilarse.
 
