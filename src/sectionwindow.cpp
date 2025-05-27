@@ -170,6 +170,7 @@ void SectionWindow::on_comboBox_option_currentTextChanged(const QString &arg1)
         ui->label_4->show();
         ui->pushButton_delete_section->show();
         ui->label_info->hide();
+        ui->frame_3->hide();
     }
     else
     {
@@ -177,7 +178,7 @@ void SectionWindow::on_comboBox_option_currentTextChanged(const QString &arg1)
         ui->label_4->hide();
         ui->pushButton_delete_section->hide();
         ui->label_info->show();
-
+        ui->frame_3->show();
     }
 }
 
