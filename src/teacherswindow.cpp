@@ -217,7 +217,10 @@ void TeachersWindow::on_tableWidget_cellClicked(int row, int column)
         current_state = "NO DISPONIBLE";
     }
 
-    QMessageBox::StandardButton reply = QMessageBox::question(this, "Cambiar el estado del bloque", QString("El bloque actual está marcado como %1. \n ¿Desea cambiar su estado?").arg(current_state), QMessageBox::Yes | QMessageBox::No);
+    QMessageBox msgBox(QMessageBox::Question, "Cambiar el estado del bloque", QString("El bloque actual está marcado como %1. \n ¿Desea cambiar su estado?").arg(current_state), QMessageBox::Yes | QMessageBox::No, this);
+    msgBox.setButtonText(QMessageBox::Yes, "Sí");
+    msgBox.setButtonText(QMessageBox::No, "No");
+    QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
 
     if(reply == QMessageBox::Yes)
     {

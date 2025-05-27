@@ -66,7 +66,11 @@ void InicialConfig::on_pushButton_save_n_semesters_clicked()
         return;
     }
 
-    QMessageBox::StandardButton reply = QMessageBox::question(this, "Guardar datos", QString("¿Desea guardar estos datos de nombre de la materia y cantidad de semestres?"), QMessageBox::Yes | QMessageBox::No);
+    QMessageBox msgBox(QMessageBox::Question, "Guardar datos", "¿Desea guardar estos datos de nombre de la materia y cantidad de semestres?", QMessageBox::Yes | QMessageBox::No, this);
+    msgBox.setButtonText(QMessageBox::Yes, "Sí");
+    msgBox.setButtonText(QMessageBox::No, "No");
+    QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
+
     if(reply == QMessageBox::Yes)
     {
         plan_.set_degree(name_degree.toStdString());
@@ -91,7 +95,11 @@ void InicialConfig::on_pushButton_save_semester_clicked()
         return;
     }
 
-    QMessageBox::StandardButton reply = QMessageBox::question(this, "Guardar materias", QString("¿Desea guardar estas materias en este semestre?"), QMessageBox::Yes | QMessageBox::No);
+    QMessageBox msgBox(QMessageBox::Question, "Guardar materias","¿Desea guardar estas materias en este semestre?", QMessageBox::Yes | QMessageBox::No, this);
+    msgBox.setButtonText(QMessageBox::Yes, "Sí");
+    msgBox.setButtonText(QMessageBox::No, "No");
+    QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
+
     if(reply == QMessageBox::Yes)
     {
         Semester semester;
@@ -161,7 +169,12 @@ void InicialConfig::on_pushButton_delete_subject_clicked()
     }
 
     QString textoQString = item->text().trimmed();
-    QMessageBox::StandardButton reply = QMessageBox::question(this, "Eliminar materia", QString("¿Desea eliminar esta materia: " + textoQString + " ?"), QMessageBox::Yes | QMessageBox::No);
+
+    QMessageBox msgBox(QMessageBox::Question,"Eliminar materia","¿Desea eliminar esta materia: " + textoQString + " ?", QMessageBox::Yes | QMessageBox::No, this);
+    msgBox.setButtonText(QMessageBox::Yes, "Sí");
+    msgBox.setButtonText(QMessageBox::No, "No");
+    QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
+
     if(reply == QMessageBox::Yes)
     {
         std::vector<Subject> new_subjects;

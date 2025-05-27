@@ -1,4 +1,3 @@
-
 # WynPlan
 
   
@@ -43,16 +42,10 @@ cd WynPlan
 ```
   
 ```
-mkdir build
+cmake -B build
 ```
 ```
-cd build
-```
-```
-cmake ..
-```
-```
-make
+cmake --build build
 ```
   #### Ejecuta:
 ```
@@ -60,7 +53,7 @@ make
 ```
 
   
-WynPlan depende de la librería externa DeSiGNAR (incluida en resources/). Si la librería no ha sido compilada, CMake la compilará automáticamente durante la configuración del proyecto. Para más información sobre la librería DeSiGNAR: [Repositorio de DeSiGNAR](https://github.com/R3mmurd/DeSiGNAR/tree/v2.0.1?tab=License-1-ov-file)
+WynPlan depende de la biblioteca externa DeSiGNAR. Si la biblioteca no ha sido compilada, CMake la compilará automáticamente durante la configuración del proyecto. Para más información sobre DeSiGNAR: [Repositorio de DeSiGNAR](https://github.com/R3mmurd/DeSiGNAR/tree/v2.0.1?tab=License-1-ov-file)
 
   
 
@@ -79,4 +72,4 @@ WynPlan/
 |include|`Archivos de cabecera`            |
 |src          |`Archivos de código fuente`            |
 | ui          |`Archivos de interfaz Qt Designer`|
-|resources       |`Archivos JSON, recursos y DeSiGNAR`|
+|resources       |`Archivos JSON y recursos`|
