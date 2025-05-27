@@ -79,6 +79,13 @@ void HomePage::update_ui()
 {
     if(plan.get_semester().empty())
     {
+        ui->frame_7->show();
+        ui->frame_6->show();
+        ui->frame_3->hide();
+        ui->frame_4->hide();
+        ui->frame_5->hide();
+        ui->frame_2->hide();
+
         ui->schedule_button->setEnabled(false);
         ui->teacher_button->setEnabled(false);
         ui->section_button->setEnabled(false);
@@ -90,6 +97,13 @@ void HomePage::update_ui()
     }
     else if(professors.empty())
     {
+        ui->frame_7->show();
+        ui->frame_6->hide();
+        ui->frame_3->show();
+        ui->frame_4->show();
+        ui->frame_5->hide();
+        ui->frame_2->hide();
+
         ui->config_button->hide();
         ui->config_label->hide();
         ui->label_warning->show();
@@ -101,6 +115,13 @@ void HomePage::update_ui()
     }
     else
     {
+        ui->frame_7->hide();
+        ui->frame_6->hide();
+        ui->frame_3->show();
+        ui->frame_4->show();
+        ui->frame_5->show();
+        ui->frame_2->show();
+
         ui->config_button->hide();
         ui->config_label->hide();
         ui->label_warning->hide();
