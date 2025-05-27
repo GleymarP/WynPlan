@@ -14,7 +14,7 @@ InicialConfig::InicialConfig(StudyPlan& plan, QWidget *parent)
     ui->label_number_semesters->show();
     ui->pushButton_save_n_semesters->show();
 
-    ui->rectangel->hide();
+
     ui->label_name_semester->hide();
     ui->label_materias->hide();
     ui->pushButton_add_subject->hide();
@@ -120,7 +120,7 @@ void InicialConfig::on_pushButton_save_semester_clicked()
 
 void InicialConfig::update_next()
 {
-    ui->rectangel->show();
+
     ui->label_name_semester->show();
     ui->label_materias->show();
     ui->pushButton_add_subject->show();
