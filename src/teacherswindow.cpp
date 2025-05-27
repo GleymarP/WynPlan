@@ -217,12 +217,17 @@ void TeachersWindow::on_tableWidget_cellClicked(int row, int column)
         current_state = "NO DISPONIBLE";
     }
 
-    QMessageBox msgBox(QMessageBox::Question, "Cambiar el estado del bloque", QString("El bloque actual está marcado como %1. \n ¿Desea cambiar su estado?").arg(current_state), QMessageBox::Yes | QMessageBox::No, this);
-    msgBox.setButtonText(QMessageBox::Yes, "Sí");
-    msgBox.setButtonText(QMessageBox::No, "No");
-    QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
+    QMessageBox msgBox(this);
+    msgBox.setWindowTitle("Cambiar el estado del bloque");
+    msgBox.setText(QString("El bloque actual está marcado como %1. \n ¿Desea cambiar su estado?").arg(current_state));
+    msgBox.setStandardButtons(QMessageBox::NoButton);
 
-    if(reply == QMessageBox::Yes)
+    QPushButton *btnSi = msgBox.addButton("Sí", QMessageBox::YesRole);
+    QPushButton *btnNo = msgBox.addButton("No", QMessageBox::NoRole);
+
+    msgBox.exec();
+
+    if(msgBox.clickedButton() == btnSi)
     {
         BlockState update_state;
         QTableWidgetItem* item = ui->tableWidget->item(hour, day);

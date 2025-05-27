@@ -66,12 +66,17 @@ void InicialConfig::on_pushButton_save_n_semesters_clicked()
         return;
     }
 
-    QMessageBox msgBox(QMessageBox::Question, "Guardar datos", "¿Desea guardar estos datos de nombre de la materia y cantidad de semestres?", QMessageBox::Yes | QMessageBox::No, this);
-    msgBox.setButtonText(QMessageBox::Yes, "Sí");
-    msgBox.setButtonText(QMessageBox::No, "No");
-    QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
+    QMessageBox msgBox(this);
+    msgBox.setWindowTitle("Guardar datos");
+    msgBox.setText("¿Desea guardar estos datos?");
+    msgBox.setStandardButtons(QMessageBox::NoButton);
 
-    if(reply == QMessageBox::Yes)
+    QPushButton *btnSi = msgBox.addButton("Sí", QMessageBox::YesRole);
+    QPushButton *btnNo = msgBox.addButton("No", QMessageBox::NoRole);
+
+    msgBox.exec();
+
+    if(msgBox.clickedButton() == btnSi)
     {
         plan_.set_degree(name_degree.toStdString());
         for(int i = 1; i <= number_semesters; i++)
@@ -95,12 +100,17 @@ void InicialConfig::on_pushButton_save_semester_clicked()
         return;
     }
 
-    QMessageBox msgBox(QMessageBox::Question, "Guardar materias","¿Desea guardar estas materias en este semestre?", QMessageBox::Yes | QMessageBox::No, this);
-    msgBox.setButtonText(QMessageBox::Yes, "Sí");
-    msgBox.setButtonText(QMessageBox::No, "No");
-    QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
+    QMessageBox msgBox(this);
+    msgBox.setWindowTitle("Guardar materias");
+    msgBox.setText("¿Desea guardar estas materias en este semestre?");
+    msgBox.setStandardButtons(QMessageBox::NoButton);
 
-    if(reply == QMessageBox::Yes)
+    QPushButton *btnSi = msgBox.addButton("Sí", QMessageBox::YesRole);
+    QPushButton *btnNo = msgBox.addButton("No", QMessageBox::NoRole);
+
+    msgBox.exec();
+
+    if(msgBox.clickedButton() == btnSi)
     {
         Semester semester;
         QString name = ui->label_name_semester->text();
@@ -170,12 +180,17 @@ void InicialConfig::on_pushButton_delete_subject_clicked()
 
     QString textoQString = item->text().trimmed();
 
-    QMessageBox msgBox(QMessageBox::Question,"Eliminar materia","¿Desea eliminar esta materia: " + textoQString + " ?", QMessageBox::Yes | QMessageBox::No, this);
-    msgBox.setButtonText(QMessageBox::Yes, "Sí");
-    msgBox.setButtonText(QMessageBox::No, "No");
-    QMessageBox::StandardButton reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
+    QMessageBox msgBox(this);
+    msgBox.setWindowTitle("Eliminar materia");
+    msgBox.setText("¿Desea eliminar esta materia: " + textoQString + " ?");
+    msgBox.setStandardButtons(QMessageBox::NoButton);
 
-    if(reply == QMessageBox::Yes)
+    QPushButton *btnSi = msgBox.addButton("Sí", QMessageBox::YesRole);
+    QPushButton *btnNo = msgBox.addButton("No", QMessageBox::NoRole);
+
+    msgBox.exec();
+
+    if(msgBox.clickedButton() == btnSi)
     {
         std::vector<Subject> new_subjects;
         for(Subject& subject : subjects_vector)
