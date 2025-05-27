@@ -327,7 +327,7 @@ color: rgb(208, 45, 105);</string>
 color: rgb(208, 45, 105);</string>
             </property>
             <property name="text">
-             <string>Cancel</string>
+             <string>Cancelar</string>
             </property>
            </widget>
           </item>

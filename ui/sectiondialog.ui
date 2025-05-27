@@ -273,7 +273,7 @@ color: rgb(70, 70, 122);</string>
 color: rgb(70, 70, 122);</string>
           </property>
           <property name="text">
-           <string>Cancel</string>
+           <string>Cancelar</string>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButton_ok">
