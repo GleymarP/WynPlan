@@ -10,5 +10,6 @@
         <file>resources/images/search.png</file>
         <file>resources/images/frame.png</file>
         <file>resources/images/insight-alt.png</file>
+        <file>resources/images/multiple.png</file>
     </qresource>
 </RCC>
