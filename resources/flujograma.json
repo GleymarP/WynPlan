@@ -1,1 +1,83 @@
-
+{
+	"plan_de_estudio":
+	{
+		"nombre": "Ingeniería en Sistemas",
+		"semestres":
+		{
+			"Semestre 1": 
+			[
+				{
+					"nombre": "Programación 1",
+                                        "codigo": "1054",
+                                        "horas": 4
+				},
+				{
+					"nombre": "Cálculo 10",
+                                        "codigo": "1004",
+                                        "horas": 4
+				},
+				{
+					"nombre": "Sistemas de Representación 10",
+                                        "codigo": "1006",
+                                        "horas": 4
+				},
+				{
+					"nombre": "Ingeniería de Sistemas",
+                                        "codigo": "1053",
+                                        "horas": 4
+				}
+			],
+			"Semestre 2": 
+			[
+				{
+					"nombre": "Programación 2",
+                                        "codigo": "1055",
+                                        "horas": 4
+				},
+				{
+					"nombre": "Cálculo 20",
+                                        "codigo": "1012",
+                                        "horas": 4
+				},
+				{
+					"nombre": "Física 11",
+                                        "codigo": "1011",
+                                        "horas": 4
+				},
+				{
+					"nombre": "Introducción a los Procesos Químicos",
+                                        "codigo": "1056",
+                                        "horas": 4
+				}
+			],
+			"Semestre 3": 
+			[
+				{
+					"nombre": "Arquitectura de Computadoras",
+                                        "codigo": "1057",
+                                        "horas": 4
+				},
+				{
+					"nombre": "Cálculo 30",
+                                        "codigo": "1018",
+                                        "horas": 4
+				},
+				{
+					"nombre": "Física 21",
+                                        "codigo": "1017",
+                                        "horas": 4
+				},
+				{
+					"nombre": "Mecánica Racional",
+                                        "codigo": "1052",
+                                        "horas": 4
+				},
+				{
+					"nombre": "Inglés I",
+                                        "codigo": "1039",
+                                        "horas": 4
+				}
+			]
+		} 
+	}
+}
