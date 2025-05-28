@@ -10,7 +10,6 @@ SectionWindow::SectionWindow(StudyPlan& plan_, std::vector<Assigment>& assigment
 {
     ui->setupUi(this);
     ui->listWidget->hide();
-    ui->label_4->hide();
     ui->label_info->hide();
     ui->pushButton_delete_section->hide();
 
@@ -167,18 +166,18 @@ void SectionWindow::on_comboBox_option_currentTextChanged(const QString &arg1)
     if(found_assignment)
     {
         ui->listWidget->show();
-        ui->label_4->show();
+
         ui->pushButton_delete_section->show();
         ui->label_info->hide();
-        ui->frame_3->hide();
+
     }
     else
     {
         ui->listWidget->hide();
-        ui->label_4->hide();
+
         ui->pushButton_delete_section->hide();
         ui->label_info->show();
-        ui->frame_3->show();
+
     }
 }
 

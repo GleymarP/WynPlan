@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1512</width>
-    <height>982</height>
+    <width>1280</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -26,6 +26,9 @@
    <layout class="QVBoxLayout" name="verticalLayout_4">
     <item>
      <widget class="QScrollArea" name="scrollArea">
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOn</enum>
+      </property>
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
@@ -34,8 +37,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>1492</width>
-         <height>940</height>
+         <width>1246</width>
+         <height>678</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -49,8 +52,8 @@
           </property>
           <property name="maximumSize">
            <size>
-            <width>1500</width>
-            <height>300</height>
+            <width>1270</width>
+            <height>250</height>
            </size>
           </property>
           <property name="layoutDirection">
@@ -73,14 +76,14 @@
              </property>
              <property name="minimumSize">
               <size>
-               <width>112</width>
-               <height>82</height>
+               <width>178</width>
+               <height>65</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>225</width>
-               <height>82</height>
+               <width>178</width>
+               <height>65</height>
               </size>
              </property>
              <property name="styleSheet">
@@ -102,7 +105,7 @@
              <property name="font">
               <font>
                <family>Montserrat</family>
-               <pointsize>16</pointsize>
+               <pointsize>14</pointsize>
                <bold>true</bold>
               </font>
              </property>
@@ -126,7 +129,7 @@ color: rgb(119, 102, 198);</string>
              <property name="font">
               <font>
                <family>Montserrat</family>
-               <pointsize>16</pointsize>
+               <pointsize>14</pointsize>
               </font>
              </property>
              <property name="styleSheet">
@@ -139,14 +142,14 @@ color: rgb(0, 0, 0);</string>
             <widget class="QLabel" name="label_name_degree">
              <property name="maximumSize">
               <size>
-               <width>300</width>
+               <width>1000</width>
                <height>33</height>
               </size>
              </property>
              <property name="font">
               <font>
                <family>Montserrat</family>
-               <pointsize>16</pointsize>
+               <pointsize>14</pointsize>
               </font>
              </property>
              <property name="styleSheet">
@@ -168,8 +171,8 @@ color: rgb(70, 70, 122);</string>
          <widget class="QFrame" name="frame_2">
           <property name="maximumSize">
            <size>
-            <width>1500</width>
-            <height>560</height>
+            <width>1280</width>
+            <height>400</height>
            </size>
           </property>
           <property name="frameShape">
@@ -195,14 +198,14 @@ color: rgb(70, 70, 122);</string>
              </property>
              <property name="maximumSize">
               <size>
-               <width>1500</width>
-               <height>489</height>
+               <width>1270</width>
+               <height>300</height>
               </size>
              </property>
              <property name="font">
               <font>
                <family>Montserrat</family>
-               <pointsize>16</pointsize>
+               <pointsize>14</pointsize>
               </font>
              </property>
              <property name="styleSheet">

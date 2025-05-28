@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>622</width>
-    <height>822</height>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,7 +37,7 @@
         <x>0</x>
         <y>0</y>
         <width>618</width>
-        <height>788</height>
+        <height>712</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -88,7 +88,7 @@
          <property name="minimumSize">
           <size>
            <width>600</width>
-           <height>80</height>
+           <height>50</height>
           </size>
          </property>
          <property name="frameShape">
@@ -109,7 +109,7 @@
           <property name="font">
            <font>
             <family>Montserrat</family>
-            <pointsize>15</pointsize>
+            <pointsize>14</pointsize>
            </font>
           </property>
           <property name="styleSheet">
@@ -143,7 +143,7 @@ color: rgb(70, 70, 122);</string>
          <property name="minimumSize">
           <size>
            <width>600</width>
-           <height>80</height>
+           <height>50</height>
           </size>
          </property>
          <property name="frameShape">
@@ -198,7 +198,7 @@ color: rgb(70, 70, 122);</string>
          <property name="minimumSize">
           <size>
            <width>600</width>
-           <height>360</height>
+           <height>250</height>
           </size>
          </property>
          <property name="frameShape">
@@ -210,10 +210,10 @@ color: rgb(70, 70, 122);</string>
          <widget class="QListWidget" name="listWidget">
           <property name="geometry">
            <rect>
-            <x>190</x>
+            <x>170</x>
             <y>10</y>
             <width>390</width>
-            <height>340</height>
+            <height>221</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -305,7 +305,7 @@ color: rgb(243, 243, 255);</string>
           <property name="font">
            <font>
             <family>Montserrat</family>
-            <pointsize>16</pointsize>
+            <pointsize>14</pointsize>
             <bold>true</bold>
            </font>
           </property>

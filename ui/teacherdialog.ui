@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>622</width>
-    <height>822</height>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,7 +28,7 @@
         <x>0</x>
         <y>0</y>
         <width>602</width>
-        <height>802</height>
+        <height>700</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -320,8 +320,6 @@ color: rgb(70, 70, 122);</string>
            </widget>
           </item>
          </layout>
-         <zorder>frame_9</zorder>
-         <zorder>frame_8</zorder>
         </widget>
        </item>
       </layout>

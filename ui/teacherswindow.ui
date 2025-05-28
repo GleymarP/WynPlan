@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1512</width>
-    <height>982</height>
+    <width>1280</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,6 +21,9 @@ color: rgb(0, 0, 0);</string>
    <layout class="QHBoxLayout" name="horizontalLayout_3">
     <item>
      <widget class="QScrollArea" name="scrollArea">
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOn</enum>
+      </property>
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
@@ -29,8 +32,8 @@ color: rgb(0, 0, 0);</string>
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>1492</width>
-         <height>940</height>
+         <width>1246</width>
+         <height>678</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -38,8 +41,8 @@ color: rgb(0, 0, 0);</string>
          <widget class="QFrame" name="frame">
           <property name="maximumSize">
            <size>
-            <width>450</width>
-            <height>928</height>
+            <width>320</width>
+            <height>710</height>
            </size>
           </property>
           <property name="frameShape">
@@ -62,8 +65,8 @@ color: rgb(0, 0, 0);</string>
                <widget class="QPushButton" name="menu_button">
                 <property name="maximumSize">
                  <size>
-                  <width>225</width>
-                  <height>82</height>
+                  <width>178</width>
+                  <height>65</height>
                  </size>
                 </property>
                 <property name="styleSheet">
@@ -106,7 +109,7 @@ color: rgb(0, 0, 0);</string>
                    <property name="font">
                     <font>
                      <family>Montserrat</family>
-                     <pointsize>16</pointsize>
+                     <pointsize>14</pointsize>
                      <bold>true</bold>
                     </font>
                    </property>
@@ -284,8 +287,8 @@ color: rgb(255, 255, 255);</string>
          <widget class="QFrame" name="frame_2">
           <property name="maximumSize">
            <size>
-            <width>1041</width>
-            <height>930</height>
+            <width>920</width>
+            <height>710</height>
            </size>
           </property>
           <property name="frameShape">
@@ -321,7 +324,7 @@ color: rgb(255, 255, 255);</string>
             <widget class="QFrame" name="frame_3">
              <property name="maximumSize">
               <size>
-               <width>1440</width>
+               <width>900</width>
                <height>197</height>
               </size>
              </property>
@@ -377,8 +380,8 @@ color: rgb(255, 255, 255);</string>
              </property>
              <property name="maximumSize">
               <size>
-               <width>1440</width>
-               <height>558</height>
+               <width>910</width>
+               <height>550</height>
               </size>
              </property>
              <property name="palette">
