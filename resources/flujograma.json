@@ -1,83 +1,227 @@
 {
-	"plan_de_estudio":
-	{
-		"nombre": "Ingeniería en Sistemas",
-		"semestres":
+    "plan_de_estudio": {
+        "nombre": "Ingeniería de Sistemas - Sistemas Computacionales",
+        "semestres": {
+            "Semestre 1": [
+                {
+                    "codigo": "1054",
+                    "horas": 4,
+                    "nombre": "Programación 1"
+                },
+                {
+                    "codigo": "1006",
+                    "horas": 4,
+                    "nombre": "Sistemas de Representación 10"
+                },
+                {
+                    "codigo": "1004",
+                    "horas": 6,
+                    "nombre": "Cálculo 10"
+                },
+                {
+                    "codigo": "1053",
+                    "horas": 4,
+                    "nombre": "Ingeniería de Sistemas"
+                }
+            ],
+            "Semestre 2": [
+                {
+                    "codigo": "1055",
+                    "horas": 4,
+                    "nombre": "Programación 2"
+                },
+                {
+                    "codigo": "1012",
+                    "horas": 6,
+                    "nombre": "Cálculo 20"
+                },
+                {
+                    "codigo": "1011",
+                    "horas": 4,
+                    "nombre": "Física 11"
+                },
+                {
+                    "codigo": "1056",
+                    "horas": 5,
+                    "nombre": "Introducción a los Procesos Químicos"
+                }
+            ],
+            "Semestre 3": [
+                {
+                    "codigo": "1018",
+                    "horas": 6,
+                    "nombre": "Cálculo 30"
+                },
+                {
+                    "codigo": "1057",
+                    "horas": 4,
+                    "nombre": "Arquitectura de Computadoras"
+                },
+                {
+                    "codigo": "1052",
+                    "horas": 4,
+                    "nombre": "Mecánica Racional"
+                },
+                {
+                    "codigo": "1017",
+                    "horas": 4,
+                    "nombre": "Física 21"
+                },
+                {
+                    "codigo": "1039",
+                    "horas": 3,
+                    "nombre": "Inglés - Lectura I"
+                }
+            ],
+            "Semestre 4": [
+                {
+                    "codigo": "1060",
+                    "horas": 4,
+                    "nombre": "Programación 3"
+                },
+                {
+                    "codigo": "1020",
+                    "horas": 4,
+                    "nombre": "Laboratorio de Física General"
+                },
+                {
+                    "codigo": "1038",
+                    "horas": 6,
+                    "nombre": "Cálculo 40"
+                },
+                {
+                    "codigo": "1059",
+                    "horas": 4,
+                    "nombre": "Elementos de Economía"
+                },
+                {
+                    "codigo": "1058",
+                    "horas": 4,
+                    "nombre": "Estocástica 1"
+                }
+            ],
+            "Semestre 5": [
+                {
+                    "codigo": "7201",
+                    "horas": 4,
+                    "nombre": "Investigación de Operaciones 1"
+                },
+                {
+                    "codigo": "7202",
+                    "horas": 4,
+                    "nombre": "Estocástica 2"
+                },
+                {
+                    "codigo": "7200",
+                    "horas": 4,
+                    "nombre": "Matemáticas Discretas"
+                },
+                {
+                    "codigo": "7003",
+                    "horas": 6,
+                    "nombre": "Matemáticas Especiales"
+                },
+                {
+                    "codigo": "7041",
+                    "horas": 4,
+                    "nombre": "Modelado de Sistemas Físicos"
+                }
+            ],
+            "Semestre 6": [
+                {
+                    "codigo": "7203",
+                    "horas": 4,
+                    "nombre": "Análisis y Diseño de Algoritmos"
+                },
+                {
+                    "codigo": "7206",
+                    "horas": 4,
+                    "nombre": "Modelado y Simulación 1"
+                },
+                {
+                    "codigo": "7300",
+                    "horas": 1,
+                    "nombre": "Inducción al servicio comunitario"
+                },
+                {
+                    "codigo": "7204",
+                    "horas": 4,
+                    "nombre": "Análisis numérico"
+                },
+                {
+                    "codigo": "7293",
+                    "horas": 4,
+                    "nombre": "Introducción al Control Automático"
+                },
+                {
+                    "codigo": "7205",
+                    "horas": 6,
+                    "nombre": "Instrumentación 1"
+                }
+            ],
+            "Semestre 7": [
+                {
+                    "codigo": "7232",
+                    "horas": 5,
+                    "nombre": "Sistemas Operativos"
+                },
+                {
+                    "codigo": "7229",
+                    "horas": 5,
+                    "nombre": "Bases de Datos"
+                },
+                {
+                    "codigo": "7230",
+                    "horas": 5,
+                    "nombre": "Ingeniería del Software"
+                },
+                {
+                    "codigo": "7231",
+                    "horas": 4,
+                    "nombre": "Teoría de la Computación"
+                },
+                {
+                    "codigo": "7301",
+                    "horas": 1,
+                    "nombre": "Servicio Comunitario"
+                }
+            ],
+            "Semestre 8": [
+                {
+                    "codigo": "7233",
+                    "horas": 5,
+                    "nombre": "Redes de Computadores"
+                },
+                {
+                    "codigo": "7235",
+                    "horas": 5,
+                    "nombre": "Inteligencia Artificial"
+                },
+                {
+                    "codigo": "7234",
+                    "horas": 5,
+                    "nombre": "Compiladores"
+                }
+            ],
+            "Semestre 9": [
+                {
+                    "codigo": "7216",
+                    "horas": 3,
+                    "nombre": "Preproyecto"
+                },
+                {
+                    "codigo": "7236",
+                    "horas": 7,
+                    "nombre": "Sistemas Computacionales"
+                }
+	    ],
+	    "Semestre 10": [
 		{
-			"Semestre 1": 
-			[
-				{
-					"nombre": "Programación 1",
-                                        "codigo": "1054",
-                                        "horas": 4
-				},
-				{
-					"nombre": "Cálculo 10",
-                                        "codigo": "1004",
-                                        "horas": 4
-				},
-				{
-					"nombre": "Sistemas de Representación 10",
-                                        "codigo": "1006",
-                                        "horas": 4
-				},
-				{
-					"nombre": "Ingeniería de Sistemas",
-                                        "codigo": "1053",
-                                        "horas": 4
-				}
-			],
-			"Semestre 2": 
-			[
-				{
-					"nombre": "Programación 2",
-                                        "codigo": "1055",
-                                        "horas": 4
-				},
-				{
-					"nombre": "Cálculo 20",
-                                        "codigo": "1012",
-                                        "horas": 4
-				},
-				{
-					"nombre": "Física 11",
-                                        "codigo": "1011",
-                                        "horas": 4
-				},
-				{
-					"nombre": "Introducción a los Procesos Químicos",
-                                        "codigo": "1056",
-                                        "horas": 4
-				}
-			],
-			"Semestre 3": 
-			[
-				{
-					"nombre": "Arquitectura de Computadoras",
-                                        "codigo": "1057",
-                                        "horas": 4
-				},
-				{
-					"nombre": "Cálculo 30",
-                                        "codigo": "1018",
-                                        "horas": 4
-				},
-				{
-					"nombre": "Física 21",
-                                        "codigo": "1017",
-                                        "horas": 4
-				},
-				{
-					"nombre": "Mecánica Racional",
-                                        "codigo": "1052",
-                                        "horas": 4
-				},
-				{
-					"nombre": "Inglés I",
-                                        "codigo": "1039",
-                                        "horas": 4
-				}
-			]
-		} 
-	}
+		    "codigo": "7217",
+		    "horas": 15,
+		    "nombre": "Proyecto de Grado"
+	        }
+	    ]
+        }
+    }
 }
