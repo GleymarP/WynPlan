@@ -56,10 +56,16 @@
              <property name="enabled">
               <bool>false</bool>
              </property>
+             <property name="minimumSize">
+              <size>
+               <width>178</width>
+               <height>65</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
-               <width>225</width>
-               <height>82</height>
+               <width>178</width>
+               <height>65</height>
               </size>
              </property>
              <property name="styleSheet">

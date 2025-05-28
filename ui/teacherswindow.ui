@@ -63,6 +63,12 @@ color: rgb(0, 0, 0);</string>
              <layout class="QVBoxLayout" name="verticalLayout_4">
               <item>
                <widget class="QPushButton" name="menu_button">
+                <property name="minimumSize">
+                 <size>
+                  <width>178</width>
+                  <height>65</height>
+                 </size>
+                </property>
                 <property name="maximumSize">
                  <size>
                   <width>178</width>
