@@ -150,7 +150,59 @@ void ScheduleWindow::on_pushButton_generate_schedule_clicked()
     ui->tableWidget->clear();
     std::vector<Subject> semester_subjects = current_semester.get_subjects_semester();
 
-    NetworkGraph network_graph(professors_, semester_subjects);
+    int i = 0;
+    std::vector<Professor> semester_professors;
+    std::vector<Professor> temporal_professors;
+    std::unordered_set<std::string> added_professor_ids;
+
+
+    for (auto& subject : semester_subjects)
+    {
+        bool has_professor = false;
+        for (auto& professor : professors_)
+        {
+            for (auto& prof_subject : professor.get_subjects())
+            {
+                if (prof_subject.get_id() == subject.get_id())
+                {
+                    if (added_professor_ids.insert(professor.get_id()).second)
+                    {
+                        semester_professors.push_back(professor);
+                    }
+                    has_professor = true;
+                    break;
+
+                }
+            }
+            if (has_professor)
+            {
+                break;
+            }
+        }
+        if (!has_professor)
+        {
+            Professor temporal;
+            temporal.set_full_name("Profesor por asignar " + std::to_string(i) + " _ " + subject.get_id());
+            i++;
+            temporal.set_id("TEMP_" + subject.get_id());
+            temporal.set_subjects({subject});
+            for (int dia = 0; dia < 7; dia++)
+            {
+                for (int hora = 0; hora < 12; hora++)
+                {
+                    temporal.set_state_block(dia, hora, DISPONIBLE);
+                }
+            }
+            temporal_professors.push_back(temporal);
+            professors_.push_back(temporal);
+            semester_professors.push_back(std::move(temporal));
+        }
+    }
+
+
+    NetworkGraph network_graph(semester_professors, semester_subjects);
+
+    //NetworkGraph network_graph(professors_, semester_subjects);
     network_graph.max_flow();
 
     std::vector<Section> sections = network_graph.get_final_assign_section();
@@ -177,6 +229,7 @@ void ScheduleWindow::on_pushButton_generate_schedule_clicked()
 
         assignments_.push_back(assigment);
         Assigment::save_assigments_json(assignments_, path_assign_json, plan_);
+        Professor::save_professors_json(professors_, path_professors_json);
         assignments_ = Assigment::load_from_json_assing(path_assign_json, plan_, professors_);
 
         ui->comboBox_options->addItem(QString::fromStdString(current_option));
@@ -188,8 +241,13 @@ void ScheduleWindow::on_pushButton_generate_schedule_clicked()
     {
         ui->tableWidget->hide();
         ui->tableWidget->clear();
-        QMessageBox::information(this, "No hay opción disponible", "No se pudieron asignar todas las materias requeridas para el semestre.");
-
+        //QMessageBox::information(this, "No hay opción disponible", "No se pudieron asignar todas las materias requeridas para el semestre.");
+        QMessageBox::information(this,"No hay opción disponible",
+            QString("No se pudieron asignar %1 de %2 materias (se usaron %3 profesores temporales).")
+                .arg(temporal_professors.size())
+                .arg(semester_subjects.size())
+                .arg(temporal_professors.size())
+        );
     }
 
 }
