@@ -10,8 +10,8 @@ NetworkGraph::NetworkGraph(const std::vector<Professor>& professors_, const std:
 
 void NetworkGraph::build_network()
 {
-    source_node = graph.insert_node({NodeType::Source, INT_MAX, 0, "source"});
-    sink_node = graph.insert_node({NodeType::Sink, INT_MAX, 0, "sink"});
+    source_node = graph.insert_node({NodeType::Source, std::numeric_limits<int>::max(), 0, "source"});
+    sink_node = graph.insert_node({NodeType::Sink, std::numeric_limits<int>::max(), 0, "sink"});
 
 
     for (const auto& subject : subjects)
@@ -111,7 +111,7 @@ int NetworkGraph::max_flow()
 
     while(bfs(parent))
     {
-        int bottleneck = INT_MAX;
+        int bottleneck = std::numeric_limits<int>::max();
 
         for(Node v = sink_node; v != source_node; v = parent[v])
         {

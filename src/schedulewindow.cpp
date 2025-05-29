@@ -20,7 +20,6 @@ ScheduleWindow::ScheduleWindow(StudyPlan& plan, std::vector<Professor>& professo
     if(assignments_.empty())
     {
         ui->pushButton_read->hide();
-        ui->comboBox_options->hide();
     }
     qApp->setStyleSheet("QMessageBox QLabel { color: black; }");
 }
