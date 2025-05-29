@@ -11,139 +11,190 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Asignar profesor</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(243, 243, 255);</string>
   </property>
-  <widget class="QComboBox" name="comboBox_subjects">
-   <property name="geometry">
-    <rect>
-     <x>72</x>
-     <y>75</y>
-     <width>311</width>
-     <height>52</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat</family>
-     <pointsize>15</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 250, 250);
+  <layout class="QVBoxLayout" name="verticalLayout_4">
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>968</width>
+        <height>560</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QFrame" name="frame">
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item alignment="">
+           <widget class="QLabel" name="label">
+            <property name="maximumSize">
+             <size>
+              <width>900</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Montserrat</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 107, 108);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_3">
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QFrame" name="frame_2">
+            <property name="frameShape">
+             <enum>QFrame::Shape::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QComboBox" name="comboBox_subjects">
+               <property name="font">
+                <font>
+                 <family>Montserrat</family>
+                 <pointsize>15</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 250, 250);
 color: rgb(0, 0, 0);</string>
-   </property>
-  </widget>
-  <widget class="QListWidget" name="listWidget_info">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>170</y>
-     <width>301</width>
-     <height>211</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 250, 250);
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListWidget" name="listWidget_info">
+               <property name="font">
+                <font>
+                 <family>Montserrat</family>
+                 <pointsize>14</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 250, 250);
 color: rgb(0, 0, 0);</string>
-   </property>
-  </widget>
-  <widget class="QListWidget" name="listWidget_professors">
-   <property name="geometry">
-    <rect>
-     <x>413</x>
-     <y>75</y>
-     <width>519</width>
-     <height>369</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 250, 250);
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListWidget" name="listWidget_professors">
+            <property name="font">
+             <font>
+              <family>Montserrat</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 250, 250);
 color: rgb(0, 0, 0);</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_save">
-   <property name="geometry">
-    <rect>
-     <x>733</x>
-     <y>502</y>
-     <width>206</width>
-     <height>46</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat</family>
-     <pointsize>16</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(119, 102, 198);
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_4">
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="pushButton_cancel">
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Montserrat</family>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(192, 191, 188);
 color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Guardar</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>30</y>
-     <width>641</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(255, 107, 108);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_cancel">
-   <property name="geometry">
-    <rect>
-     <x>500</x>
-     <y>500</y>
-     <width>206</width>
-     <height>46</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Montserrat</family>
-     <pointsize>16</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(192, 191, 188);
+            </property>
+            <property name="text">
+             <string>Cancelar</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_save">
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Montserrat</family>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(119, 102, 198);
 color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Cancelar</string>
-   </property>
-  </widget>
+            </property>
+            <property name="text">
+             <string>Guardar</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
