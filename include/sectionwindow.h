@@ -32,6 +32,10 @@ private slots:
 
     void on_pushButton_assign_professor_clicked();
 
+    bool professor_to_be_assigned();
+
+    void update_professors_schedule_from_assigments(Assigment update);
+
 private:
     Ui::SectionWindow *ui;
     std::vector<Assigment> assigments;
@@ -39,6 +43,7 @@ private:
     StudyPlan plan;
     Assigment current_assigment;
     std::string current_txt;
+
 };
 
 std::string get_day(int day);

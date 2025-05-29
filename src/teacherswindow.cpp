@@ -15,7 +15,6 @@ TeachersWindow::TeachersWindow(std::vector<Professor>& professor, StudyPlan& pla
     ui->button_delete->hide();
     ui->button_modify->hide();
     ui->line_edit_id->setPlaceholderText("Ej: V-10716009 o Taylor Swift");
-
     connect(ui->line_edit_id, &QLineEdit::returnPressed, this, &TeachersWindow::on_search_button_clicked);
 }
 

@@ -12,6 +12,7 @@ SectionWindow::SectionWindow(StudyPlan& plan_, std::vector<Assigment>& assigment
     ui->listWidget->hide();
     ui->label_info->hide();
     ui->pushButton_delete_section->hide();
+    ui->pushButton_assign_professor->hide();
 
     ui->listWidget->clear();
     std::vector<Semester> semesters = plan_.get_semester();
@@ -62,6 +63,7 @@ void SectionWindow::on_comboBox_option_currentTextChanged(const QString &arg1)
     std::string text_changed = arg1.toStdString();
     ui->listWidget->clear();
     bool found_assignment = false;
+
 
     for(Assigment& assigment : assigments)
     {
@@ -170,6 +172,14 @@ void SectionWindow::on_comboBox_option_currentTextChanged(const QString &arg1)
         ui->pushButton_delete_section->show();
         ui->label_info->hide();
 
+        if(professor_to_be_assigned())
+        {
+            ui->pushButton_assign_professor->show();
+        }
+        else
+        {
+            ui->pushButton_assign_professor->hide();
+        }
     }
     else
     {
@@ -177,6 +187,7 @@ void SectionWindow::on_comboBox_option_currentTextChanged(const QString &arg1)
 
         ui->pushButton_delete_section->hide();
         ui->label_info->show();
+        ui->pushButton_assign_professor->hide();
 
     }
 }
@@ -333,14 +344,100 @@ void SectionWindow::on_pushButton_delete_section_clicked()
 void SectionWindow::on_pushButton_assign_professor_clicked()
 {
 
-
     AssignProfessorDialog dialog(current_assigment, professors, plan, this);
     if(dialog.exec() == QDialog::Accepted)
     {
-        //Subject new_subject = dialog.get_subject();
-        //subjects_vector.push_back(new_subject);
-        //QMessageBox::information(this, "Agregado", "Nueva materia agregada");
-        ////update_window();
+        bool assigment_has_change = false;
+
+        Assigment update_assigment = dialog.get_update_assigment();
+        auto before_sections = current_assigment.get_sections_vector();
+        auto after_sections = update_assigment.get_sections_vector();
+
+
+        for(int i = 0; i < before_sections.size(); ++i)
+        {
+            std::string before_professor = before_sections[i].get_professor_section();
+            std::string after_professor = after_sections[i].get_professor_section();
+
+            if(before_professor != after_professor)
+            {
+                assigment_has_change = true;
+            }
+        }
+
+        if(assigment_has_change)
+        {
+            for(auto& assigment : assigments)
+            {
+                if(assigment.get_option() == update_assigment.get_option() && assigment.get_semester_name() == update_assigment.get_semester_name())
+                {
+                    assigment = update_assigment;
+                    break;
+                }
+            }
+
+            update_professors_schedule_from_assigments(update_assigment);
+            Professor::save_professors_json(professors, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
+
+            Assigment::save_assigments_json(assigments, QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan);
+
+            assigments = Assigment::load_from_json_assing(QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan, professors);
+            professors = Professor::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/teachers.json", plan);
+
+
+            on_comboBox_option_currentTextChanged(QString::fromStdString(update_assigment.get_option()));
+            QMessageBox::information(this, "Actualizado", "Asignaciones actualizadas correctamente.");
+        }
+        else
+        {
+            QMessageBox::information(this, "Sin cambios", "No se realizó ninguna acción");
+        }
+
+    }
+    else
+    {
+
+        QMessageBox::information(this, "Cancelado", "No se realizó ninguna acción");
+    }
+}
+
+bool SectionWindow::professor_to_be_assigned()
+{
+    std::string text = "TEMP_";
+
+    for(auto section : current_assigment.get_sections_vector())
+    {
+        std::string professor_section_id = section.get_professor_section();
+        if(professor_section_id.find(text) != std::string::npos)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+void SectionWindow::update_professors_schedule_from_assigments(Assigment update)
+{
+    for(auto& section : update.get_sections_vector())
+    {
+        std::string profesor_id = section.get_professor_section();
+        std::vector<std::pair<int, int>> blocks = section.get_assigned_blocks();
+        std::string subject_id = section.get_subject_section();
+
+        for(auto& professor: professors)
+        {
+            if(professor.get_id() == profesor_id)
+            {
+                for(const auto& [day, hour] : blocks)
+                {
+                    TimeBlock block;
+                    block.state = OCUPADO;
+                    block.id_subject = subject_id;
+                    professor.set_time_block(day, hour, block);
+                }
+                break;
+            }
+        }
     }
 }
 

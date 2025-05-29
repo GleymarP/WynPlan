@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include <definitions.h>
+#include <unordered_set>
+#include <QListWidgetItem>
 
 namespace Ui {
 class AssignProfessorDialog;
@@ -17,10 +19,20 @@ public:
     ~AssignProfessorDialog();
 
     void set_data();
+
     std::vector<Professor> get_professors_subject(Subject& subject);
+
+    Assigment get_update_assigment() const;
 
 private slots:
     void on_comboBox_subjects_currentTextChanged(const QString &arg1);
+
+    void on_pushButton_cancel_clicked();
+
+    void on_pushButton_save_clicked();
+
+    void on_listWidget_professors_itemClicked(QListWidgetItem *item);
+
 
 private:
     Ui::AssignProfessorDialog *ui;
@@ -28,6 +40,7 @@ private:
     std::vector<Professor> professors;
     StudyPlan plan;
     Subject current_subj;
+
 };
 
 #endif // ASSIGNPROFESSORDIALOG_H

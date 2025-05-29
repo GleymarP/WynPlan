@@ -5,6 +5,7 @@
 #include "definitions.h"
 #include <networkgraph.h>
 #include <QMessageBox>
+#include <unordered_set>
 
 namespace Ui {
 class ScheduleWindow;

@@ -20,6 +20,7 @@ ScheduleWindow::ScheduleWindow(StudyPlan& plan, std::vector<Professor>& professo
     if(assignments_.empty())
     {
         ui->pushButton_read->hide();
+        ui->comboBox_options->hide();
     }
     qApp->setStyleSheet("QMessageBox QLabel { color: black; }");
 }
@@ -119,6 +120,7 @@ void ScheduleWindow::update_table()
                             {
                                 professor_name = professor.get_full_name();
                             }
+
                         }
 
                         item->setToolTip(QString::fromStdString("Materia: " + subject_name + "\nProfesor: " + professor_name));
@@ -239,13 +241,7 @@ void ScheduleWindow::on_pushButton_generate_schedule_clicked()
     {
         ui->tableWidget->hide();
         ui->tableWidget->clear();
-        //QMessageBox::information(this, "No hay opción disponible", "No se pudieron asignar todas las materias requeridas para el semestre.");
-        QMessageBox::information(this,"No hay opción disponible",
-            QString("No se pudieron asignar %1 de %2 materias (se usaron %3 profesores temporales).")
-                .arg(temporal_professors.size())
-                .arg(semester_subjects.size())
-                .arg(temporal_professors.size())
-        );
+        QMessageBox::information(this, "No hay opción disponible", "No se pudieron asignar todas las materias requeridas para el semestre.");
     }
 
 }
@@ -284,7 +280,6 @@ void ScheduleWindow::on_comboBox_schedule_currentTextChanged(const QString &arg1
     }
 
 }
-
 
 void ScheduleWindow::on_comboBox_options_windowIconTextChanged(const QString &iconText)
 {

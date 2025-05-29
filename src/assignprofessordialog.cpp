@@ -154,6 +154,11 @@ void AssignProfessorDialog::on_comboBox_subjects_currentTextChanged(const QStrin
             if(flag == false)
             {
                 ui->label->setText("No hay profesores con horarios disponibles para asignar esta materia");
+                ui->pushButton_save->setText("Ok");
+            }
+            else
+            {
+                ui->label->setText("Seleccione un profesor");
             }
         }
     }
@@ -184,3 +189,65 @@ std::vector<Professor> AssignProfessorDialog::get_professors_subject(Subject& su
     return professors_vector;
 }
 
+void AssignProfessorDialog::on_pushButton_save_clicked()
+{
+
+    accept();
+}
+
+
+void AssignProfessorDialog::on_pushButton_cancel_clicked()
+{
+    reject();
+}
+
+
+void AssignProfessorDialog::on_listWidget_professors_itemClicked(QListWidgetItem *item)
+{
+    QString item_text = item->text();
+    QStringList parts = item_text.split(" - ");
+    if(parts.size() != 2)
+    {
+        return;
+    }
+
+    QString name = parts[0];
+    QString id = parts[1];
+
+    QMessageBox::StandardButton reply = QMessageBox::question(this, "Asignar profesor", "¿Desea asignar a " + name + " a esta sección?", QMessageBox::Yes | QMessageBox::No);
+
+    if(reply == QMessageBox::Yes)
+    {
+        std::string profesor_id = id.toStdString();
+        std::string subject_id = current_subj.get_id();
+
+        auto sections = current_assign.get_sections_vector();
+
+        for(auto& section : sections)
+        {
+            if (section.get_subject_section() == subject_id && section.get_professor_section().find("TEMP_") != std::string::npos)
+            {
+                section.set_professor_section(profesor_id);
+                break;
+            }
+        }
+        current_assign.set_sections_vector(sections);
+        QMessageBox::information(this, "Asignado", "Profesor asignado correctamente.");
+
+        ui->comboBox_subjects->removeItem(ui->comboBox_subjects->currentIndex());
+        ui->listWidget_info->clear();
+        ui->listWidget_professors->clear();
+
+        if(ui->comboBox_subjects->count() == 0)
+        {
+            QMessageBox::information(this, "Completado", "Se asignaron todos los profesores.");
+            accept();
+        }
+
+    }
+}
+
+Assigment AssignProfessorDialog::get_update_assigment() const
+{
+    return current_assign;
+}

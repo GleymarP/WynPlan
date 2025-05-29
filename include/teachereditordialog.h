@@ -25,9 +25,6 @@ private slots:
 
     void on_pushButton_cancel_clicked();
 
-
-
-
 private:
     Ui::TeacherEditorDialog *ui;
     bool confirm_delete = false;
