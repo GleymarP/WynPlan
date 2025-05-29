@@ -145,64 +145,105 @@ void ScheduleWindow::update_table()
 
 }
 
+bool check_availability(const Professor& professor, const Subject& subject)
+{
+    int available_blocks = 0;
+
+    for (int day = 0; day < 7; day++)
+    {
+        for (int block = 0; block < 12; block++)
+        {
+            if (professor.get_timeblock(day, block).state == DISPONIBLE)
+            {
+                available_blocks++;
+                if (available_blocks >= subject.get_required_hours())
+                {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
 
 void ScheduleWindow::on_pushButton_generate_schedule_clicked()
 {
     ui->tableWidget->clear();
     std::vector<Subject> semester_subjects = current_semester.get_subjects_semester();
 
-    int i = 0;
+    int temp_prof_counter = 0;
     std::vector<Professor> semester_professors;
     std::vector<Professor> temporal_professors;
     std::unordered_set<std::string> added_professor_ids;
 
-
-    for (auto& subject : semester_subjects)
+    for(const auto& subject : semester_subjects)
     {
-        bool has_professor = false;
-        for (auto& professor : professors_)
-        {
-            for (auto& prof_subject : professor.get_subjects())
-            {
-                if (prof_subject.get_id() == subject.get_id())
-                {
-                    if (added_professor_ids.insert(professor.get_id()).second)
-                    {
-                        semester_professors.push_back(professor);
-                    }
-                    has_professor = true;
-                    break;
+        bool has_available_professor = false;
 
+        for(const auto& professor : professors_)
+        {
+            bool teaches_subject = false;
+            for(const auto& prof_subject : professor.get_subjects())
+            {
+                if(prof_subject.get_id() == subject.get_id())
+                {
+                    teaches_subject = true;
+                    break;
                 }
             }
-            if (has_professor)
+
+            if(teaches_subject && check_availability(professor, subject))
             {
+                if(added_professor_ids.insert(professor.get_id()).second)
+                {
+                    semester_professors.push_back(professor);
+                }
+                has_available_professor = true;
                 break;
             }
         }
-        if (!has_professor)
+
+        if(!has_available_professor)
         {
-            Professor temporal;
-            temporal.set_full_name("Profesor por asignar " + std::to_string(i) + " _ " + subject.get_id());
-            i++;
-            temporal.set_id("TEMP_" + subject.get_id());
-            temporal.set_subjects({subject});
-            for (int dia = 0; dia < 7; dia++)
+            bool existing_temp_available = false;
+
+            for(const auto& prof : professors_)
             {
-                for (int hora = 0; hora < 12; hora++)
+                if(prof.get_id() == "TEMP_" + subject.get_id())
                 {
-                    temporal.set_state_block(dia, hora, DISPONIBLE);
+                    if(check_availability(prof, subject))
+                    {
+                        semester_professors.push_back(prof);
+                        existing_temp_available = true;
+                    }
+                    break;
                 }
             }
-            temporal_professors.push_back(temporal);
-            semester_professors.push_back(std::move(temporal));
+
+            if(!existing_temp_available)
+            {
+                Professor temp_prof;
+                temp_prof.set_full_name("Profesor por asignar " + std::to_string(temp_prof_counter) + " - " + subject.get_subject_name());
+                temp_prof.set_id("TEMP_" + subject.get_id());
+                temp_prof.set_subjects({subject});
+
+                for(int day = 0; day < 7; day++)
+                {
+                    for(int block = 0; block < 12; block++)
+                    {
+                        temp_prof.set_state_block(day, block, DISPONIBLE);
+                    }
+                }
+
+                temporal_professors.push_back(temp_prof);
+                semester_professors.push_back(temp_prof);
+                professors_.push_back(temp_prof);
+                temp_prof_counter++;
+            }
         }
     }
 
-
     NetworkGraph network_graph(semester_professors, semester_subjects);
-
-    //NetworkGraph network_graph(professors_, semester_subjects);
     network_graph.max_flow();
 
     std::vector<Section> sections = network_graph.get_final_assign_section();
@@ -229,6 +270,7 @@ void ScheduleWindow::on_pushButton_generate_schedule_clicked()
 
         assignments_.push_back(assigment);
         Assigment::save_assigments_json(assignments_, path_assign_json, plan_);
+        Professor::save_professors_json(professors_, path_professors_json);
         assignments_ = Assigment::load_from_json_assing(path_assign_json, plan_, professors_);
 
         ui->comboBox_options->addItem(QString::fromStdString(current_option));
