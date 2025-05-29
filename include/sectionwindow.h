@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "definitions.h"
 #include <sectiondialog.h>
+#include <assignprofessordialog.h>
 
 namespace Ui {
 class SectionWindow;
@@ -28,6 +29,8 @@ private slots:
     void on_comboBox_option_currentTextChanged(const QString &arg1);
 
     void on_pushButton_delete_section_clicked();
+
+    void on_pushButton_assign_professor_clicked();
 
 private:
     Ui::SectionWindow *ui;

@@ -38,7 +38,7 @@
          <x>0</x>
          <y>0</y>
          <width>1246</width>
-         <height>678</height>
+         <height>677</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout">
@@ -196,12 +196,27 @@ color: rgb(255, 255, 255);</string>
                 </property>
                </widget>
               </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_assign_professor">
+                <property name="font">
+                 <font>
+                  <family>Montserrat</family>
+                  <pointsize>16</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(119, 102, 198);
+color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="text">
+                 <string>PushButton</string>
+                </property>
+               </widget>
+              </item>
              </layout>
             </widget>
            </item>
           </layout>
-          <zorder>frame_4</zorder>
-          <zorder>frame_3</zorder>
          </widget>
         </item>
         <item>

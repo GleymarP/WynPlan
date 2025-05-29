@@ -194,7 +194,6 @@ void ScheduleWindow::on_pushButton_generate_schedule_clicked()
                 }
             }
             temporal_professors.push_back(temporal);
-            professors_.push_back(temporal);
             semester_professors.push_back(std::move(temporal));
         }
     }
@@ -229,7 +228,6 @@ void ScheduleWindow::on_pushButton_generate_schedule_clicked()
 
         assignments_.push_back(assigment);
         Assigment::save_assigments_json(assignments_, path_assign_json, plan_);
-        Professor::save_professors_json(professors_, path_professors_json);
         assignments_ = Assigment::load_from_json_assing(path_assign_json, plan_, professors_);
 
         ui->comboBox_options->addItem(QString::fromStdString(current_option));

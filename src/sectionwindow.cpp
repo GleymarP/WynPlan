@@ -329,3 +329,18 @@ void SectionWindow::on_pushButton_delete_section_clicked()
 
 }
 
+
+void SectionWindow::on_pushButton_assign_professor_clicked()
+{
+
+
+    AssignProfessorDialog dialog(current_assigment, professors, plan, this);
+    if(dialog.exec() == QDialog::Accepted)
+    {
+        //Subject new_subject = dialog.get_subject();
+        //subjects_vector.push_back(new_subject);
+        //QMessageBox::information(this, "Agregado", "Nueva materia agregada");
+        ////update_window();
+    }
+}
+

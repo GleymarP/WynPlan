@@ -84,6 +84,9 @@ qt_add_executable(WynPlan
     include/addsubjectdialog.h
     src/addsubjectdialog.cpp
     ui/addsubjectdialog.ui
+    include/assignprofessordialog.h
+    src/assignprofessordialog.cpp
+    ui/assignprofessordialog.ui
 )
 
 target_link_libraries(WynPlan PRIVATE
