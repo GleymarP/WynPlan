@@ -103,6 +103,11 @@ void SectionWindow::on_comboBox_option_currentTextChanged(const QString &arg1)
 
                 for(Professor& professor : professors)
                 {
+                    if (professor.get_id().find("TEMP_") != std::string::npos)
+                    {
+                        continue;
+                    }
+
                     if(section.get_professor_section() == professor.get_id())
                     {
                         ui->listWidget->addItem("Profesor: " + QString::fromStdString(professor.get_full_name()));

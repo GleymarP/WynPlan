@@ -173,6 +173,11 @@ std::vector<Professor> AssignProfessorDialog::get_professors_subject(Subject& su
 
     for(Professor& professor : professors)
     {
+        if (professor.get_id().find("TEMP_") != std::string::npos)
+        {
+            continue;
+        }
+
         for(Subject& subject_prof : professor.get_subjects())
         {
             if(subject_prof.get_id() ==  subject.get_id())
