@@ -1,11 +1,12 @@
 #include "teacherswindow.h"
 #include "ui_teacherswindow.h"
 
-TeachersWindow::TeachersWindow(std::vector<Professor>& professor, StudyPlan& plan, QWidget *parent)
+TeachersWindow::TeachersWindow(std::vector<Professor>& professor, StudyPlan& plan, std::vector<Assigment>& assigments, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::TeachersWindow)
     , professors_(professor)
     , plan_(plan)
+    , assigments_(assigments)
 {
     ui->setupUi(this);
     ui->tableWidget->hide();
@@ -305,7 +306,27 @@ void TeachersWindow::on_button_delete_clicked()
 
         professors_ = professors_temp;
 
+        for(auto& assigment : assigments_)
+        {
+            std::vector<Section> update_sections;
+            for(auto& section : assigment.get_sections_vector())
+            {
+                if(section.get_professor_section() == current_professor.get_id())
+                {
+                    section.set_professor_section("TEMP_");
+                }
+                update_sections.push_back(section);
+            }
+
+            assigment.set_sections_vector(update_sections);
+        }
+
+
         Professor::save_professors_json(professors_, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
+        Assigment::save_assigments_json(assigments_, QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan_);
+
+
+
         QMessageBox::information(this, "Eliminado","Profesor eliminado correctamente" );
 
         ui->tableWidget->hide();

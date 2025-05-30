@@ -19,7 +19,7 @@ class TeachersWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit TeachersWindow(std::vector<Professor>& professor, StudyPlan& plan, QWidget *parent = nullptr);
+    explicit TeachersWindow(std::vector<Professor>& professor, StudyPlan& plan, std::vector<Assigment>& assigments, QWidget *parent = nullptr);
     ~TeachersWindow();
 
 
@@ -55,6 +55,7 @@ private:
     Ui::TeachersWindow *ui;
     std::vector<Professor> professors_;
     StudyPlan plan_;
+    std::vector<Assigment> assigments_;
     bool edit_mode_enabled = false;
     Professor current_professor;
 };

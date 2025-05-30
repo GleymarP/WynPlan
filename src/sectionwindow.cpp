@@ -384,7 +384,36 @@ void SectionWindow::on_pushButton_assign_professor_clicked()
             assigments = Assigment::load_from_json_assing(QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan, professors);
             professors = Professor::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/teachers.json", plan);
 
+            std::unordered_set<std::string> used_professor_id;
 
+            for(auto& assig : assigments)
+            {
+                for(auto& section : assig.get_sections_vector())
+                {
+                    used_professor_id.insert(section.get_professor_section());
+                }
+            }
+
+            std::vector<Professor> filtered_professors;
+            for(const auto& professor: professors)
+            {
+                std::string id = professor.get_id();
+
+                if(id.rfind("TEMP_", 0) == 0)
+                {
+                    if(used_professor_id.count(id))
+                    {
+                        filtered_professors.push_back(professor);
+                    }
+                }
+                else
+                {
+                    filtered_professors.push_back(professor);
+                }
+            }
+
+            professors = filtered_professors;
+            Professor::save_professors_json(professors, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
             on_comboBox_option_currentTextChanged(QString::fromStdString(update_assigment.get_option()));
             QMessageBox::information(this, "Actualizado", "Asignaciones actualizadas correctamente.");
         }

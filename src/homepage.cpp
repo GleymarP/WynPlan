@@ -26,7 +26,7 @@ void HomePage::reload_data()
 void HomePage::on_teacher_button_clicked()
 {
     reload_data();
-    TeachersWindow *professor_window = new TeachersWindow(professors, plan);
+    TeachersWindow *professor_window = new TeachersWindow(professors, plan, assigments);
     connect(professor_window, &TeachersWindow::back_to_menu, this, &HomePage::handle_back_to_menu);
     professor_window->show();
     this->hide();
