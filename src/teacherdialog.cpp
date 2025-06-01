@@ -1,8 +1,10 @@
 #include "teacherdialog.h"
 #include "ui_teacherdialog.h"
 
-TeacherDialog::TeacherDialog(QWidget *parent)
+TeacherDialog::TeacherDialog(std::vector<Professor>& professors, std::string current_id, QWidget *parent)
     : QDialog(parent)
+    , professors_(professors)
+    , current_id_(current_id)
     , ui(new Ui::TeacherDialog)
 {
     ui->setupUi(this);
@@ -97,6 +99,22 @@ void TeacherDialog::on_pushButton_ok_clicked()
     {
         QMessageBox::warning(this, "Formato inválido", "Ingrese una cédula válida (ej: V-12345678, E-8765432)." );
         return;
+    }
+
+    std::string text_id = id.toStdString();
+
+    for(Professor& prof : professors_)
+    {
+        if(current_id_ == text_id)
+        {
+            continue;
+        }
+        if(prof.get_id() == text_id)
+        {
+            QMessageBox::warning(this, "Cédula registrada", "Ingrese otra cédula válida (ej: V-12345678, E-8765432)." );
+            return;
+        }
+
     }
 
     std::vector<Subject> seleted_subjects;

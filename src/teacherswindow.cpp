@@ -361,7 +361,7 @@ void TeachersWindow::on_button_modify_clicked()
 {
     std::vector<Subject> subjects = get_all_subjects();
 
-    TeacherDialog dialog(this);
+    TeacherDialog dialog(professors_, current_professor.get_id(), this);
     dialog.set_edit_mode(true);
     dialog.set_professor(current_professor);
     dialog.set_available_subjects(subjects);
@@ -435,7 +435,7 @@ void TeachersWindow::on_button_modify_clicked()
 void TeachersWindow::on_pushButton_clicked()
 {
     std::vector<Subject> subjects = get_all_subjects();
-    TeacherDialog dialog(this);
+    TeacherDialog dialog(professors_,"",this);
     dialog.set_edit_mode(false);
     dialog.set_available_subjects(subjects);
 
