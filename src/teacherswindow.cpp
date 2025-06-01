@@ -414,7 +414,7 @@ void TeachersWindow::on_button_modify_clicked()
 
         for(auto& professor: professors_)
         {
-            if(professor.get_id() == update.get_id())
+            if(professor.get_id() == current_professor.get_id())
             {
                 professor = update;
                 break;

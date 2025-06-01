@@ -86,6 +86,7 @@ void HomePage::update_ui()
         ui->frame_4->hide();
         ui->frame_5->hide();
         ui->frame_2->hide();
+        ui->frame->show();
 
         ui->schedule_button->setEnabled(false);
         ui->teacher_button->setEnabled(false);
@@ -96,25 +97,6 @@ void HomePage::update_ui()
         ui->label_warning->show();
         ui->label_warning->setText("No hay un plan de estudio agregado, ve a Añadir Plan de Estudio");
     }
-    else if(professors.empty())
-    {
-        ui->frame_7->show();
-        ui->config_button->hide();
-        ui->config_label->hide();
-        ui->frame_3->show();
-        ui->frame_4->show();
-        ui->frame_5->hide();
-        ui->frame_2->hide();
-
-        ui->config_button->hide();
-        ui->config_label->hide();
-        ui->label_warning->show();
-        ui->label_warning->setText("No hay profesores agregados, ve a la parte de profesor para añadir");
-        ui->schedule_button->setEnabled(false);
-        ui->teacher_button->setEnabled(true);
-        ui->section_button->setEnabled(false);
-        ui->studyplan_button->setEnabled(true);
-    }
     else
     {
         ui->frame_7->hide();
@@ -124,6 +106,7 @@ void HomePage::update_ui()
         ui->frame_4->show();
         ui->frame_5->show();
         ui->frame_2->show();
+        ui->frame->show();
 
         ui->config_button->hide();
         ui->config_label->hide();
