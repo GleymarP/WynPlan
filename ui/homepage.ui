@@ -29,7 +29,7 @@
          <x>0</x>
          <y>0</y>
          <width>1260</width>
-         <height>678</height>
+         <height>677</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -70,7 +70,7 @@
              </property>
             </widget>
            </item>
-           <item alignment="">
+           <item>
             <widget class="QLabel" name="config_label">
              <property name="minimumSize">
               <size>
@@ -177,7 +177,7 @@
               <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_3">
-              <item alignment="">
+              <item>
                <widget class="QLabel" name="studyplan_label">
                 <property name="minimumSize">
                  <size>
@@ -200,7 +200,7 @@
                 </property>
                </widget>
               </item>
-              <item alignment="">
+              <item>
                <widget class="QPushButton" name="studyplan_button">
                 <property name="minimumSize">
                  <size>
@@ -234,7 +234,7 @@
               <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_4">
-              <item alignment="">
+              <item>
                <widget class="QLabel" name="schedule_label">
                 <property name="minimumSize">
                  <size>
@@ -257,7 +257,7 @@
                 </property>
                </widget>
               </item>
-              <item alignment="">
+              <item>
                <widget class="QPushButton" name="schedule_button">
                 <property name="minimumSize">
                  <size>
@@ -291,7 +291,7 @@
               <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout">
-              <item alignment="">
+              <item>
                <widget class="QLabel" name="teacher_label">
                 <property name="minimumSize">
                  <size>
@@ -314,7 +314,7 @@
                 </property>
                </widget>
               </item>
-              <item alignment="">
+              <item>
                <widget class="QPushButton" name="teacher_button">
                 <property name="minimumSize">
                  <size>
@@ -348,7 +348,7 @@
               <enum>QFrame::Shadow::Raised</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_2">
-              <item alignment="">
+              <item>
                <widget class="QLabel" name="section_label">
                 <property name="minimumSize">
                  <size>
@@ -367,11 +367,11 @@
                  <string notr="true">color: rgb(70, 70, 122);</string>
                 </property>
                 <property name="text">
-                 <string>SECCIÓN</string>
+                 <string>ASIGNACIÓN</string>
                 </property>
                </widget>
               </item>
-              <item alignment="">
+              <item>
                <widget class="QPushButton" name="section_button">
                 <property name="minimumSize">
                  <size>

@@ -268,19 +268,19 @@
                 },
                 {
                     "id_subject": "",
-                    "state": "NO_DISPONIBLE"
+                    "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
-                    "state": "NO_DISPONIBLE"
+                    "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
-                    "state": "NO_DISPONIBLE"
+                    "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
-                    "state": "NO_DISPONIBLE"
+                    "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
@@ -390,7 +390,7 @@
                 },
                 {
                     "id_subject": "",
-                    "state": "NO_DISPONIBLE"
+                    "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
@@ -440,107 +440,7 @@
                 },
                 {
                     "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                }
-            ],
-            [
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                }
-            ],
-            [
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
                     "state": "DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
                 },
                 {
                     "id_subject": "",
@@ -591,6 +491,106 @@
                 {
                     "id_subject": "",
                     "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                }
+            ],
+            [
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                }
+            ],
+            [
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
@@ -4042,7 +4042,7 @@
                 },
                 {
                     "id_subject": "",
-                    "state": "NO_DISPONIBLE"
+                    "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
@@ -4076,65 +4076,15 @@
                 },
                 {
                     "id_subject": "",
-                    "state": "NO_DISPONIBLE"
+                    "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
-                    "state": "NO_DISPONIBLE"
+                    "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                }
-            ],
-            [
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
+                    "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
@@ -4176,6 +4126,106 @@
                 },
                 {
                     "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                }
+            ],
+            [
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                }
+            ],
+            [
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
                     "state": "NO_DISPONIBLE"
                 },
                 {
@@ -4218,57 +4268,7 @@
                 },
                 {
                     "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                }
-            ],
-            [
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
+                    "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
@@ -8272,11 +8272,11 @@
             [
                 {
                     "id_subject": "",
-                    "state": "NO_DISPONIBLE"
+                    "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
-                    "state": "NO_DISPONIBLE"
+                    "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
@@ -8322,6 +8322,126 @@
             [
                 {
                     "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                }
+            ],
+            [
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                }
+            ],
+            [
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
                     "state": "NO_DISPONIBLE"
                 },
                 {
@@ -8335,6 +8455,36 @@
                 {
                     "id_subject": "",
                     "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                }
+            ],
+            [
+                {
+                    "id_subject": "",
+                    "state": "NO_DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
+                },
+                {
+                    "id_subject": "",
+                    "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
@@ -8376,161 +8526,11 @@
                 },
                 {
                     "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
                     "state": "DISPONIBLE"
                 },
                 {
                     "id_subject": "",
                     "state": "DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                }
-            ],
-            [
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                }
-            ],
-            [
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                }
-            ],
-            [
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
-                },
-                {
-                    "id_subject": "",
-                    "state": "NO_DISPONIBLE"
                 },
                 {
                     "id_subject": "",
