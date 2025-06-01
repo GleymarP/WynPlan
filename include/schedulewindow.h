@@ -43,8 +43,8 @@ private:
     Semester current_semester;
     std::string current_option;
     std::vector<Assigment> assignments_;
-    QString path_assign_json = QCoreApplication::applicationDirPath() + "/../../resources/assign.json";
-    QString path_professors_json = QCoreApplication::applicationDirPath() + "/../../resources/teachers.json";
+    QString path_assign_json = QCoreApplication::applicationDirPath() + "/../resources/assign.json";
+    QString path_professors_json = QCoreApplication::applicationDirPath() + "/../resources/teachers.json";
 
 };
 

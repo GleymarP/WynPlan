@@ -272,7 +272,7 @@ void TeachersWindow::on_button_save_changes_clicked()
         }
     }
 
-    Professor::save_professors_json(professors_, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
+    Professor::save_professors_json(professors_, QCoreApplication::applicationDirPath() + "/../resources/teachers.json");
     edit_mode_enabled = false;
     ui->tableWidget->setEnabled(false);
     ui->tableWidget->clearSelection();
@@ -322,8 +322,8 @@ void TeachersWindow::on_button_delete_clicked()
         }
 
 
-        Professor::save_professors_json(professors_, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
-        Assigment::save_assigments_json(assigments_, QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan_);
+        Professor::save_professors_json(professors_, QCoreApplication::applicationDirPath() + "/../resources/teachers.json" );
+        Assigment::save_assigments_json(assigments_, QCoreApplication::applicationDirPath() + "/../resources/assign.json", plan_);
 
 
 
@@ -421,7 +421,7 @@ void TeachersWindow::on_button_modify_clicked()
             }
         }
 
-        Professor::save_professors_json(professors_, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
+        Professor::save_professors_json(professors_, QCoreApplication::applicationDirPath() + "/../resources/teachers.json");
         QMessageBox::information(this,"Actualizado", "Datos del profesor actualizados ");
 
         current_professor = update;
@@ -443,7 +443,7 @@ void TeachersWindow::on_pushButton_clicked()
     {
         Professor new_professor = dialog.get_update_professor();
         professors_.push_back(new_professor);
-        Professor::save_professors_json(professors_ , QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
+        Professor::save_professors_json(professors_ , QCoreApplication::applicationDirPath() + "/../resources/teachers.json" );
         QMessageBox::information(this, "Agregado", "Nuevo profesor agregado");
 
         current_professor = new_professor;

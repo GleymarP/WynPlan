@@ -129,7 +129,7 @@ void InicialConfig::on_pushButton_save_semester_clicked()
         else
         {
             plan_.set_semester(semesters_vector);
-            StudyPlan::save_studyplan_json(plan_, QCoreApplication::applicationDirPath() + "/../../resources/flujograma.json");
+            StudyPlan::save_studyplan_json(plan_, QCoreApplication::applicationDirPath() + "/../resources/flujograma.json");
             emit back_to_menu();
             this->close();
         }

@@ -39,10 +39,10 @@ private slots:
 
 private:
     Ui::HomePage *ui;
-    const QString path_studyplan_json = QCoreApplication::applicationDirPath() + "/../../resources/flujograma.json";
-    const QString path_professors_json = QCoreApplication::applicationDirPath() + "/../../resources/teachers.json";
-    const QString path_assigments_json = QCoreApplication::applicationDirPath() + "/../../resources/assigments.json";
-    const QString path_assign_json = QCoreApplication::applicationDirPath() + "/../../resources/assign.json";
+    const QString path_studyplan_json = QCoreApplication::applicationDirPath() + "/../resources/flujograma.json";
+    const QString path_professors_json = QCoreApplication::applicationDirPath() + "/../resources/teachers.json";
+    const QString path_assigments_json = QCoreApplication::applicationDirPath() + "/../resources/assigments.json";
+    const QString path_assign_json = QCoreApplication::applicationDirPath() + "/../resources/assign.json";
 
     StudyPlan plan;
     std::vector<Professor> professors;

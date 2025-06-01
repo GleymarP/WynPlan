@@ -320,10 +320,10 @@ void SectionWindow::on_pushButton_delete_section_clicked()
 
         assigments = assigments_temp;
 
-        Assigment::save_assigments_json(assigments, QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan);
-        assigments = Assigment::load_from_json_assing(QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan, professors);
-        professors = Professor::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/teachers.json", plan);
-        Professor::save_professors_json(professors, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
+        Assigment::save_assigments_json(assigments, QCoreApplication::applicationDirPath() + "/../resources/assign.json", plan);
+        assigments = Assigment::load_from_json_assing(QCoreApplication::applicationDirPath() + "/../resources/assign.json", plan, professors);
+        professors = Professor::load_from_json(QCoreApplication::applicationDirPath() + "/../resources/teachers.json", plan);
+        Professor::save_professors_json(professors, QCoreApplication::applicationDirPath() + "/../resources/teachers.json" );
 
         QMessageBox::information(this, "Eliminado","Sección eliminada correctamente");
         ui->listWidget->clear();
@@ -382,12 +382,12 @@ void SectionWindow::on_pushButton_assign_professor_clicked()
             }
 
             update_professors_schedule_from_assigments(update_assigment);
-            Professor::save_professors_json(professors, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json" );
+            Professor::save_professors_json(professors, QCoreApplication::applicationDirPath() + "/../resources/teachers.json" );
 
-            Assigment::save_assigments_json(assigments, QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan);
+            Assigment::save_assigments_json(assigments, QCoreApplication::applicationDirPath() + "/../resources/assign.json", plan);
 
-            assigments = Assigment::load_from_json_assing(QCoreApplication::applicationDirPath() + "/../../resources/assign.json", plan, professors);
-            professors = Professor::load_from_json(QCoreApplication::applicationDirPath() + "/../../resources/teachers.json", plan);
+            assigments = Assigment::load_from_json_assing(QCoreApplication::applicationDirPath() + "/../resources/assign.json", plan, professors);
+            professors = Professor::load_from_json(QCoreApplication::applicationDirPath() + "/../resources/teachers.json", plan);
 
             std::unordered_set<std::string> used_professor_id;
 
@@ -418,7 +418,7 @@ void SectionWindow::on_pushButton_assign_professor_clicked()
             }
 
             professors = filtered_professors;
-            Professor::save_professors_json(professors, QCoreApplication::applicationDirPath() + "/../../resources/teachers.json");
+            Professor::save_professors_json(professors, QCoreApplication::applicationDirPath() + "/../resources/teachers.json");
             on_comboBox_option_currentTextChanged(QString::fromStdString(update_assigment.get_option()));
             QMessageBox::information(this, "Actualizado", "Asignaciones actualizadas correctamente.");
         }

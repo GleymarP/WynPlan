@@ -24,9 +24,9 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QJsonArray default_array;
-    QString path_assign_json = QCoreApplication::applicationDirPath() + "/../../resources/assign.json";
-    QString path_professors_json = QCoreApplication::applicationDirPath() + "/../../resources/teachers.json";
-    QString path_plan_json = QCoreApplication::applicationDirPath() + "/../../resources/flujograma.json";
+    QString path_assign_json = QCoreApplication::applicationDirPath() + "/../resources/assign.json";
+    QString path_professors_json = QCoreApplication::applicationDirPath() + "/../resources/teachers.json";
+    QString path_plan_json = QCoreApplication::applicationDirPath() + "/../resources/flujograma.json";
 
     create_json_if_not_exists(path_assign_json, QJsonDocument(default_array));
     create_json_if_not_exists(path_professors_json, QJsonDocument(default_array));
