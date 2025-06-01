@@ -49,7 +49,7 @@ cmake --build build
 ```
   #### Ejecuta:
 ```
-./WynPlan
+./build/WynPlan
 ```
 
   
